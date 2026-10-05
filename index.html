@@ -828,6 +828,294 @@
         transform: rotate(360deg);
       }
     }
+
+    :root {
+      --doctor-blue: #2d5e9c;
+      --doctor-deep: #163f73;
+      --doctor-soft: #edf5ff;
+      --doctor-light: #f8fbff;
+      --doctor-shadow: 0 18px 42px rgba(23, 52, 92, 0.12);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f8fbff;
+      color: #24364f;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      box-shadow: 0 12px 24px rgba(22, 45, 77, 0.06);
+    }
+
+    .header-scrolled {
+      box-shadow: 0 16px 28px rgba(22, 45, 77, 0.08);
+    }
+
+    .navmenu a {
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .navmenu a:hover,
+    .navmenu .active {
+      background: rgba(45, 94, 156, 0.08);
+      color: var(--doctor-blue);
+    }
+
+    .cta-btn,
+    .hero .btn-get-started,
+    .contact .php-email-form button[type=submit] {
+      background: linear-gradient(135deg, var(--doctor-blue), #4f7cc3);
+      border: none;
+      box-shadow: 0 18px 35px rgba(45, 94, 156, 0.22);
+    }
+
+    .cta-btn:hover,
+    .hero .btn-get-started:hover,
+    .contact .php-email-form button[type=submit]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 38px rgba(45, 94, 156, 0.28);
+    }
+
+    .hero {
+      min-height: 730px;
+      background: linear-gradient(120deg, rgba(11, 25, 42, 0.72), rgba(14, 31, 50, 0.5));
+    }
+
+    .hero .carousel-item {
+      min-height: 730px;
+    }
+
+    .hero .container {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2.5rem, 4vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      text-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    }
+
+    .hero p {
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      color: rgba(255,255,255,0.85);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    .featured-services {
+      margin-top: -36px;
+    }
+
+    .featured-services .service-item,
+    .about .text-center,
+    .stats .stats-item,
+    .services .service-item,
+    .tabs .tab-content,
+    .contact .info-item,
+    .contact .php-email-form,
+    .footer {
+      box-shadow: var(--doctor-shadow);
+    }
+
+    .featured-services .service-item {
+      border-radius: 22px;
+      border: 1px solid rgba(45,94,156,0.08);
+      background: rgba(255,255,255,0.96);
+      padding: 2rem 1.5rem;
+    }
+
+    .featured-services .service-item:hover,
+    .services .service-item:hover {
+      transform: translateY(-8px);
+    }
+
+    .featured-services .service-item .icon,
+    .services .service-item .icon {
+      background: linear-gradient(135deg, rgba(45,94,156,0.12), rgba(79,124,195,0.18));
+      border-radius: 18px;
+    }
+
+    .about .content h3 {
+      color: var(--doctor-blue);
+      font-size: clamp(1.8rem, 2vw, 2.3rem);
+      margin-bottom: 1rem;
+    }
+
+    .about .content p,
+    .about .content li,
+    .stats .stats-item p,
+    .services .service-item p,
+    .tabs .details p,
+    .contact .info-item p,
+    .footer .footer-contact p,
+    .footer .footer-links a {
+      color: #5b6d82;
+    }
+
+    .about .text-center {
+      background: linear-gradient(180deg, #ffffff, #f6f9ff);
+      border: 1px solid rgba(45,94,156,0.08);
+      border-radius: 22px;
+      padding: 2rem 1.5rem;
+    }
+
+    .about .text-center h4 {
+      color: var(--doctor-deep);
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    .stats .stats-item {
+      border-radius: 22px;
+      border: 1px solid rgba(45,94,156,0.08);
+      background: rgba(255,255,255,0.94);
+      overflow: hidden;
+    }
+
+    .stats .stats-item i {
+      color: var(--doctor-blue);
+      font-size: 2.1rem;
+      margin-right: 1rem;
+    }
+
+    .services .service-item {
+      border-radius: 22px;
+      border: 1px solid rgba(45,94,156,0.08);
+      background: rgba(255,255,255,0.96);
+      padding: 2rem 1.5rem;
+      height: 100%;
+    }
+
+    .services .service-item h3 {
+      color: var(--doctor-deep);
+      font-size: 1.28rem;
+    }
+
+    .tabs .nav-tabs .nav-link {
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid rgba(45,94,156,0.08);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .tabs .nav-tabs .nav-link.active {
+      background: linear-gradient(135deg, var(--doctor-blue), #4f7cc3);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .contact .info-item,
+    .contact .php-email-form {
+      border-radius: 24px;
+      border: 1px solid rgba(45,94,156,0.08);
+      background: rgba(255,255,255,0.96);
+    }
+
+    .contact .php-email-form .form-control {
+      border-radius: 14px;
+      border: 1px solid rgba(45,94,156,0.12);
+      background: #f8fbff;
+      min-height: 52px;
+    }
+
+    .contact .php-email-form .form-control:focus {
+      border-color: var(--doctor-blue);
+      box-shadow: 0 0 0 0.2rem rgba(45,94,156,0.08);
+    }
+
+    .map-wrapper {
+      margin-top: 1.75rem;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(45,94,156,0.08);
+      box-shadow: var(--doctor-shadow);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      min-height: 320px;
+      border: 0;
+      display: block;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 90px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1dbb65, #29d673);
+      color: #fff;
+      font-size: 1.9rem;
+      box-shadow: 0 16px 30px rgba(23, 170, 94, 0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      color: #fff;
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .footer {
+      background: linear-gradient(180deg, #f4f9ff, #edf3fb);
+      border-top: 1px solid rgba(45,94,156,0.08);
+    }
+
+    .footer .social-links a {
+      background: #fff;
+      border: 1px solid rgba(45,94,156,0.08);
+      color: var(--doctor-blue);
+    }
+
+    .footer .social-links a:hover {
+      background: var(--doctor-blue);
+      color: #fff;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        min-height: 580px;
+      }
+      .hero .carousel-item {
+        min-height: 580px;
+      }
+      .hero .container {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero .btn-get-started,
+      .cta-btn {
+        width: 100%;
+      }
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 24px;
+        right: 14px;
+      }
+    }
   </style>
 </head>
 
@@ -1458,6 +1746,10 @@
 
       </div>
 
+      <div class="map-wrapper" data-aos="fade-up" data-aos-delay="200">
+        <iframe title="Ubicación del consultorio del Dr. Mendoza Soto" src="https://www.google.com/maps?q=Rio%20Bamba%20781%2C%20Consultorio%204%20Lindavista%20CDMX&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
     </section><!-- /Contact Section -->
 
   </main>
@@ -1477,10 +1769,10 @@
             <p><strong>WhatsApp:</strong> <span>55 3667 0155</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/525536670155" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
 
@@ -1528,6 +1820,10 @@
     </div>
 
   </footer>
+
+  <a href="https://wa.me/525536670155" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

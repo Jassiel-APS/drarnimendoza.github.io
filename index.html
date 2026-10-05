@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Dr. Mendoza Soto - Cirujano General, Hernias y Mínima Invasión</title>
+  <meta name="description" content="Dr. Arni Alejandro Mendoza Soto - Especialista en Cirugía General, Hernias y Procedimientos de Mínima Invasión en CDMX">
+  <meta name="keywords" content="cirujano general, hernias, laparoscopia, mínima invasión, CDMX, Lindavista">
+
+  <!-- Favicons -->
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Dr Arni Mendoza" />
+<link rel="manifest" href="site.webmanifest" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* Variables CSS */
+    :root {
+      --accent-color: #44649e;
+      --surface-color: #ffffff;
+      --contrast-color: #ffffff;
+      --heading-color: #2c4964;
+      --nav-color: #2c4964;
+      --nav-hover-color: #3fbbc0;
+      --nav-dropdown-background-color: #ffffff;
+      --nav-dropdown-color: #2c4964;
+      --nav-dropdown-hover-color: #3fbbc0;
+      --default-color: #444444;
+      --background-color: #ffffff;
+      --light-background-color: #f4f7fc;
+    }
+
+    /* General */
+    body {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: color-mix(in srgb, var(--accent-color), transparent 25%);
+      text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--heading-color);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Header */
+    .header {
+      background-color: var(--surface-color);
+      transition: all 0.5s;
+      z-index: 997;
+      box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .topbar {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .header .branding {
+      min-height: 60px;
+      padding: 10px 0;
+    }
+
+    .header .logo img {
+      max-height: 100px;
+    }
+
+    .header .logo h1 {
+      font-size: 30px;
+      margin: 0;
+      color: var(--heading-color);
+      font-weight: 700;
+    }
+
+    /* Navigation */
+    .navmenu {
+      padding: 0;
+    }
+
+    .navmenu ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    .navmenu li {
+      position: relative;
+    }
+
+    .navmenu a {
+      color: var(--nav-color);
+      padding: 18px 15px;
+      font-size: 16px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+
+    .navmenu a:hover,
+    .navmenu .active {
+      color: var(--nav-hover-color);
+    }
+
+    /* Mobile Navigation */
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        color: var(--nav-color);
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .navmenu {
+        padding: 0;
+        z-index: 9997;
+      }
+
+      .navmenu ul {
+        display: none;
+        position: absolute;
+        inset: 60px 20px 20px 20px;
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 6px;
+        background-color: var(--nav-dropdown-background-color);
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        box-shadow: none;
+        overflow-y: auto;
+        transition: 0.3s;
+        z-index: 9998;
+        flex-direction: column;
+      }
+
+      .navmenu a {
+        padding: 10px 20px;
+        color: var(--nav-dropdown-color);
+        border-radius: 4px;
+        transition: 0.3s;
+        display: block;
+      }
+
+      .navmenu a:hover {
+        color: var(--nav-dropdown-hover-color);
+        background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+      }
+
+      .mobile-nav-active {
+        overflow: hidden;
+      }
+
+      .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+        position: absolute;
+        font-size: 32px;
+        top: 15px;
+        right: 15px;
+        margin-right: 0;
+        z-index: 9999;
+      }
+
+      .mobile-nav-active .navmenu {
+        position: fixed;
+        overflow: hidden;
+        inset: 0;
+        background: rgba(33, 37, 41, 0.8);
+        transition: 0.3s;
+      }
+
+      .mobile-nav-active .navmenu > ul {
+        display: block;
+      }
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      color: var(--contrast-color);
+      background: var(--accent-color);
+      font-size: 14px;
+      padding: 12px 40px;
+      margin: 0 0 0 30px;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      color: var(--contrast-color);
+      background: color-mix(in srgb, var(--accent-color), transparent 15%);
+    }
+
+    /* Hero Section */
+    .hero {
+      width: 100%;
+      min-height: 80vh;
+      position: relative;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero .carousel-item {
+      width: 100%;
+      min-height: 80vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      padding: 80px 0;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--contrast-color);
+    }
+
+    .hero p {
+      color: color-mix(in srgb, var(--contrast-color), transparent 20%);
+      margin: 10px 0 0 0;
+      font-size: 20px;
+      max-width: 600px;
+    }
+
+    .hero .btn-get-started {
+      color: var(--contrast-color);
+      background: var(--accent-color);
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 12px 40px;
+      border-radius: 50px;
+      transition: 0.3s;
+      margin: 30px 0 0 0;
+    }
+
+    .hero .btn-get-started:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 15%);
+      color: var(--contrast-color);
+    }
+
+    /* Carousel Controls */
+    .hero .carousel-control-prev,
+    .hero .carousel-control-next {
+      top: 50%;
+      bottom: auto;
+      width: 54px;
+      height: 54px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50px;
+      transition: 0.3s;
+      opacity: 1;
+    }
+
+    .hero .carousel-control-prev:hover,
+    .hero .carousel-control-next:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero .carousel-control-prev {
+      left: 15px;
+      transform: translateY(-50%);
+    }
+
+    .hero .carousel-control-next {
+      right: 15px;
+      transform: translateY(-50%);
+    }
+
+    .hero .carousel-control-next-icon,
+    .hero .carousel-control-prev-icon {
+      background: none;
+      font-size: 24px;
+      line-height: 1;
+      width: auto;
+      height: auto;
+    }
+
+    /* Carousel Indicators */
+    .hero .carousel-indicators {
+      bottom: 20px;
+      margin-bottom: 0;
+    }
+
+    .hero .carousel-indicators li {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.4);
+      overflow: hidden;
+      border: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50px;
+      opacity: 0.6;
+      transition: 0.3s;
+    }
+
+    .hero .carousel-indicators li.active {
+      opacity: 1;
+      background: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .hero .carousel-control-prev,
+      .hero .carousel-control-next {
+        width: 44px;
+        height: 44px;
+      }
+
+      .hero .carousel-control-next-icon,
+      .hero .carousel-control-prev-icon {
+        font-size: 18px;
+      }
+    }
+
+    /* Sections */
+    .section {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 60px 0;
+      scroll-margin-top: 100px;
+      overflow: clip;
+    }
+
+    .section-title {
+      text-align: center;
+      padding-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+    }
+
+    .section-title h2:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent-color);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .section-title p {
+      margin-bottom: 0;
+    }
+
+    .light-background {
+      background-color: var(--light-background-color);
+    }
+
+    /* Featured Services */
+    .featured-services .service-item {
+      padding: 30px;
+      background: var(--surface-color);
+      border-radius: 10px;
+      box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .featured-services .service-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .featured-services .service-item .icon {
+      margin-bottom: 20px;
+    }
+
+    .featured-services .service-item .icon i {
+      font-size: 48px;
+      color: var(--accent-color);
+    }
+
+    .featured-services .service-item h4 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .featured-services .service-item h4 a {
+      color: var(--heading-color);
+    }
+
+    .featured-services .service-item p {
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    /* Stats */
+    .stats .stats-item {
+      padding: 30px;
+      background: var(--surface-color);
+      border-radius: 10px;
+      box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats .stats-item i {
+      font-size: 44px;
+      color: var(--accent-color);
+      margin-right: 15px;
+    }
+
+    .stats .stats-item span {
+      font-size: 48px;
+      display: block;
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+
+    .stats .stats-item p {
+      padding: 0;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+    }
+
+    /* About */
+    .about .content h3 {
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--accent-color);
+    }
+
+    .about .content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about .content ul li {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .about .content ul strong {
+      margin-right: 10px;
+    }
+
+    .about .content ul i {
+      font-size: 16px;
+      margin-right: 8px;
+      color: var(--accent-color);
+    }
+
+    /* Services */
+    .services .service-item {
+      box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      padding: 60px 30px;
+      text-align: center;
+      background: var(--surface-color);
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .services .service-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .services .service-item .icon {
+      margin: 10px auto 20px auto;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in-out 0.3s;
+      position: relative;
+    }
+
+    .services .service-item .icon i {
+      font-size: 36px;
+      transition: 0.5s;
+      position: relative;
+    }
+
+    .services .service-item .icon svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .services .service-item .icon svg path {
+      transition: 0.5s;
+      fill: #f5f5f5;
+    }
+
+    .services .service-item:hover .icon {
+      background: var(--accent-color);
+    }
+
+    .services .service-item:hover .icon i {
+      color: var(--contrast-color);
+    }
+
+    .services .service-item:hover .icon svg path {
+      fill: #353535;
+    }
+
+    .services .service-item h3 {
+      font-weight: 700;
+      margin: 10px 0 15px 0;
+      font-size: 22px;
+    }
+
+    .services .service-item h3 a {
+      color: var(--heading-color);
+      transition: ease-in-out 0.3s;
+    }
+
+    .services .service-item p {
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    /* Contact */
+    .contact .info-item {
+      padding: 30px;
+      background: var(--surface-color);
+      border-radius: 10px;
+      box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact .info-item i {
+      font-size: 20px;
+      color: var(--accent-color);
+      width: 56px;
+      height: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      transition: all 0.3s ease-in-out;
+      border: 2px solid color-mix(in srgb, var(--accent-color), transparent 40%);
+    }
+
+    .contact .info-item h3 {
+      font-size: 20px;
+      color: var(--heading-color);
+      font-weight: 700;
+      margin: 20px 0 10px 0;
+    }
+
+    .contact .info-item p {
+      padding: 0;
+      margin-bottom: 0;
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+      font-size: 14px;
+    }
+
+    .contact .php-email-form {
+      padding: 30px;
+      background: var(--surface-color);
+      border-radius: 10px;
+      box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact .php-email-form .form-group {
+      padding-bottom: 20px;
+    }
+
+    .contact .php-email-form .form-control {
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 14px;
+      border-radius: 0;
+    }
+
+    .contact .php-email-form .form-control:focus {
+      border-color: var(--accent-color);
+    }
+
+    .contact .php-email-form button[type=submit] {
+      background: var(--accent-color);
+      border: 0;
+      padding: 10px 30px;
+      color: var(--contrast-color);
+      transition: 0.4s;
+      border-radius: 4px;
+    }
+
+    .contact .php-email-form button[type=submit]:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 15%);
+    }
+
+    /* Footer */
+    .footer {
+      color: var(--default-color);
+      background-color: var(--light-background-color);
+      font-size: 14px;
+      padding-bottom: 50px;
+      position: relative;
+    }
+
+    .footer .footer-top {
+      padding-top: 50px;
+    }
+
+    .footer .footer-about .logo {
+      line-height: 0;
+      margin-bottom: 25px;
+    }
+
+    .footer .footer-about .logo img {
+      max-height: 100px;
+      margin-right: 6px;
+    }
+
+    .footer .footer-about .logo span {
+      color: var(--heading-color);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer .footer-about p {
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer .social-links a {
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+      line-height: 0;
+      display: inline-block;
+      background: color-mix(in srgb, var(--default-color), transparent 90%);
+      padding: 8px;
+      margin-right: 4px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .footer .social-links a:hover {
+      color: var(--contrast-color);
+      background: var(--accent-color);
+    }
+
+    .footer .footer-links {
+      margin-bottom: 30px;
+    }
+
+    .footer .footer-links h4 {
+      color: var(--heading-color);
+      font-size: 16px;
+      font-weight: bold;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    .footer .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer .footer-links ul i {
+      padding-right: 2px;
+      color: color-mix(in srgb, var(--accent-color), transparent 20%);
+      font-size: 12px;
+      line-height: 0;
+    }
+
+    .footer .footer-links ul li {
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer .footer-links ul li:first-child {
+      padding-top: 0;
+    }
+
+    .footer .footer-links ul a {
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .footer .footer-links ul a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer .footer-contact p {
+      margin-bottom: 5px;
+    }
+
+    .footer .copyright {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+
+    .footer .copyright p {
+      margin-bottom: 0;
+    }
+
+    .footer .credits {
+      margin-top: 6px;
+      font-size: 13px;
+    }
+
+    /* Scroll top button */
+    .scroll-top {
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      right: 15px;
+      bottom: 15px;
+      z-index: 99999;
+      background-color: var(--accent-color);
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      transition: all 0.4s;
+    }
+
+    .scroll-top i {
+      font-size: 24px;
+      color: var(--contrast-color);
+      line-height: 0;
+    }
+
+    .scroll-top:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+      color: var(--contrast-color);
+    }
+
+    .scroll-top.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      overflow: hidden;
+      background: var(--background-color);
+      transition: all 0.6s ease-out;
+    }
+
+    #preloader:before {
+      content: "";
+      position: fixed;
+      top: calc(50% - 30px);
+      left: calc(50% - 30px);
+      border: 6px solid #ffffff;
+      border-color: var(--accent-color) transparent var(--accent-color) transparent;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: animate-preloader 1.5s linear infinite;
+    }
+
+    @keyframes animate-preloader {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="d-none d-md-flex align-items-center">
+          <i class="bi bi-clock me-1"></i> Lunes - Sábado, 8AM a 8PM
+        </div>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-phone me-1"></i> WhatsApp: 55 3667 0155
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-end">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <img src="assets/img/logoarnimendoza.png" alt="Logo Dr. Mendoza Soto" style="width:auto;height:100px;">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Inicio</a></li>
+            <li><a href="#about">Acerca de</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#procedures">Procedimientos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="cta-btn" href="https://www.doctoralia.com.mx/arni-mendoza/" target="_blank">Agendar Cita</a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <div class="hero-bg" style="background-image:url('assets/img/slider3.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="container">
+            <h2>Dr. Arni Alejandro Mendoza Soto</h2>
+            <p>Especialista en Cirugía General, Hernias y Procedimientos de Mínima Invasión. Egresado de la Universidad Nacional Autónoma de México con más de 3 años de experiencia brindando atención médica de calidad.</p>
+            <a href="#about" class="btn-get-started">Conocer más</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <div class="hero-bg" style="background-image:url('assets/img/slider2.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="container">
+            <h2>Cirugía de Mínima Invasión</h2>
+            <p>Utilizamos las técnicas laparoscópicas más avanzadas para realizar procedimientos con incisiones mínimas, lo que resulta en menos dolor postoperatorio, cicatrices más pequeñas y una recuperación más rápida para nuestros pacientes.</p>
+            <a href="#services" class="btn-get-started">Ver Servicios</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <div class="hero-bg" style="background-image:url('assets/img/slider1.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="container">
+            <h2>Especialista en Hernias</h2>
+            <p>Con más de 500 hernias reparadas exitosamente, ofrecemos tratamiento especializado para hernias inguinales, umbilicales, incisionales y de pared abdominal utilizando las técnicas más modernas y materiales de alta calidad.</p>
+            <a href="#procedures" class="btn-get-started">Ver Procedimientos</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="fas fa-cut icon"></i></div>
+              <h4><a href="" class="stretched-link">Cirugía Laparoscópica</a></h4>
+              <p>Procedimientos de mínima invasión con incisiones pequeñas para una recuperación más rápida</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="fas fa-shield-alt icon"></i></div>
+              <h4><a href="" class="stretched-link">Reparación de Hernias</a></h4>
+              <p>Especialización en hernias inguinales, umbilicales, incisionales y de pared abdominal</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="fas fa-heartbeat icon"></i></div>
+              <h4><a href="" class="stretched-link">Cirugía General</a></h4>
+              <p>Procedimientos quirúrgicos generales del aparato digestivo y pared abdominal</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="fas fa-microscope icon"></i></div>
+              <h4><a href="" class="stretched-link">Técnicas Avanzadas</a></h4>
+              <p>Uso de tecnología de vanguardia para obtener los mejores resultados quirúrgicos</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Acerca del Dr. Mendoza Soto</h2>
+        <p>Especialista en Cirugía General con enfoque en procedimientos de mínima invasión y reparación de hernias</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <h3>Formación Académica y Profesional</h3>
+            <p class="fst-italic">
+              El Dr. Arni Alejandro Mendoza Soto es un cirujano general altamente calificado, egresado de la prestigiosa Universidad Nacional Autónoma de México.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span><strong>Cédula Profesional:</strong> 11767675</span></li>
+              <li><i class="bi bi-check2-all"></i> <span><strong>Cédula de Especialidad:</strong> 14408066</span></li>
+              <li><i class="bi bi-check2-all"></i> <span><strong>Universidad de Egreso:</strong> Universidad Nacional Autónoma de México</span></li>
+              <li><i class="bi bi-check2-all"></i> <span><strong>Especialidad:</strong> Cirugía General, Hernias y Mínima Invasión</span></li>
+            </ul>
+            <p>
+              Con más de 3 años de experiencia en cirugía general, el Dr. Mendoza Soto se especializa en técnicas de mínima invasión que ofrecen a sus pacientes una recuperación más rápida, menor dolor postoperatorio y mejores resultados estéticos.
+            </p>
+          </div>
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center p-4" style="background: var(--light-background-color); border-radius: 15px;">
+              <i class="fas fa-user-md" style="font-size: 120px; color: var(--accent-color); margin-bottom: 20px;"></i>
+              <h4>Dr. Arni Alejandro Mendoza Soto</h4>
+              <p class="text-muted">Cirujano General Certificado</p>
+              <div class="row text-center mt-4">
+                <div class="col-6">
+                  <h5 style="color: var(--accent-color);">3+</h5>
+                  <small>Años de Experiencia</small>
+                </div>
+                <div class="col-6">
+                  <h5 style="color: var(--accent-color);">1000+</h5>
+                  <small>Cirugías Realizadas</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-cut flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter">1000+</span>
+                <p>Cirugías Realizadas</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-shield-alt flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter">500+</span>
+                <p>Hernias Reparadas</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-award flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter">3+</span>
+                <p>Años de Experiencia</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-heart flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="1" class="purecounter">98%</span>
+                <p>Satisfacción del Paciente</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+   <!-- Services Section -->
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Servicios</h2>
+    <p>Ofrecemos una amplia gama de procedimientos quirúrgicos especializados con la más alta calidad médica</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Gastrointestinales</h3>
+          </a>
+          <p>Tratamiento integral de abdomen agudo, úlceras gastroduodenales, hernias hiatales, obstrucción intestinal y procedimientos especializados del tracto digestivo.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-pills"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Hígado, Vesícula y Vías Biliares</h3>
+          </a>
+          <p>Cirugías especializadas en colelitiasis, colecistitis, coledocolitiasis, tumores hepáticos, abscesos hepáticos y pancreatitis aguda.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-hospital-user"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Hernias y Pared Abdominal</h3>
+          </a>
+          <p>Reparación quirúrgica de hernias inguinales, umbilicales, crurales, incisionales y tratamiento de diástasis de rectos con técnicas avanzadas.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-dna"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Cabeza y Cuello</h3>
+          </a>
+          <p>Cirugías de tiroides, bocio multinodular, hiperparatiroidismo, nódulos tiroideos y tumores parotídeos con abordajes mínimamente invasivos.</p>
+          <a href="#" class="stretched-link"></a>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-wheelchair"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Procedimientos Especializados</h3>
+          </a>
+          <p>Tratamiento de fascitis necrosante, infecciones de tejidos blandos, colocación de catéteres de diálisis y manejo de quistes especializados.</p>
+          <a href="#" class="stretched-link"></a>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-notes-medical"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Urgencias Quirúrgicas</h3>
+          </a>
+          <p>Atención de emergencias como apendicitis aguda, peritonitis, perforación gastrointestinal y síndrome compartimental las 24 horas.</p>
+          <a href="#" class="stretched-link"></a>
+        </div>
+      </div><!-- End Service Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+
+<!-- Tabs Section -->
+<section id="tabs" class="tabs section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Departamentos</h2>
+    <p>Especialidades médicas organizadas por área de atención con procedimientos específicos</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row">
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tabs-tab-1">Gastrointestinales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-2">Hepatobiliar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-3">Hernias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-4">Cabeza y Cuello</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-5">Misceláneos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tabs-tab-1">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Cirugía Gastrointestinal</h3>
+                <p class="fst-italic">Especialistas en el tratamiento integral del aparato digestivo con técnicas quirúrgicas avanzadas</p>
+                <p>Ofrecemos tratamiento completo para abdomen agudo, úlceras gastroduodenales, enfermedad por reflujo gastroesofágico, obstrucción intestinal, apendicitis aguda, enfermedad diverticular, síndrome de intestino irritable y procedimientos de ostomía. Utilizamos técnicas mínimamente invasivas cuando es posible para optimizar la recuperación del paciente.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-2">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Cirugía Hepatobiliar</h3>
+                <p class="fst-italic">Especialización en cirugías del hígado, vesícula biliar y vías biliares con alta precisión técnica</p>
+                <p>Realizamos procedimientos para colelitiasis, colecistitis aguda y crónica, coledocolitiasis con exploración de vías biliares, colangitis aguda, tumores hepáticos, abscesos hepáticos y pancreáticos, quistes hepáticos y pancreatitis aguda. Contamos con tecnología de vanguardia para diagnóstico y tratamiento.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-3">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Cirugía de Hernias y Pared Abdominal</h3>
+                <p class="fst-italic">Reparación especializada de hernias con técnicas modernas y materiales biocompatibles</p>
+                <p>Tratamos hernias inguinales, umbilicales, crurales (femorales), incisionales y diástasis de rectos. Utilizamos técnicas tanto abiertas como laparoscópicas, empleando mallas especializadas cuando está indicado. Nuestro enfoque se centra en minimizar las recidivas y optimizar la calidad de vida del paciente.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-4">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Cirugía de Cabeza y Cuello</h3>
+                <p class="fst-italic">Especialistas en cirugía endocrina y patologías cervicales con abordajes mínimamente invasivos</p>
+                <p>Realizamos cirugías de tiroides incluyendo bocio, bocio multinodular tóxico, nódulos tiroideos, así como tratamiento del hiperparatiroidismo primario y secundario, hiperplasia paratiroidea y tumores parotídeos. Utilizamos técnicas que preservan la función y minimizan las cicatrices.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-5">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Procedimientos Misceláneos</h3>
+                <p class="fst-italic">Tratamiento integral de diversas patologías quirúrgicas con enfoque multidisciplinario</p>
+                <p>Manejamos fascitis necrosante, infecciones necrosantes de tejidos blandos, gangrena, quistes pilonidales, sebáceos, queratínicos y epidermoides, lipomas cervicales, y colocación de catéteres Tenckhoff para diálisis peritoneal. También tratamos gastroenteritis bacteriana con complicaciones quirúrgicas.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Tabs Section -->
+
+    <!-- Procedures Section -->
+    <section id="procedures" class="procedures section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Procedimientos Especializados</h2>
+        <p>Conoce los principales procedimientos que realizamos con técnicas de vanguardia</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#procedures-tab-1">Hernias Inguinales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#procedures-tab-2">Hernias Umbilicales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#procedures-tab-3">Cirugía Laparoscópica</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#procedures-tab-4">Cirugía de Vesícula</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#procedures-tab-5">Eventración</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="procedures-tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Reparación de Hernias Inguinales</h3>
+                    <p class="fst-italic">Técnica especializada para la reparación de hernias inguinales con mínima invasión y máxima efectividad.</p>
+                    <p>Las hernias inguinales son las más comunes y requieren tratamiento quirúrgico especializado. Utilizamos técnicas laparoscópicas avanzadas que permiten una recuperación más rápida, menor dolor postoperatorio y menor riesgo de recidiva. El procedimiento se realiza con anestesia general y el paciente puede regresar a casa el mismo día.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <div class="p-4" style="background: white; border-radius: 10px;">
+                      <i class="fas fa-shield-alt" style="font-size: 80px; color: var(--accent-color);"></i>
+                      <h5 class="mt-3">Hernia Inguinal</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="procedures-tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Reparación de Hernias Umbilicales</h3>
+                    <p class="fst-italic">Procedimiento especializado para la corrección de hernias umbilicales con resultados estéticos óptimos.</p>
+                    <p>Las hernias umbilicales pueden presentarse tanto en adultos como en niños. Nuestro enfoque incluye técnicas de reparación que no solo corrigen el defecto anatómico, sino que también proporcionan resultados estéticos excelentes. Utilizamos materiales de alta calidad y técnicas que minimizan el riesgo de recurrencia.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <div class="p-4" style="background: white; border-radius: 10px;">
+                      <i class="fas fa-dot-circle" style="font-size: 80px; color: var(--accent-color);"></i>
+                      <h5 class="mt-3">Hernia Umbilical</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="procedures-tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Cirugía Laparoscópica</h3>
+                    <p class="fst-italic">Técnicas de mínima invasión que revolucionan la cirugía abdominal moderna.</p>
+                    <p>La cirugía laparoscópica permite realizar procedimientos complejos a través de pequeñas incisiones, utilizando una cámara y instrumentos especializados. Esta técnica ofrece ventajas significativas como menor dolor postoperatorio, recuperación más rápida, menor riesgo de infección y mejores resultados estéticos.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <div class="p-4" style="background: white; border-radius: 10px;">
+                      <i class="fas fa-cut" style="font-size: 80px; color: var(--accent-color);"></i>
+                      <h5 class="mt-3">Laparoscopía</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="procedures-tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Cirugía de Vesícula Biliar</h3>
+                    <p class="fst-italic">Colecistectomía laparoscópica para el tratamiento de patologías de la vesícula biliar.</p>
+                    <p>La colecistectomía laparoscópica es el estándar de oro para el tratamiento de cálculos biliares y otras patologías de la vesícula. Este procedimiento se realiza a través de pequeñas incisiones, permitiendo una recuperación rápida y un retorno temprano a las actividades normales. La mayoría de los pacientes pueden regresar a casa al día siguiente de la cirugía.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <div class="p-4" style="background: white; border-radius: 10px;">
+                      <i class="fas fa-stomach" style="font-size: 80px; color: var(--accent-color);"></i>
+                      <h5 class="mt-3">Vesícula Biliar</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="procedures-tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Reparación de Eventración</h3>
+                    <p class="fst-italic">Corrección de defectos de la pared abdominal con técnicas avanzadas de reconstrucción.</p>
+                    <p>La eventración es una complicación que puede presentarse después de cirugías abdominales previas. Utilizamos técnicas especializadas de reconstrucción de la pared abdominal con mallas de alta calidad y métodos que aseguran resultados duraderos. Cada caso se evalúa individualmente para determinar la mejor estrategia quirúrgica.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <div class="p-4" style="background: white; border-radius: 10px;">
+                      <i class="fas fa-band-aid" style="font-size: 80px; color: var(--accent-color);"></i>
+                      <h5 class="mt-3">Eventración</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Procedures Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contacto</h2>
+        <p>Agenda tu consulta con el Dr. Mendoza Soto para una evaluación personalizada</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="row gy-4">
+
+              <div class="col-lg-12">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Dirección</h3>
+                  <p>Rio Bamba 781, Consultorio 4<br>Lindavista, CP 07300<br>Gustavo A. Madero, CDMX</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Teléfonos</h3>
+                  <p>55 6626 6049<br>55 2000 6100 Ext 188</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-whatsapp"></i>
+                  <h3>WhatsApp</h3>
+                  <p>55 3667 0155</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Su Nombre" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Su Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Asunto" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="4" placeholder="Mensaje" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Enviando...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Su mensaje ha sido enviado. ¡Gracias!</div>
+
+                  <button type="submit">Enviar Mensaje</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logoarnimendoza.png" alt="Logo Dr. Mendoza Soto" style="width:auto;height:200px;">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Rio Bamba 781, Consultorio 4</p>
+            <p>Lindavista, CP 07300, CDMX</p>
+            <p class="mt-3"><strong>Teléfono:</strong> <span>55 6626 6049</span></p>
+            <p><strong>WhatsApp:</strong> <span>55 3667 0155</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#about">Acerca de</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#procedures">Procedimientos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#">Cirugía Laparoscópica</a></li>
+            <li><a href="#">Reparación de Hernias</a></li>
+            <li><a href="#">Cirugía de Vesícula</a></li>
+            <li><a href="#">Cirugía de Apéndice</a></li>
+            <li><a href="#">Consulta Especializada</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="#">Cédula Profesional: 11767675</a></li>
+            <li><a href="#">Cédula Especialidad: 14408066</a></li>
+            <li><a href="#">UNAM - Cirugía General</a></li>
+            <li><a href="#">Especialista en Hernias</a></li>
+            <li><a href="#">Mínima Invasión</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Dr. Mendoza Soto</strong> <span>Todos los Derechos Reservados</span></p>
+      <div class="credits">
+        Sitio web diseñado para brindar información médica profesional
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    // Initialize Bootstrap carousel
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroCarousel = document.querySelector('#hero-carousel');
+      if (heroCarousel) {
+        new bootstrap.Carousel(heroCarousel, {
+          interval: 5000,
+          ride: 'carousel'
+        });
+      }
+
+      // Mobile nav toggle
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('.navmenu');
+
+      if (mobileNavToggle && navmenu) {
+        mobileNavToggle.addEventListener('click', function() {
+          document.body.classList.toggle('mobile-nav-active');
+          mobileNavToggle.classList.toggle('bi-list');
+          mobileNavToggle.classList.toggle('bi-x');
+        });
+
+        // Close mobile nav when clicking on a menu link
+        document.querySelectorAll('.navmenu a').forEach(link => {
+          link.addEventListener('click', function() {
+            if (document.body.classList.contains('mobile-nav-active')) {
+              document.body.classList.remove('mobile-nav-active');
+              mobileNavToggle.classList.add('bi-list');
+              mobileNavToggle.classList.remove('bi-x');
+            }
+          });
+        });
+      }
+
+      // Scroll top button
+      const scrollTop = document.querySelector('.scroll-top');
+      if (scrollTop) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 100) {
+            scrollTop.classList.add('active');
+          } else {
+            scrollTop.classList.remove('active');
+          }
+        });
+
+        scrollTop.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+
+      // Preloader
+      const preloader = document.querySelector('#preloader');
+      if (preloader) {
+        window.addEventListener('load', function() {
+          preloader.remove();
+        });
+      }
+
+      // Navbar scroll effect
+      const header = document.querySelector('#header');
+      if (header) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 100) {
+            header.classList.add('header-scrolled');
+          } else {
+            header.classList.remove('header-scrolled');
+          }
+        });
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Counter animation
+      const counters = document.querySelectorAll('.purecounter');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-purecounter-end'));
+            const duration = parseInt(counter.getAttribute('data-purecounter-duration')) * 1000;
+            const start = parseInt(counter.getAttribute('data-purecounter-start') || 0);
+            
+            let current = start;
+            const increment = (target - start) / (duration / 16);
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              counter.textContent = Math.floor(current);
+              if (target > 100) {
+                counter.textContent = Math.floor(current) + '+';
+              } else if (target === 98) {
+                counter.textContent = Math.floor(current) + '%';
+              }
+            }, 16);
+            
+            counterObserver.unobserve(counter);
+          }
+        });
+      });
+
+      counters.forEach(counter => {
+        counterObserver.observe(counter);
+      });
+
+      // Auto-generate carousel indicators
+      const carousel = document.querySelector('#hero-carousel');
+      const indicators = document.querySelector('.carousel-indicators');
+      const items = carousel.querySelectorAll('.carousel-item');
+      
+      if (indicators && items.length > 0) {
+        indicators.innerHTML = '';
+        items.forEach((item, index) => {
+          const indicator = document.createElement('button');
+          indicator.type = 'button';
+          indicator.setAttribute('data-bs-target', '#hero-carousel');
+          indicator.setAttribute('data-bs-slide-to', index);
+          indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+          if (index === 0) {
+            indicator.classList.add('active');
+            indicator.setAttribute('aria-current', 'true');
+          }
+          indicators.appendChild(indicator);
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

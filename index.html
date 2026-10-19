@@ -4,9 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dr. Mendoza Soto - Cirujano General, Hernias y Mínima Invasión</title>
-  <meta name="description" content="Dr. Arni Alejandro Mendoza Soto - Especialista en Cirugía General, Hernias y Procedimientos de Mínima Invasión en CDMX">
+  <title>Dr. Arni Mendoza | Cirugía General, Hernias y Mínima Invasión</title>
+  <meta name="description" content="Dr. Arni Mendoza, cirujano general en CDMX. Información sobre valoración de hernias, cirugía general y procedimientos de mínima invasión.">
   <meta name="keywords" content="cirujano general, hernias, laparoscopia, mínima invasión, CDMX, Lindavista">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dr. Arni Mendoza">
+  <meta property="og:title" content="Dr. Arni Mendoza | Cirugía General">
+  <meta property="og:description" content="Información sobre cirugía general, hernias y procedimientos de mínima invasión en CDMX.">
+  <meta property="og:locale" content="es_MX">
 
   <!-- Favicons -->
 <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
@@ -89,6 +94,37 @@
 
     .header .logo img {
       max-height: 100px;
+    }
+
+    .header .logo,
+    .footer .logo {
+      gap: 0.75rem;
+    }
+
+    .brand-symbol {
+      width: 64px;
+      height: 62px;
+      flex: 0 0 64px;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .brand-symbol img {
+      width: 180px !important;
+      height: 62px !important;
+      max-width: none !important;
+      max-height: none !important;
+      object-fit: cover;
+      object-position: left center;
+    }
+
+    .brand-wordmark {
+      color: var(--doctor-deep, #2c4964);
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1rem, 1.4vw, 1.3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
     .header .logo h1 {
@@ -675,6 +711,11 @@
     .footer .footer-about .logo span {
       color: var(--heading-color);
       font-size: 30px;
+    }
+
+    .footer .footer-about .logo .brand-wordmark {
+      font-size: 1.2rem;
+      line-height: 1.2;
       font-weight: 700;
       letter-spacing: 1px;
       font-family: 'Poppins', sans-serif;
@@ -1220,6 +1261,26 @@
       .header .branding {
         padding: 0.65rem 0;
       }
+      .header .cta-btn {
+        width: auto;
+        flex: 0 0 auto;
+        padding: 0.55rem 0.8rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
+      .header .logo {
+        min-width: 0;
+        margin-right: 0.5rem !important;
+      }
+      .header .brand-symbol {
+        display: none;
+      }
+      .header .brand-wordmark {
+        font-size: 1rem;
+      }
+      .footer .logo {
+        max-width: 100%;
+      }
     }
   
 
@@ -1469,6 +1530,94 @@
       padding: 0.75rem 1.15rem;
     }
 
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+      gap: 1rem;
+    }
+
+    .testimonials .review-card {
+      padding: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
+    .review-card .review-rating {
+      color: #b7791f;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .review-card .review-quote {
+      color: #42546a;
+      margin: 0.75rem 0 1rem;
+      white-space: pre-line;
+    }
+
+    .review-card .review-date,
+    .review-card .review-source {
+      color: #5b6d82;
+      font-size: 0.875rem;
+    }
+
+    .review-card .review-source {
+      display: inline-block;
+      margin-top: 0.75rem;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    .review-card .review-quote {
+      margin-top: 1rem;
+    }
+
+    .review-card .review-author {
+      color: var(--doctor-deep);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .review-card .review-source-label {
+      color: #5b6d82;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .google-map-embed {
+      overflow: hidden;
+      border: 1px solid rgba(45, 94, 156, 0.12);
+      border-radius: 20px;
+      box-shadow: 0 14px 34px rgba(22, 45, 77, 0.08);
+    }
+
+    .google-map-embed iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: 0;
+    }
+
+    .review-empty {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .review-empty > i {
+      color: var(--doctor-blue);
+      display: inline-block;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .review-implementation-note {
+      color: #64748b;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+
     .contact .php-email-form {
       padding-bottom: 6rem;
     }
@@ -1522,7 +1671,8 @@
         </div>
         <div class="d-flex align-items-center">
           <i class="bi bi-phone me-1"></i>
-          <a href="https://wa.me/525536670155" target="_blank" rel="noopener noreferrer" style="color: #fff;">WhatsApp: 55 3667 0155</a>
+          <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer" style="color: #fff;">WhatsApp</a>
+          <span data-contact-whatsapp-pending>WhatsApp pendiente de confirmación</span>
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -1531,7 +1681,8 @@
 
       <div class="container position-relative d-flex align-items-center justify-content-end">
         <a href="index.html" class="logo d-flex align-items-center me-auto">
-          <img src="assets/img/logoarnimendoza.optimized.png" alt="Dr. Arni Alejandro Mendoza Soto" width="300" height="100" fetchpriority="high" decoding="async">
+          <span class="brand-symbol"><img src="assets/img/logoarnimendoza.optimized.png" alt="" aria-hidden="true" fetchpriority="high" decoding="async"></span>
+          <span class="brand-wordmark" data-brand-name>Dr. Arni Mendoza</span>
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -1546,7 +1697,7 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="cta-btn" href="https://www.doctoralia.com.mx/arni-mendoza/" data-site-link="appointment" target="_blank" rel="noopener noreferrer">Agendar Cita</a>
+        <a class="cta-btn" href="#procedures">Agendar</a>
 
       </div>
 
@@ -1564,11 +1715,11 @@
         <div class="carousel-item active">
           <div class="hero-bg" aria-hidden="true" style="background-image:url('assets/img/slider3.optimized.jpg'); background-size: cover; background-position: center;"></div>
           <div class="container">
-            <h1>Dr. Arni Alejandro Mendoza Soto</h1>
+            <h1 data-brand-name>Dr. Arni Mendoza</h1>
             <p>Cirujano general con formación en la Universidad Nacional Autónoma de México y enfoque en cirugía de hernias y procedimientos de mínima invasión.</p>
             <div class="hero-actions">
-              <a href="https://www.doctoralia.com.mx/arni-mendoza/" data-site-link="appointment" target="_blank" rel="noopener noreferrer" class="btn-get-started">Agendar una cita</a>
-              <a href="tel:67267049" class="btn-secondary">Llamar</a>
+              <a href="#procedures" class="btn-get-started">Elegir servicio y agendar</a>
+              <a data-phone-action hidden class="btn-secondary">Llamar</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -1579,8 +1730,8 @@
             <h2>Cirugía de Mínima Invasión</h2>
             <p>La cirugía laparoscópica es una técnica de mínima invasión que se considera de acuerdo con la valoración clínica y las necesidades de cada paciente.</p>
             <div class="hero-actions">
-              <a href="https://www.doctoralia.com.mx/arni-mendoza/" data-site-link="appointment" target="_blank" rel="noopener noreferrer" class="btn-get-started">Agendar una cita</a>
-              <a href="tel:67267049" class="btn-secondary">Llamar</a>
+              <a href="#procedures" class="btn-get-started">Elegir servicio y agendar</a>
+              <a data-phone-action hidden class="btn-secondary">Llamar</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -1591,8 +1742,8 @@
             <h2>Especialista en Hernias</h2>
             <p>Valoración y tratamiento quirúrgico de hernias inguinales, umbilicales e incisionales, de acuerdo con las características de cada caso.</p>
             <div class="hero-actions">
-              <a href="https://www.doctoralia.com.mx/arni-mendoza/" data-site-link="appointment" target="_blank" rel="noopener noreferrer" class="btn-get-started">Agendar una cita</a>
-              <a href="tel:67267049" class="btn-secondary">Llamar</a>
+              <a href="#procedures" class="btn-get-started">Elegir servicio y agendar</a>
+              <a data-phone-action hidden class="btn-secondary">Llamar</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -1661,7 +1812,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Acerca del Dr. Mendoza Soto</h2>
+        <h2>Acerca del <span data-brand-name>Dr. Arni Mendoza</span></h2>
         <p>Especialista en Cirugía General con enfoque en procedimientos de mínima invasión y reparación de hernias</p>
       </div><!-- End Section Title -->
 
@@ -1671,7 +1822,7 @@
           <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
             <h3>Formación Académica y Profesional</h3>
             <p class="fst-italic">
-              El Dr. Arni Alejandro Mendoza Soto es egresado de la Universidad Nacional Autónoma de México.
+              El Dr. Arni Mendoza es egresado de la Universidad Nacional Autónoma de México.
             </p>
             <ul>
               <li><i class="bi bi-check2-all"></i> <span><strong>Cédula Profesional:</strong> 11767675</span></li>
@@ -1688,7 +1839,7 @@
               <div class="card-icon">
                 <i class="fas fa-user-md" style="font-size: 70px;"></i>
               </div>
-              <h4>Dr. Arni Alejandro Mendoza Soto</h4>
+              <h4 data-brand-name>Dr. Arni Mendoza</h4>
               <p class="text-muted">Cirujano general</p>
               <p class="mb-0">Formación: Universidad Nacional Autónoma de México</p>
             </div>
@@ -1865,23 +2016,50 @@
 
     <section id="testimonials" class="testimonials section light-background">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Opiniones de pacientes</h2>
-        <p>Los testimonios se publicarán únicamente cuando sean comentarios reales y estén autorizados.</p>
+        <h2>Opiniones de nuestros pacientes</h2>
+        <p>Una selección de opiniones compartidas en Google Maps. Consulta la ficha para ver las reseñas más recientes; estas citas no se actualizan automáticamente.</p>
       </div>
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <article class="review-card">
-              <h3>Reseñas de pacientes</h3>
-              <p>Aún no se han incorporado testimonios autorizados.</p>
-              <div class="review-actions">
-                <button type="button" class="btn btn-primary" data-review-destination="profile" disabled>Ver reseñas en Google</button>
-                <button type="button" class="btn btn-outline-primary" data-review-destination="write" disabled>Dejar una reseña</button>
-              </div>
-              <p class="booking-note mt-3">Los enlaces al perfil de Google están pendientes de confirmación.</p>
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <article class="review-card h-100">
+              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
+              <blockquote class="review-quote">“Muy buena atención, explica todo muy bien. Muy profesional.”</blockquote>
+              <p class="review-author">Francisco Ramírez</p>
+              <p class="review-source-label">Reseña de Google Maps</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6">
+            <article class="review-card h-100">
+              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
+              <blockquote class="review-quote">“Muchas gracias doc. Siempre en contacto continuo previo, durante y posterior a cirugía de hernia y con toda la disposición para atender todas las dudas. Recomendado 100%.”</blockquote>
+              <p class="review-author">eduardo b</p>
+              <p class="review-source-label">Reseña de Google Maps</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6">
+            <article class="review-card h-100">
+              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
+              <blockquote class="review-quote">“¡El mejor doc del mundo! Es lindísimo para tratar los pacientes que llegamos con miedo, como yo. Tiene la paciencia para explicar el procedimiento, implicaciones, riesgos, etc. Su atención es de 1000 de inicio a fin.”</blockquote>
+              <p class="review-author">Samantha Arroyo</p>
+              <p class="review-source-label">Reseña de Google Maps</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6">
+            <article class="review-card h-100">
+              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
+              <blockquote class="review-quote">“Excelente atención, muy profesional y respetuoso”</blockquote>
+              <p class="review-author">Jonathan Jared Salinas Muñoz</p>
+              <p class="review-source-label">Reseña de Google Maps</p>
             </article>
           </div>
         </div>
+
+        <div class="review-actions justify-content-center mt-4">
+          <button type="button" class="btn btn-primary" data-review-destination="reviews" disabled>Ver opiniones</button>
+          <button type="button" class="btn btn-outline-primary" data-review-destination="write" disabled>Dejar opinión</button>
+        </div>
+        <p class="review-implementation-note text-center">Las opiniones se muestran como citas estáticas proporcionadas para este sitio y se atribuyen a Google Maps; no hay una integración automática de reseñas. «Dejar opinión» se habilitará al configurar el enlace oficial de reseñas.</p>
       </div>
     </section>
 
@@ -1891,7 +2069,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contacto</h2>
-        <p>Agenda tu consulta con el Dr. Mendoza Soto para una evaluación personalizada</p>
+        <p>Agenda tu consulta con el Dr. Arni Mendoza para una evaluación personalizada</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1904,16 +2082,16 @@
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
                   <i class="bi bi-geo-alt"></i>
                   <h3>Dirección</h3>
-                  <p>Río Bamba 781, Consultorio 4<br>Lindavista, CP 07300<br>Gustavo A. Madero, CDMX</p>
-                  <a class="btn btn-outline-primary mt-3" href="https://www.google.com/maps/search/?api=1&amp;query=Rio%20Bamba%20781%2C%20Consultorio%204%20Lindavista%20CDMX" data-site-link="map" target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps</a>
+                  <p data-address-display></p>
+                  <a class="btn btn-outline-primary mt-3" data-location-link target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps</a>
                 </div>
               </div><!-- End Info Item -->
 
               <div class="col-md-6">
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
-                  <h3>Teléfonos</h3>
-                  <p><a href="tel:67267049">67267049</a><br><a href="tel:+52556626049">55 6626 6049</a><br><a href="tel:+525520006100">55 2000 6100 Ext 188</a></p>
+                  <h3>Teléfono de llamadas</h3>
+                  <p><a data-contact-phone hidden></a><span data-contact-phone-pending>Pendiente de confirmación</span></p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1921,7 +2099,7 @@
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
                   <i class="bi bi-whatsapp"></i>
                   <h3>WhatsApp</h3>
-                  <p><a href="https://wa.me/525536670155" target="_blank" rel="noopener noreferrer">55 3667 0155</a></p>
+                  <p><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a><span data-contact-whatsapp-pending>Pendiente de confirmación</span></p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1952,7 +2130,7 @@
                 <div class="col-md-12 text-center">
                   <div class="loading">Enviando...</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Este formulario aún no está conectado a un servicio de correo. Para enviar su mensaje, por favor use WhatsApp o llame directamente.</div>
+                  <div class="sent-message">Este formulario aún no está conectado a un servicio de correo y no envía el mensaje. Use únicamente los medios de contacto habilitados en esta página.</div>
 
                   <button type="submit">Enviar Mensaje</button>
                 </div>
@@ -1967,6 +2145,15 @@
 
     </section><!-- /Contact Section -->
 
+    <section class="section pt-0" aria-labelledby="location-map-title">
+      <div class="container">
+        <h2 id="location-map-title" class="visually-hidden">Mapa de ubicación del consultorio</h2>
+        <div class="google-map-embed ratio ratio-16x9">
+          <iframe data-location-embed title="Mapa de ubicación del consultorio del Dr. Arni Mendoza en Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -1975,16 +2162,16 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <img src="assets/img/logoarnimendoza.optimized.png" alt="Dr. Arni Alejandro Mendoza Soto" width="300" height="100" loading="lazy" decoding="async">
+            <span class="brand-symbol"><img src="assets/img/logoarnimendoza.optimized.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></span>
+            <span class="brand-wordmark" data-brand-name>Dr. Arni Mendoza</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>Rio Bamba 781, Consultorio 4</p>
-            <p>Lindavista, CP 07300, CDMX</p>
-            <p class="mt-3"><strong>Teléfono:</strong> <span><a href="tel:+52556626049">55 6626 6049</a></span></p>
-            <p><strong>WhatsApp:</strong> <span><a href="https://wa.me/525536670155" target="_blank" rel="noopener noreferrer">55 3667 0155</a></span></p>
+            <p data-address-display></p>
+            <p class="mt-3"><strong>Teléfono:</strong> <span><a data-contact-phone hidden></a><span data-contact-phone-pending>Pendiente de confirmación</span></span></p>
+            <p><strong>WhatsApp:</strong> <span><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a><span data-contact-whatsapp-pending>Pendiente de confirmación</span></span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href="https://wa.me/525536670155" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a data-whatsapp-action hidden target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
 
@@ -2026,7 +2213,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Dr. Mendoza Soto</strong> <span>Todos los Derechos Reservados</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename" data-brand-name>Dr. Arni Mendoza</strong> <span>Todos los Derechos Reservados</span></p>
       <div class="credits">
         Sitio web diseñado para brindar información médica profesional
       </div>
@@ -2034,11 +2221,11 @@
 
   </footer>
 
-    <a href="tel:67267049" class="call-float" aria-label="Llamar al consultorio">
+    <a data-phone-action hidden class="call-float" aria-label="Llamar al consultorio">
     <i class="bi bi-telephone"></i>
   </a>
 
-  <a href="https://wa.me/525536670155" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+  <a data-whatsapp-action hidden target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
 
@@ -2051,58 +2238,9 @@
   <!-- Vendor JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="assets/js/site-config.js"></script>
 
   <script>
-    // Replace these values only with destinations confirmed by the doctor.
-    const siteDestinations = {
-      appointment: 'https://www.doctoralia.com.mx/perfil/arni-mendoza',
-      map: 'https://www.google.com/maps/search/?api=1&query=Rio%20Bamba%20781%2C%20Consultorio%204%20Lindavista%20CDMX',
-      googleReviews: {
-        // Add the doctor's verified Google Business Profile and review form URLs.
-        profile: '',
-        write: ''
-      },
-      googleCalendar: {
-        // Add only Google Calendar booking URLs explicitly approved for each service.
-        hernias: '',
-        vesicula: '',
-        apendicitis: '',
-        laparoscopia: ''
-      }
-    };
-
-    function isValidHttpsUrl(value) {
-      try {
-        return new URL(value).protocol === 'https:';
-      } catch {
-        return false;
-      }
-    }
-
-    document.querySelectorAll('[data-site-link]').forEach(link => {
-      const destination = siteDestinations[link.dataset.siteLink];
-      if (destination && isValidHttpsUrl(destination)) {
-        link.href = destination;
-      }
-    });
-
-    document.querySelectorAll('[data-review-destination]').forEach(button => {
-      const destination = siteDestinations.googleReviews[button.dataset.reviewDestination];
-      if (destination && isValidHttpsUrl(destination)) {
-        button.disabled = false;
-        button.addEventListener('click', () => window.open(destination, '_blank', 'noopener,noreferrer'));
-      }
-    });
-
-    document.querySelectorAll('[data-calendar-service]').forEach(button => {
-      const destination = siteDestinations.googleCalendar[button.dataset.calendarService];
-      if (destination && isValidHttpsUrl(destination)) {
-        button.disabled = false;
-        button.addEventListener('click', () => window.open(destination, '_blank', 'noopener,noreferrer'));
-        button.nextElementSibling.textContent = 'Se abrirá el destino de Google Calendar configurado.';
-      }
-    });
-
     // Initialize AOS
     AOS.init({
       duration: 1000,
@@ -2123,7 +2261,7 @@
         if (errorMessage) errorMessage.style.display = 'none';
         if (sentMessage) {
           sentMessage.style.display = 'block';
-          sentMessage.textContent = 'Este formulario aún no está conectado a un servicio de correo. Para enviar su mensaje, use WhatsApp o llame al consultorio.';
+          sentMessage.textContent = 'Este formulario aún no está conectado a un servicio de correo y no envía el mensaje. Use únicamente los medios de contacto habilitados en esta página.';
         }
       });
     }

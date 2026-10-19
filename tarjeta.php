@@ -4,9 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dr. Arni Mendoza Soto - Cirugía General, Hernias y Mínima Invasión - Tarjeta Digital</title>
-  <meta name="description" content="Dr. Arni Alejandro Mendoza Soto - Cirujano General especializado en Hernias y Mínima Invasión">
+  <title>Dr. Arni Mendoza | Cirugía General - Tarjeta Digital</title>
+  <meta name="description" content="Tarjeta digital del Dr. Arni Mendoza, cirujano general con enfoque en hernias y procedimientos de mínima invasión en CDMX.">
   <meta name="keywords" content="cirujano general, hernias, laparoscopia, mínima invasión, CDMX, Lindavista">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dr. Arni Mendoza">
+  <meta property="og:title" content="Dr. Arni Mendoza | Tarjeta Digital">
+  <meta property="og:description" content="Información de contacto y formación del Dr. Arni Mendoza.">
+  <meta property="og:locale" content="es_MX">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
@@ -319,6 +324,25 @@
       border-radius: 12px;
       transition: all 0.3s ease;
       cursor: pointer;
+    }
+
+    a.contact-item {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-item[data-contact-whatsapp-pending],
+    .contact-item[data-contact-phone-pending],
+    .contact-item[data-contact-hospital-pending] {
+      cursor: default;
+    }
+
+    .contact-item[data-contact-whatsapp-pending]:hover,
+    .contact-item[data-contact-phone-pending]:hover,
+    .contact-item[data-contact-hospital-pending]:hover {
+      background: var(--light-blue);
+      transform: none;
+      box-shadow: none;
     }
 
     .contact-item:hover {
@@ -690,9 +714,9 @@
       <div class="card-header">
         <div class="profile-section">
           <div class="profile-photo">
-            <img src="businesscard/drarnimendoza.jpg" style="border-radius:50%;width:100%;height:auto;">
+            <img src="businesscard/drarnimendoza.jpg" alt="Fotografía del Dr. Arni Mendoza" style="border-radius:50%;width:100%;height:auto;">
           </div>
-          <h1>Dr. Arni Alejandro Mendoza Soto</h1>
+          <h1 data-brand-name>Dr. Arni Mendoza</h1>
           <p class="specialty">Cirujano General | Especialista en Hernias y Mínima Invasión</p>
           <p class="credentials">Cédula Profesional: 11767675 | Cédula Especialidad: 14408066</p>
         </div>
@@ -740,45 +764,66 @@
             Información de Contacto
           </h3>
           
-          <div class="contact-item" onclick="window.open('https://wa.me/525554612387', '_blank')">
+          <a class="contact-item" data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer">
             <div class="contact-icon">
               <i class="fab fa-whatsapp"></i>
             </div>
             <div class="contact-info">
               <div class="contact-label">WhatsApp</div>
-              <div class="contact-value">55 5461 2387</div>
+              <div class="contact-value"></div>
+            </div>
+          </a>
+          <div class="contact-item" data-contact-whatsapp-pending>
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-info">
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-value">Pendiente de confirmación</div>
             </div>
           </div>
 
-          <div class="contact-item" onclick="window.open('tel:5566266049', '_blank')">
+          <a class="contact-item" data-contact-phone hidden>
             <div class="contact-icon">
               <i class="fas fa-phone"></i>
             </div>
             <div class="contact-info">
-              <div class="contact-label">Teléfono Consultorio</div>
-              <div class="contact-value">55 6726 6049</div>
+              <div class="contact-label">Teléfono de llamadas</div>
+              <div class="contact-value"></div>
+            </div>
+          </a>
+          <div class="contact-item" data-contact-phone-pending>
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-info">
+              <div class="contact-label">Teléfono de llamadas</div>
+              <div class="contact-value">Pendiente de confirmación</div>
             </div>
           </div>
 
-          <div class="contact-item" onclick="window.open('tel:5520006100', '_blank')">
+          <a class="contact-item" data-contact-hospital hidden>
             <div class="contact-icon">
               <i class="fas fa-hospital"></i>
             </div>
             <div class="contact-info">
-              <div class="contact-label">Hospital</div>
-              <div class="contact-value">55 2000 6100 Ext. 188</div>
+              <div class="contact-label">Teléfono del hospital</div>
+              <div class="contact-value"></div>
+            </div>
+          </a>
+          <div class="contact-item" data-contact-hospital-pending>
+            <div class="contact-icon"><i class="fas fa-hospital"></i></div>
+            <div class="contact-info">
+              <div class="contact-label">Teléfono del hospital</div>
+              <div class="contact-value">Pendiente de confirmación</div>
             </div>
           </div>
 
-          <div class="contact-item" onclick="window.open('https://maps.google.com/?q=Rio+Bamba+781+Lindavista+CDMX', '_blank')">
+          <a class="contact-item" data-location-link target="_blank" rel="noopener noreferrer">
             <div class="contact-icon">
               <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="contact-info">
               <div class="contact-label">Dirección</div>
-              <div class="contact-value">Rio Bamba 781, Consultorio 4<br>Lindavista, CP 07300, CDMX</div>
+              <div class="contact-value" data-address-display></div>
             </div>
-          </div>
+          </a>
 
           <div class="contact-item">
             <div class="contact-icon">
@@ -790,15 +835,15 @@
             </div>
           </div>
 
-          <div class="contact-item" onclick="window.open('https://drarnimendoza.com', '_blank')">
+          <a class="contact-item" href="index.html">
             <div class="contact-icon">
               <i class="far fa-globe"></i>
             </div>
             <div class="contact-info">
               <div class="contact-label">Visita mi website</div>
-              <div class="contact-value">https://drarnimendoza.com</div>
+              <div class="contact-value">Sitio web del Dr. Arni Mendoza</div>
             </div>
-          </div>
+          </a>
           
         </div>
 
@@ -821,18 +866,15 @@
 
         <!-- Action Buttons -->
         <div class="action-buttons">
-          <a href="https://wa.me/525554612387?text=Hola%20Dr.%20Arni%20Mendoza,%20me%20gustaría%20agendar%20una%20cita" 
-             class="action-btn btn-whatsapp" target="_blank">
+          <a data-whatsapp-action hidden class="action-btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp"></i>
             WhatsApp
           </a>
-          <a href="https://www.doctoralia.com.mx/arni-mendoza/cirujano-general/ciudad-de-mexico" 
-             class="action-btn btn-primary" target="_blank">
+          <a href="index.html#procedures" class="action-btn btn-primary">
             <i class="far fa-calendar-check"></i>
-            Agendar Cita
+            Elegir servicio y agendar
           </a>
-          <a href="tel:5566266049" 
-             class="action-btn btn-secondary">
+          <a data-phone-action hidden class="action-btn btn-secondary">
             <i class="fas fa-phone"></i>
             Llamar
           </a>
@@ -847,16 +889,16 @@
       <!-- Footer -->
       <div class="card-footer">
         <div class="social-links">
-          <a href="https://www.facebook.com/drarnimendoza" class="social-link" title="Facebook">
+          <a data-site-social="facebook" class="social-link" title="Facebook" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://instagram.com/drarnimendoza" class="social-link" title="Instagram">
+          <a data-site-social="instagram" class="social-link" title="Instagram" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
          
         </div>
         <div class="copyright">
-          © 2025 Dr. Arni Alejandro Mendoza Soto | Todos los derechos reservados
+          © 2025 <span data-brand-name>Dr. Arni Mendoza</span> | Todos los derechos reservados
         </div>
       </div>
 
@@ -865,6 +907,7 @@
 
   <!-- Vendor JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/site-config.js"></script>
 
   <script>
     // Hide loading screen
@@ -876,19 +919,28 @@
 
     // Save contact function
     function saveContact() {
-      // Crear datos vCard
-      const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Dr. Arni Alejandro Mendoza Soto
-N:Mendoza Soto;Arni Alejandro;Dr.;;
-TITLE:Cirujano General - Especialista en Hernias y Mínima Invasión
-TEL;TYPE=CELL,VOICE:+52 55 3667 0155
-TEL;TYPE=WORK,VOICE:+52 55 6626 6049
-TEL;TYPE=WORK,VOICE:+52 55 2000 6100
-ADR;TYPE=WORK:;;Rio Bamba 781, Consultorio 4;Ciudad de México;CDMX;07300;México
-URL:https://www.doctoralia.com.mx/arni-mendoza/
-NOTE:Cédula Profesional: 11767675 | Cédula Especialidad: 14408066\\nEgresado UNAM\\nMás de 1000 cirugías realizadas\\n500+ hernias reparadas\\nHorario: Lunes a Sábado, 8AM - 8PM
-END:VCARD`;
+      const config = window.DrArniSiteConfig;
+      const phoneLines = [];
+      if (/^\d{10,15}$/.test(config.contact.whatsappE164)) {
+        phoneLines.push(`TEL;TYPE=CELL,VOICE:+${config.contact.whatsappE164}`);
+      }
+      if (/^\d{10,15}$/.test(config.contact.callPhoneE164)) {
+        phoneLines.push(`TEL;TYPE=WORK,VOICE:+${config.contact.callPhoneE164}`);
+      }
+      if (/^\d{10,15}$/.test(config.contact.hospitalPhoneE164)) {
+        phoneLines.push(`TEL;TYPE=WORK,VOICE:+${config.contact.hospitalPhoneE164}`);
+      }
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        `FN:${config.legalName}`,
+        'N:Mendoza Soto;Arni Alejandro;Dr.;;',
+        'TITLE:Cirujano General - Especialista en Hernias y Mínima Invasión',
+        ...phoneLines,
+        'ADR;TYPE=WORK:;;Rio Bamba 781, Consultorio 4;Ciudad de México;CDMX;07300;México',
+        'NOTE:Cédula Profesional: 11767675 | Cédula Especialidad: 14408066\\nEgresado UNAM\\nHorario: Lunes a Sábado, 8AM - 8PM',
+        'END:VCARD'
+      ].join('\r\n');
 
       // Crear blob y descargar
       const blob = new Blob([vcard], { type: 'text/vcard' });

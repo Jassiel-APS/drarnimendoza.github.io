@@ -24,7 +24,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
@@ -837,39 +837,6 @@
       opacity: 1;
     }
 
-    /* Preloader */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      z-index: 999999;
-      overflow: hidden;
-      background: var(--background-color);
-      transition: all 0.6s ease-out;
-    }
-
-    #preloader:before {
-      content: "";
-      position: fixed;
-      top: calc(50% - 30px);
-      left: calc(50% - 30px);
-      border: 6px solid #ffffff;
-      border-color: var(--accent-color) transparent var(--accent-color) transparent;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: animate-preloader 1.5s linear infinite;
-    }
-
-    @keyframes animate-preloader {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
     :root {
       --doctor-blue: #2d5e9c;
       --doctor-deep: #163f73;
@@ -1657,6 +1624,2335 @@
       }
     }
 
+    :root {
+      --ink: #263746;
+      --doctor-deep: #17324d;
+      --doctor-blue: #17324d;
+      --doctor-accent: #287c78;
+      --doctor-soft: #dce8e7;
+      --doctor-light: #f7f5f0;
+      --doctor-shadow: 0 18px 48px rgba(23, 50, 77, 0.09);
+      --font-body: "Roboto", sans-serif;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --radius-card: 1.25rem;
+      --radius-control: 999px;
+      --section-space: clamp(4.5rem, 8vw, 7.5rem);
+      --ease-standard: 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      --background-color: #fff;
+      --default-color: var(--ink);
+      --heading-color: var(--doctor-deep);
+      --accent-color: var(--doctor-accent);
+      --nav-color: var(--doctor-deep);
+      --nav-hover-color: var(--doctor-accent);
+      --light-background-color: var(--doctor-light);
+      scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
+    }
+
+    body {
+      color: var(--ink);
+      background: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--doctor-deep);
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid #287c78;
+      outline-offset: 3px;
+    }
+
+    .section {
+      padding-block: var(--section-space);
+      scroll-margin-top: 5.5rem;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-inline: auto;
+      padding-bottom: clamp(2rem, 4vw, 3.25rem);
+    }
+
+    .section-title h2 {
+      margin-bottom: 0.75rem;
+      padding-bottom: 0;
+      font-size: clamp(2.35rem, 4.2vw, 3.65rem);
+      line-height: 1.02;
+    }
+
+    .section-title h2::after {
+      content: none;
+    }
+
+    .section-title p {
+      max-width: 60ch;
+      margin-inline: auto;
+      color: #536372;
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      line-height: 1.75;
+    }
+
+    .eyebrow,
+    .section-title .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      color: var(--doctor-accent);
+      font-family: var(--font-body);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .header {
+      box-shadow: 0 6px 24px rgba(23, 50, 77, 0.06);
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom-color: rgba(23, 50, 77, 0.08);
+    }
+
+    .header .topbar {
+      min-height: 2rem;
+      padding-block: 0.25rem;
+      background: var(--doctor-deep);
+      font-size: 0.76rem;
+    }
+
+    .header .branding {
+      padding-block: 0.35rem;
+    }
+
+    .header .logo img {
+      height: 66px;
+      max-height: 66px;
+    }
+
+    .brand-wordmark {
+      color: var(--doctor-deep);
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .navmenu ul {
+      gap: 0.2rem;
+    }
+
+    .navmenu a {
+      padding: 0.65rem 0.8rem;
+      color: #3e4c59;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--ease-standard), background-color var(--ease-standard);
+    }
+
+    .navmenu a:hover,
+    .navmenu .active {
+      color: var(--doctor-accent);
+      background: var(--doctor-soft);
+    }
+
+    .cta-btn,
+    .hero .btn-get-started,
+    .procedure-booking button,
+    .review-actions button,
+    .contact .php-email-form button[type=submit] {
+      min-height: 48px;
+      border: 1px solid var(--doctor-accent);
+      border-radius: var(--radius-control);
+      background: var(--doctor-accent);
+      box-shadow: none;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      transition: transform var(--ease-standard), background-color var(--ease-standard), box-shadow var(--ease-standard);
+    }
+
+    .cta-btn {
+      margin-left: 0.75rem;
+      padding: 0.7rem 1.25rem;
+    }
+
+    .cta-btn:hover,
+    .hero .btn-get-started:hover,
+    .procedure-booking button:hover:not(:disabled),
+    .review-actions button:hover:not(:disabled),
+    .contact .php-email-form button[type=submit]:hover {
+      transform: translateY(-2px);
+      border-color: #1d625f;
+      background: #1d625f;
+      box-shadow: 0 8px 20px rgba(40, 124, 120, 0.2);
+      color: #fff;
+    }
+
+    .hero {
+      min-height: clamp(590px, 72vw, 760px);
+      background: var(--doctor-deep);
+    }
+
+    .hero .carousel-item {
+      min-height: clamp(590px, 72vw, 760px);
+      isolation: isolate;
+    }
+
+    .hero .hero-bg {
+      background-position: center 42% !important;
+      background-size: cover !important;
+      transform: scale(1.015);
+    }
+
+    .hero .hero-bg::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 35, 54, 0.88) 0%, rgba(15, 35, 54, 0.68) 48%, rgba(15, 35, 54, 0.18) 100%);
+      content: "";
+    }
+
+    .hero .container {
+      width: 100%;
+      max-width: 1140px;
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .hero h1,
+    .hero h2 {
+      max-width: 780px;
+      margin: 0 0 1.1rem;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: clamp(3.4rem, 8vw, 6.5rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 0.92;
+      text-shadow: none;
+    }
+
+    .hero p {
+      max-width: 580px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .hero .btn-get-started,
+    .hero .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0.8rem 1.45rem;
+      text-decoration: none;
+    }
+
+    .hero .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      border-radius: var(--radius-control);
+      background: rgba(23, 50, 77, 0.18);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .hero .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+    }
+
+    .hero .carousel-control-prev,
+    .hero .carousel-control-next {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      background: rgba(23, 50, 77, 0.3);
+    }
+
+    .hero .carousel-indicators {
+      gap: 0.4rem;
+    }
+
+    .hero .carousel-indicators button {
+      width: 24px;
+      height: 4px;
+      margin-inline: 0;
+      border: 0;
+      border-radius: var(--radius-control);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .featured-services {
+      z-index: 2;
+      margin-top: -3rem;
+      padding-top: 0;
+    }
+
+    .featured-services .service-item {
+      width: 100%;
+      min-height: 100%;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid rgba(23, 50, 77, 0.09);
+      border-radius: var(--radius-card);
+      background: #fff;
+      box-shadow: 0 14px 36px rgba(23, 50, 77, 0.09);
+      transition: transform var(--ease-standard), box-shadow var(--ease-standard), border-color var(--ease-standard);
+    }
+
+    .testimonials .review-card {
+      transition: transform var(--ease-standard), box-shadow var(--ease-standard), border-color var(--ease-standard);
+    }
+
+    .testimonials .review-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(40, 124, 120, 0.32);
+      box-shadow: 0 16px 36px rgba(23, 50, 77, 0.1);
+    }
+
+    .featured-services .service-item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(40, 124, 120, 0.38);
+      box-shadow: 0 20px 42px rgba(23, 50, 77, 0.13);
+    }
+
+    .featured-services .service-item .icon {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 1.2rem;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--doctor-soft);
+      color: var(--doctor-accent);
+      font-size: 1.35rem;
+    }
+
+    .featured-services .service-item h4 {
+      margin-bottom: 0.45rem;
+      color: var(--doctor-deep);
+      font-family: var(--font-body);
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .featured-services .service-item p {
+      color: #536372;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .featured-services .row > div:first-child .service-item {
+      border-color: var(--doctor-deep);
+      background: var(--doctor-deep);
+    }
+
+    .featured-services .row > div:first-child .service-item h4,
+    .featured-services .row > div:first-child .service-item p {
+      color: #fff;
+    }
+
+    .featured-services .row > div:first-child .service-item .icon {
+      background: rgba(220, 232, 231, 0.16);
+      color: #dce8e7;
+    }
+
+    .about .content h3 {
+      margin-bottom: 1rem;
+      color: var(--doctor-deep);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.05;
+    }
+
+    .about .content p,
+    .about .content li {
+      color: #4b5c69;
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .about .doctor-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      padding: 0 !important;
+      border: 0;
+      border-radius: 1.5rem;
+      background: var(--doctor-soft);
+      box-shadow: var(--doctor-shadow);
+    }
+
+    .about .doctor-photo {
+      display: block;
+      width: 100%;
+      height: clamp(300px, 38vw, 470px);
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .about .doctor-photo-caption {
+      padding: 0.85rem 1rem;
+      color: #3d5663;
+      font-size: 0.82rem;
+      text-align: left;
+    }
+
+    .credentials .credential-item,
+    .hours .hours-card {
+      padding: 1.6rem;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: var(--radius-card);
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(23, 50, 77, 0.06);
+      transition: transform var(--ease-standard), box-shadow var(--ease-standard);
+    }
+
+    .credentials .credential-item:hover,
+    .hours .hours-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(23, 50, 77, 0.1);
+    }
+
+    .credentials .credential-item i,
+    .hours .hours-card > i {
+      color: var(--doctor-accent);
+    }
+
+    .credentials .credential-item h3,
+    .hours .hours-card h3 {
+      font-family: var(--font-body);
+    }
+
+    .procedures .procedures-tabs {
+      gap: 0.5rem;
+    }
+
+    .procedures .procedures-tabs .nav-link {
+      border: 1px solid rgba(23, 50, 77, 0.13);
+      border-radius: 0.8rem;
+      background: #fff;
+      color: var(--doctor-deep);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color var(--ease-standard), background-color var(--ease-standard), border-color var(--ease-standard);
+    }
+
+    .procedures .procedures-tabs .nav-link.active {
+      border-color: var(--doctor-deep);
+      background: var(--doctor-deep);
+      color: #fff;
+    }
+
+    .procedures .procedure-panel {
+      min-height: 0;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 1.5rem;
+      background: #fff;
+      box-shadow: var(--doctor-shadow);
+    }
+
+    .procedures .procedure-panel h3 {
+      margin-bottom: 0.65rem;
+      color: var(--doctor-deep);
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+    }
+
+    .procedures .procedure-panel p {
+      max-width: 68ch;
+      color: #4b5c69;
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .procedure-visual {
+      min-height: 150px;
+      border: 1px solid rgba(40, 124, 120, 0.12);
+      border-radius: 50% 50% 1.25rem 1.25rem;
+      background: var(--doctor-light);
+      box-shadow: none;
+      color: var(--doctor-accent);
+    }
+
+    .procedure-booking .booking-note {
+      color: #526371;
+      font-size: 0.84rem;
+    }
+
+    .testimonials {
+      background: var(--doctor-light);
+    }
+
+    .testimonials .review-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: clamp(1.35rem, 2.8vw, 2rem);
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: var(--radius-card);
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(23, 50, 77, 0.05);
+    }
+
+    .review-card .review-rating {
+      color: #805c0a;
+    }
+
+    .review-card .review-quote {
+      color: #344957;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .review-card .review-author {
+      margin-top: auto;
+      padding-top: 0.5rem;
+      color: var(--doctor-deep);
+      font-family: var(--font-body);
+    }
+
+    .review-card .review-source-label,
+    .review-implementation-note {
+      color: #536372;
+    }
+
+    .review-actions button {
+      padding-inline: 1.35rem;
+    }
+
+    .review-actions .btn-outline-primary {
+      border-color: var(--doctor-accent);
+      background: transparent;
+      color: var(--doctor-accent);
+    }
+
+    .review-actions .btn-outline-primary:hover:not(:disabled) {
+      background: var(--doctor-accent);
+      color: #fff;
+    }
+
+    .contact .info-item,
+    .contact .php-email-form {
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: var(--radius-card);
+      background: #fff;
+      box-shadow: 0 12px 32px rgba(23, 50, 77, 0.06);
+    }
+
+    .contact .info-item i {
+      color: var(--doctor-accent);
+      background: var(--doctor-soft);
+    }
+
+    .contact .php-email-form .form-control {
+      border-color: rgba(23, 50, 77, 0.18);
+      border-radius: 0.8rem;
+      background: #fff;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .contact .php-email-form .form-control:focus {
+      border-color: var(--doctor-accent);
+      box-shadow: 0 0 0 0.2rem rgba(40, 124, 120, 0.16);
+    }
+
+    .contact .php-email-form label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--doctor-deep);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .contact .form-status {
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      background: #f7f5f0;
+      color: #344957;
+      font-size: 0.92rem;
+    }
+
+    .google-map-embed.ratio {
+      --bs-aspect-ratio: 40%;
+      overflow: hidden;
+      border: 1px solid rgba(23, 50, 77, 0.12);
+      border-radius: 1.25rem;
+      background: var(--doctor-soft);
+      box-shadow: 0 12px 32px rgba(23, 50, 77, 0.07);
+    }
+
+    .google-map-embed iframe {
+      min-height: 0;
+    }
+
+    .footer {
+      background: var(--doctor-light);
+      box-shadow: none;
+    }
+
+    .footer .social-links a {
+      border-color: rgba(23, 50, 77, 0.14);
+      color: var(--doctor-deep);
+    }
+
+    .footer .social-links a:hover {
+      background: var(--doctor-accent);
+      color: #fff;
+    }
+
+    .call-float,
+    .whatsapp-float,
+    .scroll-top {
+      border: 0;
+      box-shadow: 0 8px 24px rgba(23, 50, 77, 0.2);
+    }
+
+    .call-float {
+      background: var(--doctor-deep);
+    }
+
+    .whatsapp-float {
+      background: var(--doctor-accent);
+    }
+
+    .scroll-top {
+      background: var(--doctor-deep);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        display: inline-grid;
+        width: 44px;
+        height: 44px;
+        margin-left: 0.4rem;
+        place-items: center;
+        border: 1px solid rgba(23, 50, 77, 0.14);
+        border-radius: 50%;
+        background: #fff;
+        color: var(--doctor-deep);
+        font-size: 1.35rem;
+      }
+
+      .mobile-nav-active .navmenu {
+        position: fixed;
+        inset: 0;
+        z-index: 9997;
+        width: 100vw;
+        height: 100dvh;
+        overflow: hidden;
+        background: rgba(23, 50, 77, 0.56);
+      }
+
+      .mobile-nav-active .mobile-nav-toggle {
+        position: fixed;
+        top: max(1rem, env(safe-area-inset-top));
+        right: 1rem;
+        z-index: 10000;
+        color: var(--doctor-deep);
+      }
+
+      .mobile-nav-active .navmenu {
+        background: rgba(23, 50, 77, 0.56);
+      }
+
+      .mobile-nav-active .navmenu > ul {
+        inset: 0.75rem;
+        height: calc(100dvh - 1.5rem);
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        padding: 4rem 1rem 1.5rem;
+        overflow-y: auto;
+        border: 0;
+        border-radius: 1.25rem;
+        background: #fff;
+        box-shadow: 0 20px 60px rgba(23, 50, 77, 0.2);
+      }
+
+      .mobile-nav-active .navmenu a {
+        padding: 0.9rem 1rem;
+        font-size: 1.05rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      :root {
+        --section-space: 4.25rem;
+      }
+
+      .header .logo img {
+        height: 54px;
+        max-height: 54px;
+      }
+
+      .header .cta-btn {
+        width: auto;
+        min-height: 42px;
+        margin-left: 0.25rem;
+        padding: 0.55rem 0.85rem;
+        font-size: 0.82rem;
+      }
+
+      .header .brand-wordmark {
+        max-width: 8.5rem;
+        overflow: hidden;
+        font-size: 0.92rem;
+        text-overflow: ellipsis;
+      }
+
+      .hero,
+      .hero .carousel-item {
+        min-height: min(690px, calc(100svh - 5.5rem));
+      }
+
+      .hero .hero-bg {
+        background-position: 58% center !important;
+      }
+
+      .hero .hero-bg::after {
+        background: linear-gradient(90deg, rgba(15, 35, 54, 0.84), rgba(15, 35, 54, 0.56));
+      }
+
+      .hero .carousel-control-prev,
+      .hero .carousel-control-next {
+        display: none;
+      }
+
+      .hero .container {
+        padding: 4rem 1.25rem 5rem;
+      }
+
+      .hero h1,
+      .hero h2 {
+        max-width: 10ch;
+        font-size: clamp(3.25rem, 15vw, 5rem);
+      }
+
+      .hero .carousel-control-prev {
+        left: 0.65rem;
+      }
+
+      .hero .carousel-control-next {
+        right: 0.65rem;
+      }
+
+      .hero-actions {
+        align-items: flex-start;
+      }
+
+      .hero .btn-get-started,
+      .hero .btn-secondary {
+        width: auto;
+      }
+
+      .featured-services {
+        margin-top: -2rem;
+      }
+
+      .featured-services .service-item {
+        padding: 1.35rem;
+      }
+
+      .procedures .procedures-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .procedures .procedures-tabs .nav-link {
+        min-height: 52px;
+        padding: 0.65rem 0.5rem;
+        font-size: 0.86rem;
+      }
+
+      .google-map-embed.ratio {
+        --bs-aspect-ratio: 75%;
+      }
+
+      .contact .php-email-form {
+        padding-bottom: 1.5rem;
+      }
+
+      .review-actions {
+        flex-direction: row;
+      }
+
+      .review-actions button {
+        width: auto;
+        flex: 1 1 100%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .header .container {
+        padding-inline: 0.65rem;
+      }
+
+      .header .brand-wordmark {
+        max-width: 7.2rem;
+        font-size: 0.84rem;
+      }
+
+      .header .cta-btn {
+        padding-inline: 0.65rem;
+        font-size: 0.76rem;
+      }
+
+      .mobile-nav-toggle {
+        width: 44px;
+        height: 44px;
+        margin-left: 0.1rem;
+      }
+
+      .hero .btn-get-started,
+      .hero .btn-secondary {
+        padding-inline: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    :root {
+      --font-body: "Poppins", sans-serif;
+      --font-display: "Poppins", sans-serif;
+      --doctor-accent: #168c8c;
+      --doctor-soft: #dceeed;
+      --doctor-light: #f7f9f8;
+      --doctor-shadow: 0 20px 50px rgba(15, 39, 64, 0.1);
+      --section-space: clamp(4.5rem, 7vw, 6.5rem);
+    }
+
+    body,
+    h1, h2, h3, h4, h5, h6,
+    .navmenu a,
+    .brand-wordmark,
+    .btn,
+    button,
+    input,
+    textarea {
+      font-family: var(--font-body);
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .title-highlight {
+      background: linear-gradient(135deg, #0f2740 0%, #168c8c 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .section-title .eyebrow,
+    .section-title > .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 0.9rem;
+      padding: 0.38rem 0.9rem;
+      border: 1px solid rgba(22, 140, 140, 0.2);
+      border-radius: 999px;
+      background: rgba(22, 140, 140, 0.09);
+      color: #116f70;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title h2 {
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 1.13;
+    }
+
+    .section-title h2 .title-highlight {
+      display: inline;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      overflow: visible;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .header .topbar {
+      display: none;
+    }
+
+    .header .branding {
+      padding: 0.9rem 1rem 0;
+      background: transparent;
+    }
+
+    .header .branding > .container {
+      max-width: 1240px;
+      min-height: 74px;
+      padding: 0.55rem 1.2rem;
+      border: 1px solid rgba(203, 213, 225, 0.82);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .header .logo img {
+      height: 56px;
+      max-height: 56px;
+    }
+
+    .navmenu a {
+      border-radius: 999px;
+    }
+
+    .cta-btn {
+      border: 1px solid rgba(22, 140, 140, 0.28);
+      background: linear-gradient(135deg, #168c8c, #1d777c);
+      box-shadow: 0 10px 24px rgba(22, 140, 140, 0.23);
+      color: #fff;
+    }
+
+    .hero {
+      margin-top: -6.5rem;
+      padding-top: 6.5rem;
+    }
+
+    .hero .carousel-item {
+      min-height: clamp(630px, 72vw, 780px);
+    }
+
+    .hero .container {
+      padding-top: clamp(6.5rem, 10vw, 8rem);
+    }
+
+    .hero h1,
+    .hero h2 {
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+    }
+
+    .hero .eyebrow {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .hero .btn-get-started {
+      background: linear-gradient(135deg, #168c8c, #1d777c);
+      box-shadow: 0 12px 30px rgba(22, 140, 140, 0.3);
+    }
+
+    .featured-services {
+      margin-top: -5rem;
+      padding-top: 0;
+      position: relative;
+      z-index: 20;
+    }
+
+    .featured-services .service-item {
+      border-radius: 1.4rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 20px 50px rgba(15, 39, 64, 0.1), 0 2px 8px rgba(15, 39, 64, 0.04);
+      backdrop-filter: blur(14px);
+      transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+    }
+
+    .featured-services .service-item:hover {
+      transform: translateY(-8px);
+    }
+
+    .featured-services .row > div:first-child .service-item {
+      background: linear-gradient(145deg, #0f2740, #16324f);
+    }
+
+    .about,
+    .procedures,
+    .testimonials {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background-color: #fbfcfb;
+    }
+
+    .about::before,
+    .procedures::before,
+    .testimonials::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-image: radial-gradient(rgba(22, 50, 79, 0.15) 0.7px, transparent 0.7px);
+      background-size: 24px 24px;
+      content: "";
+      opacity: 0.2;
+      mask-image: radial-gradient(ellipse at center, #000 25%, transparent 78%);
+      pointer-events: none;
+    }
+
+    .about::after,
+    .procedures::after,
+    .testimonials::after {
+      position: absolute;
+      z-index: -1;
+      top: 10%;
+      right: -9rem;
+      width: min(42vw, 38rem);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(22, 140, 140, 0.14), rgba(22, 140, 140, 0) 68%);
+      content: "";
+      filter: blur(12px);
+      pointer-events: none;
+    }
+
+    .about .doctor-card {
+      overflow: visible;
+      margin: 0.75rem 0.6rem 1.5rem;
+      border: 1px solid rgba(22, 50, 79, 0.08);
+      border-radius: 1.75rem;
+      box-shadow: 0 24px 60px rgba(15, 39, 64, 0.18);
+    }
+
+    .about .doctor-photo {
+      height: clamp(310px, 39vw, 480px);
+      border-radius: 1.7rem 1.7rem 0 0;
+    }
+
+    .trust-badge {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      max-width: min(15rem, 68%);
+      padding: 0.75rem 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 12px 30px rgba(15, 39, 64, 0.16);
+      color: #16324f;
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.4;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .trust-badge i {
+      flex: 0 0 auto;
+      color: #168c8c;
+      font-size: 1.15rem;
+    }
+
+    .trust-badge--credential {
+      right: -0.35rem;
+      top: 1.1rem;
+    }
+
+    .trust-badge--care {
+      left: -0.35rem;
+      bottom: 3.75rem;
+    }
+
+    .credentials {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0f2740, #16324f);
+      color: #fff;
+    }
+
+    .credentials::before,
+    .credentials::after {
+      position: absolute;
+      z-index: -1;
+      width: min(38vw, 34rem);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(22, 140, 140, 0.22), transparent 68%);
+      content: "";
+      filter: blur(16px);
+      pointer-events: none;
+    }
+
+    .credentials::before {
+      top: -12rem;
+      right: -5rem;
+    }
+
+    .credentials::after {
+      bottom: -19rem;
+      left: -10rem;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+    }
+
+    .credentials .section-title h2,
+    .credentials .section-title p {
+      color: #fff;
+    }
+
+    .credentials .section-title h2 .title-highlight {
+      background-image: linear-gradient(135deg, #fff 0%, #9de0dc 100%);
+    }
+
+    .credentials .credential-item,
+    .credentials .hours-card {
+      height: 100%;
+      padding: clamp(1.25rem, 2vw, 1.75rem);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.055);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 12px 30px rgba(5, 20, 34, 0.16);
+      color: #fff;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: border-color 220ms ease, transform 220ms ease, background-color 220ms ease;
+    }
+
+    .credentials .credential-item:hover,
+    .credentials .hours-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(22, 140, 140, 0.62);
+      background: rgba(255, 255, 255, 0.085);
+    }
+
+    .credentials .credential-item i,
+    .credentials .hours-card > i {
+      display: inline-grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      margin-bottom: 1rem;
+      place-items: center;
+      border-radius: 0.9rem;
+      background: rgba(22, 140, 140, 0.2);
+      color: #9de0dc;
+      font-size: 1.35rem;
+    }
+
+    .credentials .credential-item h3,
+    .credentials .hours-card h3 {
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .credentials .credential-item p,
+    .credentials .hours-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.9rem;
+    }
+
+    .credentials .credential-item p {
+      overflow-wrap: anywhere;
+    }
+
+    .credentials .hours-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      background: linear-gradient(145deg, rgba(22, 140, 140, 0.22), rgba(255, 255, 255, 0.06));
+    }
+
+    #hours {
+      scroll-margin-top: 7rem;
+    }
+
+    .credentials .hours-card .hours-time {
+      margin: 0.35rem 0 1rem;
+      color: #fff;
+      font-size: clamp(1.45rem, 2.5vw, 2rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+    }
+
+    .credentials .hours-card .hours-days {
+      color: #c6e4e3;
+      font-size: 0.9rem;
+    }
+
+    .credentials .hours-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      align-self: flex-start;
+      margin-top: 1.25rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .credentials .hours-cta:hover {
+      border-color: #9de0dc;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .procedures {
+      background-color: #f8faf9;
+    }
+
+    .procedures .procedures-tabs {
+      display: flex;
+      width: fit-content;
+      max-width: 100%;
+      margin-inline: auto;
+      padding: 0.38rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.3rem;
+      border: 1px solid rgba(22, 50, 79, 0.08);
+      border-radius: 999px;
+      background: rgba(235, 241, 240, 0.86);
+      box-shadow: inset 0 1px 2px rgba(15, 39, 64, 0.04);
+    }
+
+    .procedures .procedures-tabs .nav-item {
+      display: flex;
+    }
+
+    .procedures .procedures-tabs .nav-link {
+      width: auto;
+      min-height: 46px;
+      padding: 0.65rem 1rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: transparent;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+    }
+
+    .procedures .procedures-tabs .nav-link.active {
+      border-color: rgba(15, 39, 64, 0.06);
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(15, 39, 64, 0.12);
+      color: #0f2740;
+    }
+
+    .procedures .procedure-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.35rem, 4vw, 3.25rem);
+      border: 1px solid rgba(22, 50, 79, 0.08);
+      border-radius: 1.75rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 22px 60px rgba(15, 39, 64, 0.1);
+      backdrop-filter: blur(12px);
+    }
+
+    .procedures .procedure-panel h3 {
+      font-family: var(--font-body);
+      font-size: clamp(1.75rem, 3vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+    }
+
+    .procedures .procedure-panel p {
+      font-size: 0.96rem;
+    }
+
+    .procedure-points {
+      display: flex;
+      margin: 1rem 0 1.35rem;
+      padding: 0;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.1rem;
+      list-style: none;
+    }
+
+    .procedure-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      color: #354b5b;
+      font-size: 0.86rem;
+    }
+
+    .procedure-points i {
+      margin-top: 0.15rem;
+      color: #168c8c;
+    }
+
+    .procedure-visual {
+      display: grid;
+      min-height: 190px;
+      place-items: center;
+      border: 1px solid rgba(22, 140, 140, 0.12);
+      border-radius: 1.5rem;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(22, 140, 140, 0.16), transparent 42%),
+        linear-gradient(145deg, #f8fbfa, #eaf2f1);
+      color: #168c8c;
+      font-size: 3.5rem;
+    }
+
+    .procedure-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.1rem;
+    }
+
+    .procedure-actions .procedure-whatsapp,
+    .procedure-actions .procedure-whatsapp-pending,
+    .procedure-actions .procedure-contact-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.7rem 1.1rem;
+      border: 1px solid #168c8c;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+
+    .procedure-actions .procedure-whatsapp {
+      background: #168c8c;
+      box-shadow: 0 9px 22px rgba(22, 140, 140, 0.22);
+      color: #fff;
+    }
+
+    .procedure-actions .procedure-whatsapp:hover {
+      background: #116f70;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .procedure-actions .procedure-whatsapp-pending {
+      background: rgba(22, 140, 140, 0.08);
+      color: #116f70;
+    }
+
+    .procedure-actions .procedure-contact-link {
+      border-color: rgba(15, 39, 64, 0.2);
+      background: #fff;
+      color: #16324f;
+    }
+
+    .procedure-actions .procedure-contact-link:hover {
+      border-color: #168c8c;
+      color: #116f70;
+    }
+
+    .procedure-booking {
+      margin-top: 1.1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(22, 50, 79, 0.08);
+    }
+
+    .procedure-booking button {
+      min-height: 42px;
+      padding: 0.55rem 0.95rem;
+      border-color: rgba(22, 50, 79, 0.2);
+      background: transparent;
+      color: #16324f;
+      font-size: 0.82rem;
+    }
+
+    .procedure-booking button:disabled {
+      border-color: rgba(22, 50, 79, 0.18);
+      background: #f6f8f8;
+      color: #536372;
+      opacity: 1;
+      cursor: not-allowed;
+    }
+
+    .procedure-booking .booking-note {
+      display: inline-block;
+      margin: 0 0 0 0.5rem;
+      color: #536372;
+      font-size: 0.78rem;
+    }
+
+    .testimonials {
+      background: #f7f9f8;
+    }
+
+    .testimonials .row {
+      --bs-gutter-y: 1.15rem;
+    }
+
+    .testimonials .review-card {
+      height: auto;
+      min-height: 0;
+      padding: 1.35rem;
+      border: 1px solid rgba(22, 50, 79, 0.1);
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 14px rgba(15, 39, 64, 0.04);
+      backdrop-filter: blur(10px);
+    }
+
+    .review-card::after {
+      position: absolute;
+      top: 0.2rem;
+      right: 1rem;
+      color: rgba(22, 140, 140, 0.1);
+      content: "“";
+      font-family: Georgia, serif;
+      font-size: 6rem;
+      font-weight: 700;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .review-card .review-rating {
+      position: relative;
+      z-index: 1;
+      margin-top: 0;
+      color: #8a6400;
+      font-size: 1rem;
+    }
+
+    .testimonials .review-card .review-rating {
+      color: #8a6400;
+    }
+
+    .review-card .review-quote {
+      position: relative;
+      z-index: 1;
+      margin: 0.65rem 0;
+      color: #344957;
+      font-size: 0.91rem;
+      line-height: 1.7;
+    }
+
+    .review-card .review-author {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 0.91rem;
+    }
+
+    .review-source-label {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: 0.75rem !important;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid rgba(22, 50, 79, 0.09);
+      border-radius: 999px;
+      background: #f4f7f6;
+      color: #405563 !important;
+      font-size: 0.7rem !important;
+    }
+
+    .contact .info-item {
+      min-height: 100%;
+      border-radius: 1.25rem;
+      box-shadow: 0 9px 28px rgba(15, 39, 64, 0.07);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .contact .info-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(22, 140, 140, 0.45);
+      box-shadow: 0 14px 34px rgba(22, 140, 140, 0.1);
+    }
+
+    .contact .php-email-form {
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border-radius: 1.5rem;
+      box-shadow: 0 18px 45px rgba(15, 39, 64, 0.1);
+    }
+
+    .contact .php-email-form .form-control {
+      background: rgba(248, 250, 249, 0.9);
+    }
+
+    .contact .php-email-form button[type=submit] {
+      width: 100%;
+    }
+
+    .google-map-embed.ratio {
+      border-radius: 1.5rem;
+      box-shadow: 0 18px 42px rgba(15, 39, 64, 0.1);
+    }
+
+    @media (min-width: 1200px) {
+      .header .branding > .container {
+        padding-inline: 1.35rem;
+      }
+
+      .header .logo {
+        margin-right: 1rem !important;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      .header {
+        background: transparent;
+      }
+
+      .header .topbar {
+        display: flex;
+      }
+
+      .header .branding {
+        padding: 0.5rem 0.65rem 0;
+      }
+
+      .header .branding > .container {
+        min-height: 62px;
+        padding: 0.4rem 0.7rem;
+        border-radius: 1rem;
+      }
+
+      .mobile-nav-active .navmenu > ul {
+        background: #fff;
+      }
+
+      .mobile-nav-toggle {
+        position: relative;
+        z-index: 10000;
+        width: 44px;
+        height: 44px;
+        margin-left: 0.25rem;
+        border-radius: 50%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        margin-top: -6rem;
+        padding-top: 6rem;
+      }
+
+      .hero .carousel-item {
+        min-height: min(700px, calc(100svh - 3.5rem));
+      }
+
+      .hero .container {
+        padding-top: 6.75rem;
+      }
+
+      .featured-services {
+        margin-top: -3.25rem;
+      }
+
+      .trust-badge {
+        max-width: 72%;
+        padding: 0.6rem 0.7rem;
+        font-size: 0.67rem;
+      }
+
+      .trust-badge--credential {
+        top: 0.65rem;
+        right: -0.2rem;
+      }
+
+      .trust-badge--care {
+        bottom: 3.65rem;
+        left: -0.2rem;
+      }
+
+      .credentials .hours-card {
+        min-height: 0;
+      }
+
+      .procedures .procedures-tabs {
+        width: 100%;
+        border-radius: 1.25rem;
+      }
+
+      .procedures .procedures-tabs .nav-item {
+        flex: 1 1 calc(50% - 0.3rem);
+      }
+
+      .procedures .procedures-tabs .nav-link {
+        width: 100%;
+        min-height: 44px;
+        padding-inline: 0.65rem;
+        font-size: 0.78rem;
+      }
+
+      .procedure-visual {
+        min-height: 128px;
+        font-size: 2.6rem;
+      }
+
+      .procedure-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .procedure-actions > * {
+        width: 100%;
+      }
+
+      .procedure-booking .booking-note {
+        display: block;
+        margin: 0.45rem 0 0;
+      }
+
+      .testimonials .review-card {
+        padding: 1.2rem;
+      }
+
+      .google-map-embed.ratio {
+        --bs-aspect-ratio: 75%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .header .branding {
+        padding-inline: 0.45rem;
+      }
+
+      .header .branding > .container {
+        padding-inline: 0.55rem;
+      }
+
+      .header .brand-wordmark {
+        max-width: 7rem;
+      }
+
+      .trust-badge {
+        max-width: 78%;
+        font-size: 0.62rem;
+      }
+    }
+
+    .hero .hero-actions > a {
+      flex: 0 0 auto;
+      height: 52px;
+      min-height: 52px;
+      margin: 0;
+      padding: 0.875rem 1.75rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+
+    .featured-services {
+      padding-block: clamp(4rem, 7vw, 6rem);
+    }
+
+    .featured-services .service-item {
+      height: 100%;
+      padding: 1.6rem;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 1.4rem;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 16px 38px rgba(15, 39, 64, 0.08);
+      transition: transform var(--ease-standard), color var(--ease-standard), background var(--ease-standard), box-shadow var(--ease-standard);
+    }
+
+    .featured-services .service-item:hover,
+    .featured-services .service-item:focus-within {
+      transform: translateY(-0.375rem);
+      background: linear-gradient(145deg, #0f2740, #16324f);
+      box-shadow: 0 20px 44px rgba(15, 39, 64, 0.2);
+    }
+
+    .featured-services .service-item h4,
+    .featured-services .service-item p {
+      color: var(--ink);
+      transition: color var(--ease-standard);
+    }
+
+    .featured-services .service-item:hover h4,
+    .featured-services .service-item:hover p,
+    .featured-services .service-item:focus-within h4,
+    .featured-services .service-item:focus-within p {
+      color: #fff;
+    }
+
+    .featured-services .service-item .icon {
+      background: var(--doctor-soft);
+      color: var(--doctor-accent);
+      transition: color var(--ease-standard), background var(--ease-standard);
+    }
+
+    .featured-services .service-item:hover .icon,
+    .featured-services .service-item:focus-within .icon {
+      background: rgba(255, 255, 255, 0.12);
+      color: #8de0d8;
+    }
+
+    .featured-services .row > div:first-child .service-item,
+    .featured-services .row > div:first-child .service-item h4,
+    .featured-services .row > div:first-child .service-item p {
+      color: var(--ink);
+      background-color: #fff;
+    }
+
+    .featured-services .row > div:first-child .service-item:hover,
+    .featured-services .row > div:first-child .service-item:focus-within {
+      background: linear-gradient(145deg, #0f2740, #16324f);
+    }
+
+    .featured-services .row > div:first-child .service-item:hover h4,
+    .featured-services .row > div:first-child .service-item:hover p,
+    .featured-services .row > div:first-child .service-item:focus-within h4,
+    .featured-services .row > div:first-child .service-item:focus-within p {
+      color: #fff;
+      background: transparent;
+    }
+
+    .featured-services {
+      padding-block: clamp(4rem, 7vw, 5rem);
+    }
+
+    .featured-services .row > div:first-child .service-item {
+      border-color: rgba(23, 50, 77, 0.1);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .featured-services .row > div:first-child .service-item h4,
+    .featured-services .row > div:first-child .service-item p {
+      color: var(--ink);
+    }
+
+    .featured-services .row > div:first-child .service-item .icon {
+      background: var(--doctor-soft);
+      color: var(--doctor-accent);
+    }
+
+    .featured-services .row > div:first-child .service-item:hover,
+    .featured-services .row > div:first-child .service-item:focus-within {
+      border-color: rgba(22, 140, 140, 0.55);
+      background: linear-gradient(145deg, #0f2740, #16324f);
+    }
+
+    .featured-services .row > div:first-child .service-item:hover h4,
+    .featured-services .row > div:first-child .service-item:hover p,
+    .featured-services .row > div:first-child .service-item:focus-within h4,
+    .featured-services .row > div:first-child .service-item:focus-within p {
+      color: #fff;
+    }
+
+    .featured-services .service-item:hover,
+    .featured-services .service-item:focus-within {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 22px 48px rgba(15, 39, 64, 0.2);
+    }
+
+    .doctor-card {
+      isolation: isolate;
+      padding: clamp(1.5rem, 5vw, 3rem);
+      border: 0;
+      border-radius: 2rem;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(40, 124, 120, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(23, 50, 77, 0.12), transparent 42%),
+        #f7f5f0;
+    }
+
+    .about .doctor-card {
+      position: relative;
+      overflow: visible;
+      display: grid;
+      min-height: 31rem;
+      margin: 0.75rem 0.6rem 1.5rem;
+      border: 0;
+      border-radius: 2rem;
+      box-shadow: none;
+      background:
+        radial-gradient(rgba(22, 50, 79, 0.14) 0.7px, transparent 0.7px) 0 0 / 18px 18px,
+        radial-gradient(circle at 50% 52%, rgba(40, 124, 120, 0.15), transparent 56%),
+        linear-gradient(145deg, rgba(247, 245, 240, 0.5), rgba(220, 232, 231, 0.6));
+    }
+
+    .doctor-card::before {
+      position: absolute;
+      z-index: 0;
+      top: 8%;
+      left: 17%;
+      width: 66%;
+      height: 72%;
+      border: 12px solid rgba(40, 124, 120, 0.7);
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      content: "";
+      transform: rotate(-12deg);
+    }
+
+    .doctor-card::after {
+      position: absolute;
+      z-index: 0;
+      right: 3%;
+      bottom: 8%;
+      left: 3%;
+      height: 22%;
+      border: 1px solid rgba(23, 50, 77, 0.2);
+      border-radius: 50%;
+      content: "";
+      transform: rotate(-5deg);
+    }
+
+    .doctor-card .doctor-photo {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      display: block;
+      width: 100%;
+      height: 30rem;
+      object-fit: contain;
+      object-position: center bottom;
+      border-radius: 0;
+      box-shadow: none;
+      filter: drop-shadow(0 22px 20px rgba(15, 39, 64, 0.18));
+    }
+
+    .about .doctor-card .doctor-photo {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .about .doctor-photo-caption {
+      position: absolute;
+      bottom: 0.25rem;
+      left: 50%;
+      z-index: 2;
+      width: max-content;
+      max-width: 90%;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      color: #405563;
+      font-size: 0.7rem;
+      text-align: center;
+      transform: translateX(-50%);
+    }
+
+    .about .trust-badge {
+      z-index: 3;
+      max-width: min(15rem, 65%);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 18px 42px rgba(15, 39, 64, 0.2);
+    }
+
+    .about .trust-badge--credential {
+      top: 12%;
+      right: -0.5rem;
+      transform: rotate(2deg);
+    }
+
+    .about .trust-badge--care {
+      bottom: 17%;
+      left: -0.65rem;
+      transform: rotate(-2deg);
+    }
+
+    .medical-icon-sprite {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .procedure-visual svg,
+    .procedures-tabs .nav-link svg {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2.4;
+    }
+
+    .procedure-visual svg {
+      width: 5rem;
+      height: 5rem;
+      color: var(--doctor-accent);
+    }
+
+    .procedures-tabs .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .procedures-tabs .nav-link svg {
+      flex: 0 0 auto;
+      width: 1.35rem;
+      height: 1.35rem;
+      color: currentColor;
+    }
+
+    .credentials [data-professional-license],
+    .credentials [data-specialty-license] {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .review-carousel {
+      position: relative;
+    }
+
+    .review-carousel-viewport {
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .review-carousel-track {
+      display: flex;
+      transition: transform 320ms ease;
+      will-change: transform;
+    }
+
+    .review-slide {
+      flex: 0 0 100%;
+      display: grid;
+      grid-template-columns: repeat(var(--reviews-visible, 1), minmax(0, 1fr));
+      gap: 1rem;
+      padding: 0.25rem;
+    }
+
+    .review-slide .review-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-width: 0;
+      padding: clamp(1.15rem, 2vw, 1.5rem);
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 1.35rem;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 10px 28px rgba(15, 39, 64, 0.06);
+    }
+
+    .review-avatar {
+      display: grid;
+      width: 3.25rem;
+      height: 3.25rem;
+      margin-bottom: 0.9rem;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #17324d, #287c78);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .review-slide .review-author {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .review-slide .review-rating {
+      margin: 0 0 0.8rem;
+      color: #8a6400;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+    }
+
+    .review-slide .review-quote {
+      margin: 0 0 1rem;
+      color: #344957;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .review-slide .review-source-label {
+      display: inline-flex;
+      margin: 0;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: #f2f6f5;
+      color: #405563;
+      font-size: 0.72rem;
+    }
+
+    .review-carousel-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .review-carousel-controls button,
+    .review-indicator {
+      display: grid;
+      width: 2.75rem;
+      height: 2.75rem;
+      place-items: center;
+      border: 1px solid rgba(23, 50, 77, 0.15);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--doctor-deep);
+    }
+
+    .review-carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .review-indicator {
+      width: 0.7rem;
+      height: 0.7rem;
+      padding: 0;
+      border: 0;
+      background: rgba(23, 50, 77, 0.25);
+    }
+
+    .review-indicator[aria-current="true"] {
+      background: var(--doctor-accent);
+      transform: scale(1.15);
+    }
+
+    .review-actions a[hidden],
+    .contact [hidden] {
+      display: none !important;
+    }
+
+    .contact .contact-card,
+    .contact .contact-map-card,
+    .contact .php-email-form {
+      height: 100%;
+      padding: 1.4rem;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 1.4rem;
+      background: #fff;
+      box-shadow: 0 14px 36px rgba(15, 39, 64, 0.08);
+    }
+
+    .contact .contact-card {
+      transition: transform var(--ease-standard), border-color var(--ease-standard), box-shadow var(--ease-standard);
+    }
+
+    .contact .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(40, 124, 120, 0.45);
+      box-shadow: 0 18px 38px rgba(15, 39, 64, 0.12);
+    }
+
+    .contact .contact-map-card h3,
+    .contact .php-email-form h3 {
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .contact .contact-map-card .google-map-embed {
+      flex: 1 1 auto;
+      height: auto;
+      min-height: 23.75rem;
+      --bs-aspect-ratio: auto;
+      border-radius: 1rem;
+    }
+
+    .contact .contact-map-card .google-map-embed iframe {
+      min-height: 23.75rem;
+    }
+
+    .contact .php-email-form {
+      padding: clamp(1.2rem, 2.5vw, 2rem);
+    }
+
+    .contact .php-email-form .form-control {
+      min-height: 48px;
+      border-radius: 0.85rem;
+      background: #f6f8f8;
+    }
+
+    .contact .php-email-form textarea.form-control {
+      min-height: 7rem;
+    }
+
+    .contact .php-email-form button[type="submit"] {
+      width: 100%;
+      min-height: 50px;
+      border-radius: 999px;
+      background: var(--doctor-accent);
+    }
+
+    .footer {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(40, 124, 120, 0.18), transparent 32%),
+        linear-gradient(180deg, #0a192f, #10243d);
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .footer h4,
+    .footer .brand-wordmark,
+    .footer .sitename,
+    .footer .footer-about .logo,
+    .footer .footer-links h4 {
+      color: #fff;
+    }
+
+    .footer a,
+    .footer p,
+    .footer .credits {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .footer a:hover {
+      color: #9de0dc;
+    }
+
+    .footer .social-links a {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+      color: #fff;
+    }
+
+    .footer .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 1.2rem;
+    }
+
+    .footer-academic p {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-academic .academic-license {
+      font-size: 0.88rem;
+    }
+
+    .academic-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid rgba(226, 190, 112, 0.5);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #f0d48f;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .academic-mark svg {
+      width: 2rem;
+      height: 2rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+    }
+
+    .floating-dock {
+      position: fixed;
+      right: max(1.25rem, env(safe-area-inset-right));
+      bottom: max(1.25rem, env(safe-area-inset-bottom));
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .floating-dock .call-float,
+    .floating-dock .whatsapp-float,
+    .floating-dock .scroll-top {
+      position: relative;
+      inset: auto;
+      flex: 0 0 auto;
+      width: 3.25rem;
+      height: 3.25rem;
+      min-width: 3.25rem;
+      min-height: 3.25rem;
+      margin: 0;
+      opacity: 1;
+      visibility: visible;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 50%;
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(10, 25, 47, 0.22);
+      text-decoration: none;
+    }
+
+    .floating-dock [hidden],
+    .floating-dock #scroll-top:not(.active) {
+      display: none !important;
+    }
+
+    .floating-dock .call-float {
+      background: #17324d;
+    }
+
+    .floating-dock .whatsapp-float {
+      background: #287c78;
+      animation: breathingGlow 2.8s ease-in-out infinite;
+    }
+
+    .floating-dock .scroll-top {
+      background: rgba(23, 50, 77, 0.92);
+    }
+
+    .floating-dock-label {
+      position: absolute;
+      right: calc(100% + 0.65rem);
+      top: 50%;
+      width: max-content;
+      max-width: min(11rem, 55vw);
+      padding: 0.45rem 0.7rem;
+      border: 1px solid rgba(23, 50, 77, 0.1);
+      border-radius: 999px;
+      background: #fff;
+      color: #17324d;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(0.25rem, -50%);
+      transition: opacity var(--ease-standard), transform var(--ease-standard);
+    }
+
+    .floating-dock .whatsapp-float:hover .floating-dock-label,
+    .floating-dock .whatsapp-float:focus-visible .floating-dock-label {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+
+    }
+
+    .whatsapp-float {
+      animation: breathingGlow 2.8s ease-in-out infinite;
+    }
+
+    @keyframes breathingGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(40, 124, 120, 0.3), 0 14px 28px rgba(22, 45, 77, 0.18); }
+      50% { box-shadow: 0 0 0 9px rgba(40, 124, 120, 0), 0 18px 34px rgba(22, 45, 77, 0.24); }
+    }
+
+    @media (min-width: 768px) {
+      .review-slide {
+        --reviews-visible: 2;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .review-slide {
+        --reviews-visible: 3;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .header .topbar {
+        display: none !important;
+      }
+
+      .hero .hero-actions > a {
+        width: 100%;
+      }
+
+      .contact .contact-map-card .google-map-embed {
+        min-height: 23.75rem;
+      }
+
+      .about .doctor-card {
+        min-height: 25rem;
+        margin-inline: 0.5rem;
+      }
+
+      .about .doctor-card .doctor-photo {
+        height: 24rem;
+      }
+
+      .about .trust-badge--credential {
+        right: -0.3rem;
+      }
+
+      .about .trust-badge--care {
+        left: -0.3rem;
+      }
+
+      .footer-academic {
+        max-width: 100%;
+      }
+
+      .floating-dock {
+        right: max(0.8rem, env(safe-area-inset-right));
+        bottom: max(0.85rem, env(safe-area-inset-bottom));
+        gap: 0.6rem;
+      }
+
+      .floating-dock .call-float,
+      .floating-dock .whatsapp-float,
+      .floating-dock .scroll-top {
+        width: 3rem;
+        height: 3rem;
+        min-width: 3rem;
+        min-height: 3rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .review-carousel-track,
+      .featured-services .service-item,
+      .contact .contact-card,
+      .whatsapp-float {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
 </style>
 </head>
 
@@ -1667,12 +3963,11 @@
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="d-none d-md-flex align-items-center">
-          <i class="bi bi-clock me-1"></i> Lunes - Sábado, 8AM a 8PM
+          <i class="bi bi-clock me-1" aria-hidden="true"></i> <span data-hours-header>Lunes - Sábado, 8AM a 8PM</span>
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center" data-contact-card>
           <i class="bi bi-phone me-1"></i>
           <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer" style="color: #fff;">WhatsApp</a>
-          <span data-contact-whatsapp-pending>WhatsApp pendiente de confirmación</span>
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -1685,8 +3980,8 @@
           <span class="brand-wordmark" data-brand-name>Dr. Arni Mendoza</span>
         </a>
 
-        <nav id="navmenu" class="navmenu">
-          <ul>
+        <nav id="navmenu" class="navmenu" aria-label="Navegación principal">
+          <ul id="navmenu-links">
             <li><a href="#hero" class="active">Inicio</a></li>
             <li><a href="#about">Acerca de</a></li>
             <li><a href="#procedures">Procedimientos</a></li>
@@ -1694,10 +3989,12 @@
             <li><a href="#testimonials">Opiniones</a></li>
             <li><a href="#contact">Contacto</a></li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <button type="button" class="mobile-nav-toggle d-xl-none" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navmenu-links">
+            <i class="bi bi-list" aria-hidden="true"></i>
+          </button>
         </nav>
 
-        <a class="cta-btn" href="#procedures">Agendar</a>
+        <a class="cta-btn" href="#contact">Contacto</a>
 
       </div>
 
@@ -1706,19 +4003,41 @@
   </header>
 
   <main class="main">
+    <svg class="medical-icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <symbol id="icon-hernia" viewBox="0 0 64 64">
+        <path d="M23 8c-5 5-7 12-6 20l2 18c.4 4 5 7 13 7s12.6-3 13-7l2-18c1-8-1-15-6-20M24 28c3 2 5 3 8 3s5-1 8-3"/>
+        <circle cx="32" cy="38" r="4"/>
+      </symbol>
+      <symbol id="icon-vesicula" viewBox="0 0 64 64">
+        <path d="M12 27c5-11 17-17 33-14 3 1 5 3 6 6-7 10-17 14-30 13-4 0-7-2-9-5ZM34 32c-2 5-2 9 1 13 2 3 6 3 8 0 3-4 2-9-2-14"/>
+        <path d="M41 43c1 4 0 7-3 9"/>
+      </symbol>
+      <symbol id="icon-appendix" viewBox="0 0 64 64">
+        <path d="M23 8c-5 5-7 12-6 20l2 18c.4 4 5 7 13 7s12.6-3 13-7l2-18c1-8-1-15-6-20"/>
+        <path d="M40 43c5-1 7 1 6 4-1 2-4 2-6 1-3-1-4-3-2-5"/>
+        <circle cx="43" cy="46" r="2"/>
+      </symbol>
+      <symbol id="icon-laparoscopy" viewBox="0 0 64 64">
+        <path d="m15 12 8 8m-4-12 8 8M23 20l25 25m-6 6 9-9m-17-1 9-9M22 21l-9 9 13 13 9-9"/>
+        <circle cx="49" cy="49" r="5"/>
+        <path d="m45 45 4 4"/>
+      </symbol>
+    </svg>
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-interval="7000" data-bs-pause="hover">
 
         <div class="carousel-item active">
           <div class="hero-bg" aria-hidden="true" style="background-image:url('assets/img/slider3.optimized.jpg'); background-size: cover; background-position: center;"></div>
           <div class="container">
+            <span class="eyebrow text-white">Cirugía general · CDMX</span>
             <h1 data-brand-name>Dr. Arni Mendoza</h1>
             <p>Cirujano general con formación en la Universidad Nacional Autónoma de México y enfoque en cirugía de hernias y procedimientos de mínima invasión.</p>
             <div class="hero-actions">
-              <a href="#procedures" class="btn-get-started">Elegir servicio y agendar</a>
+              <a href="#procedures" class="btn-get-started"><i class="bi bi-arrow-down-circle me-2" aria-hidden="true"></i>Ver procedimientos</a>
+              <a href="#contact" class="btn-secondary">Ver ubicación</a>
               <a data-phone-action hidden class="btn-secondary">Llamar</a>
             </div>
           </div>
@@ -1730,7 +4049,8 @@
             <h2>Cirugía de Mínima Invasión</h2>
             <p>La cirugía laparoscópica es una técnica de mínima invasión que se considera de acuerdo con la valoración clínica y las necesidades de cada paciente.</p>
             <div class="hero-actions">
-              <a href="#procedures" class="btn-get-started">Elegir servicio y agendar</a>
+              <a href="#procedures" class="btn-get-started"><i class="bi bi-arrow-down-circle me-2" aria-hidden="true"></i>Ver procedimientos</a>
+              <a href="#contact" class="btn-secondary">Ver ubicación</a>
               <a data-phone-action hidden class="btn-secondary">Llamar</a>
             </div>
           </div>
@@ -1742,7 +4062,8 @@
             <h2>Especialista en Hernias</h2>
             <p>Valoración y tratamiento quirúrgico de hernias inguinales, umbilicales e incisionales, de acuerdo con las características de cada caso.</p>
             <div class="hero-actions">
-              <a href="#procedures" class="btn-get-started">Elegir servicio y agendar</a>
+              <a href="#procedures" class="btn-get-started"><i class="bi bi-arrow-down-circle me-2" aria-hidden="true"></i>Ver procedimientos</a>
+              <a href="#contact" class="btn-secondary">Ver ubicación</a>
               <a data-phone-action hidden class="btn-secondary">Llamar</a>
             </div>
           </div>
@@ -1812,7 +4133,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Acerca del <span data-brand-name>Dr. Arni Mendoza</span></h2>
+        <span class="eyebrow">Conoce al especialista</span>
+        <h2>Acerca del <span class="title-highlight" data-brand-name>Dr. Arni Mendoza</span></h2>
         <p>Especialista en Cirugía General con enfoque en procedimientos de mínima invasión y reparación de hernias</p>
       </div><!-- End Section Title -->
 
@@ -1824,25 +4146,17 @@
             <p class="fst-italic">
               El Dr. Arni Mendoza es egresado de la Universidad Nacional Autónoma de México.
             </p>
-            <ul>
-              <li><i class="bi bi-check2-all"></i> <span><strong>Cédula Profesional:</strong> 11767675</span></li>
-              <li><i class="bi bi-check2-all"></i> <span><strong>Cédula de Especialidad:</strong> 14408066</span></li>
-              <li><i class="bi bi-check2-all"></i> <span><strong>Universidad de Egreso:</strong> Universidad Nacional Autónoma de México</span></li>
-              <li><i class="bi bi-check2-all"></i> <span><strong>Especialidad:</strong> Cirugía General, Hernias y Mínima Invasión</span></li>
-            </ul>
             <p>
               Su práctica se enfoca en cirugía general, reparación de hernias y procedimientos de mínima invasión. La indicación de cada procedimiento requiere valoración médica individual.
             </p>
           </div>
           <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-            <div class="doctor-card text-center p-4">
-              <div class="card-icon">
-                <i class="fas fa-user-md" style="font-size: 70px;"></i>
-              </div>
-              <h4 data-brand-name>Dr. Arni Mendoza</h4>
-              <p class="text-muted">Cirujano general</p>
-              <p class="mb-0">Formación: Universidad Nacional Autónoma de México</p>
-            </div>
+            <figure class="doctor-card">
+              <img class="doctor-photo" data-config-image="about" src="assets/img/doctor-illustration.svg" alt="Ilustración editorial de un profesional médico; no es una fotografía del doctor" loading="lazy" decoding="async">
+              <span class="trust-badge trust-badge--credential"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>Cirugía general<br>Formación UNAM</span></span>
+              <span class="trust-badge trust-badge--care"><i class="bi bi-heart-pulse" aria-hidden="true"></i><span>Enfoque en hernias<br>y mínima invasión</span></span>
+              <figcaption class="doctor-photo-caption">Ilustración médica de apoyo; no representa una fotografía del doctor.</figcaption>
+            </figure>
           </div>
         </div>
 
@@ -1851,39 +4165,53 @@
     </section><!-- /About Section -->
 
     <!-- Professional details replace statistics pending doctor verification. -->
-    <section id="credentials" class="credentials section light-background">
+    <section id="credentials" class="credentials section">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Datos profesionales</h2>
+        <span class="eyebrow">Formación y atención</span>
+        <h2><span class="title-highlight">Datos profesionales</span></h2>
         <p>Información profesional publicada en el sitio.</p>
       </div>
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-3 col-md-6">
-            <article class="credential-item">
-              <i class="bi bi-person-vcard" aria-hidden="true"></i>
-              <h3>Cédula profesional</h3>
-              <p>11767675</p>
-            </article>
+          <div class="col-lg-8">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <article class="credential-item">
+                  <i class="bi bi-person-vcard" aria-hidden="true"></i>
+                  <h3>Cédula profesional</h3>
+                  <p data-professional-license>11767675</p>
+                </article>
+              </div>
+              <div class="col-sm-6">
+                <article class="credential-item">
+                  <i class="bi bi-person-vcard" aria-hidden="true"></i>
+                  <h3>Cédula de especialidad</h3>
+                  <p data-specialty-license>14408066</p>
+                </article>
+              </div>
+              <div class="col-sm-6">
+                <article class="credential-item">
+                  <i class="bi bi-mortarboard" aria-hidden="true"></i>
+                  <h3>Formación</h3>
+                  <p data-university>Universidad Nacional Autónoma de México</p>
+                </article>
+              </div>
+              <div class="col-sm-6">
+                <article class="credential-item">
+                  <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+                  <h3>Especialidad</h3>
+                  <p data-specialty>Cirugía general</p>
+                </article>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <article class="credential-item">
-              <i class="bi bi-patch-check" aria-hidden="true"></i>
-              <h3>Cédula de especialidad</h3>
-              <p>14408066</p>
-            </article>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <article class="credential-item">
-              <i class="bi bi-mortarboard" aria-hidden="true"></i>
-              <h3>Formación</h3>
-              <p>Universidad Nacional Autónoma de México</p>
-            </article>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <article class="credential-item">
-              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
-              <h3>Especialidad</h3>
-              <p>Cirugía general</p>
+          <div class="col-lg-4">
+            <article id="hours" class="hours-card">
+              <i class="bi bi-clock" aria-hidden="true"></i>
+              <h3>Horarios de atención</h3>
+              <p class="hours-time" data-hours-display>8:00 a 20:00</p>
+              <p class="hours-days" data-hours-days>Lunes a sábado</p>
+              <a class="hours-cta" href="#contact">Ver opciones de contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
         </div>
@@ -1895,7 +4223,7 @@
 
       <div class="container section-title" data-aos="fade-up">
         <span class="eyebrow">Procedimientos</span>
-        <h2>Procedimientos quirúrgicos</h2>
+        <h2><span class="title-highlight">Procedimientos</span> quirúrgicos</h2>
         <p>Información general; cada tratamiento se define tras una valoración médica individual.</p>
       </div>
 
@@ -1904,19 +4232,16 @@
           <div class="col-12">
             <ul class="nav nav-tabs procedures-tabs" role="tablist" aria-label="Procedimientos disponibles">
               <li class="nav-item">
-                <button class="nav-link active show" id="procedures-tab-button-1" data-bs-toggle="tab" data-bs-target="#procedures-tab-1" type="button" role="tab" aria-controls="procedures-tab-1" aria-selected="true">Hernias</button>
+                <button class="nav-link active show" id="procedures-tab-button-1" data-bs-toggle="tab" data-bs-target="#procedures-tab-1" type="button" role="tab" aria-controls="procedures-tab-1" aria-selected="true"><svg aria-hidden="true" focusable="false"><use href="#icon-hernia"></use></svg><span>Hernias</span></button>
               </li>
               <li class="nav-item">
-                <button class="nav-link" id="procedures-tab-button-2" data-bs-toggle="tab" data-bs-target="#procedures-tab-2" type="button" role="tab" aria-controls="procedures-tab-2" aria-selected="false">Vesícula</button>
+                <button class="nav-link" id="procedures-tab-button-2" data-bs-toggle="tab" data-bs-target="#procedures-tab-2" type="button" role="tab" aria-controls="procedures-tab-2" aria-selected="false"><svg aria-hidden="true" focusable="false"><use href="#icon-vesicula"></use></svg><span>Vesícula</span></button>
               </li>
               <li class="nav-item">
-                <button class="nav-link" id="procedures-tab-button-3" data-bs-toggle="tab" data-bs-target="#procedures-tab-3" type="button" role="tab" aria-controls="procedures-tab-3" aria-selected="false">Apendicitis</button>
+                <button class="nav-link" id="procedures-tab-button-3" data-bs-toggle="tab" data-bs-target="#procedures-tab-3" type="button" role="tab" aria-controls="procedures-tab-3" aria-selected="false"><svg aria-hidden="true" focusable="false"><use href="#icon-appendix"></use></svg><span>Apendicitis</span></button>
               </li>
               <li class="nav-item">
-                <button class="nav-link" id="procedures-tab-button-4" data-bs-toggle="tab" data-bs-target="#procedures-tab-4" type="button" role="tab" aria-controls="procedures-tab-4" aria-selected="false">Cirugía laparoscópica</button>
-              </li>
-              <li class="nav-item">
-                <button class="nav-link" id="procedures-tab-button-5" data-bs-toggle="tab" data-bs-target="#procedures-tab-5" type="button" role="tab" aria-controls="procedures-tab-5" aria-selected="false">Eventraciones y otros</button>
+                <button class="nav-link" id="procedures-tab-button-4" data-bs-toggle="tab" data-bs-target="#procedures-tab-4" type="button" role="tab" aria-controls="procedures-tab-4" aria-selected="false"><svg aria-hidden="true" focusable="false"><use href="#icon-laparoscopy"></use></svg><span>Cirugía laparoscópica</span></button>
               </li>
             </ul>
           </div>
@@ -1929,12 +4254,16 @@
                     <div class="col-lg-9 details">
                       <h3>Hernias</h3>
                       <p>Valoración de hernias inguinales, umbilicales e incisionales. El plan de tratamiento se determina según la evaluación clínica de cada paciente.</p>
-                      <div class="procedure-booking">
-                        <button type="button" class="btn btn-primary" data-calendar-service="hernias" disabled>Agendar</button>
-                        <span class="booking-note">Enlace de Google Calendar pendiente de configuración y aprobación del doctor.</span>
+                      <ul class="procedure-points">
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Valoración clínica individual</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Plan definido tras evaluación</li>
+                      </ul>
+                      <div class="procedure-actions">
+                        <a data-whatsapp-action data-whatsapp-service="hernia" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
+                        <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><i class="fas fa-shield-alt"></i></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-hernia"></use></svg></div></div>
                   </div>
                 </div>
               </div>
@@ -1944,12 +4273,16 @@
                     <div class="col-lg-9 details">
                       <h3>Vesícula</h3>
                       <p>Valoración de padecimientos de la vesícula biliar. El diagnóstico y las opciones de tratamiento requieren consulta médica.</p>
-                      <div class="procedure-booking">
-                        <button type="button" class="btn btn-primary" data-calendar-service="vesicula" disabled>Agendar</button>
-                        <span class="booking-note">Enlace de Google Calendar pendiente de configuración y aprobación del doctor.</span>
+                      <ul class="procedure-points">
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Valoración clínica individual</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Plan definido tras evaluación</li>
+                      </ul>
+                      <div class="procedure-actions">
+                        <a data-whatsapp-action data-whatsapp-service="vesicula" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
+                        <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><i class="fas fa-notes-medical"></i></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-vesicula"></use></svg></div></div>
                   </div>
                 </div>
               </div>
@@ -1959,12 +4292,16 @@
                     <div class="col-lg-9 details">
                       <h3>Apendicitis</h3>
                       <p>La sospecha de apendicitis requiere valoración médica. La necesidad y el tipo de tratamiento se determinan de acuerdo con el cuadro clínico.</p>
-                      <div class="procedure-booking">
-                        <button type="button" class="btn btn-primary" data-calendar-service="apendicitis" disabled>Agendar</button>
-                        <span class="booking-note">Enlace de Google Calendar pendiente de configuración y aprobación del doctor.</span>
+                      <ul class="procedure-points">
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Valoración médica del cuadro clínico</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Plan definido tras evaluación médica</li>
+                      </ul>
+                      <div class="procedure-actions">
+                        <a data-whatsapp-action data-whatsapp-service="apendicitis" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
+                        <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><i class="fas fa-heart-pulse"></i></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-appendix"></use></svg></div></div>
                   </div>
                 </div>
               </div>
@@ -1974,19 +4311,17 @@
                     <div class="col-lg-9 details">
                       <h3>Cirugía laparoscópica</h3>
                       <p>La cirugía laparoscópica es una técnica quirúrgica de mínima invasión. Su indicación depende de la condición clínica y la valoración del especialista.</p>
-                      <div class="procedure-booking">
-                        <button type="button" class="btn btn-primary" data-calendar-service="laparoscopia" disabled>Agendar</button>
-                        <span class="booking-note">Enlace de Google Calendar pendiente de configuración y aprobación del doctor.</span>
+                      <ul class="procedure-points">
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Indicación tras valoración médica</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Indicación según condición clínica</li>
+                      </ul>
+                      <div class="procedure-actions">
+                        <a data-whatsapp-action data-whatsapp-service="laparoscopia" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
+                        <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><i class="fas fa-cut"></i></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-laparoscopy"></use></svg></div></div>
                   </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="procedures-tab-5" role="tabpanel" aria-labelledby="procedures-tab-button-5">
-                <div class="procedure-panel">
-                  <h3>Eventraciones y otros procedimientos</h3>
-                  <p>Este contenido está pendiente de confirmación del doctor. No se describen ni ofrecen procedimientos adicionales hasta recibir información validada.</p>
                 </div>
               </div>
             </div>
@@ -1996,70 +4331,29 @@
 
     </section><!-- /Procedures Section -->
 
-    <section id="hours" class="hours section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Horarios de atención</h2>
-        <p>Horario publicado en este sitio; confirmar disponibilidad al solicitar una cita.</p>
-      </div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <article class="hours-card text-center">
-              <i class="bi bi-clock" aria-hidden="true"></i>
-              <h3>Lunes a sábado</h3>
-              <p>8:00 a 20:00</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="testimonials" class="testimonials section light-background">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Opiniones de nuestros pacientes</h2>
+        <span class="eyebrow">Experiencias compartidas</span>
+        <h2><span class="title-highlight">Opiniones</span> de nuestros pacientes</h2>
         <p>Una selección de opiniones compartidas en Google Maps. Consulta la ficha para ver las reseñas más recientes; estas citas no se actualizan automáticamente.</p>
       </div>
       <div class="container">
-        <div class="row g-4">
-          <div class="col-12 col-md-6">
-            <article class="review-card h-100">
-              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
-              <blockquote class="review-quote">“Muy buena atención, explica todo muy bien. Muy profesional.”</blockquote>
-              <p class="review-author">Francisco Ramírez</p>
-              <p class="review-source-label">Reseña de Google Maps</p>
-            </article>
+        <div class="review-carousel" aria-roledescription="carrusel de opiniones">
+          <div class="review-carousel-controls" data-review-controls hidden>
+            <button type="button" data-review-step="previous" aria-label="Opiniones anteriores"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
+            <button type="button" data-review-step="next" aria-label="Opiniones siguientes"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
           </div>
-          <div class="col-12 col-md-6">
-            <article class="review-card h-100">
-              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
-              <blockquote class="review-quote">“Muchas gracias doc. Siempre en contacto continuo previo, durante y posterior a cirugía de hernia y con toda la disposición para atender todas las dudas. Recomendado 100%.”</blockquote>
-              <p class="review-author">eduardo b</p>
-              <p class="review-source-label">Reseña de Google Maps</p>
-            </article>
+          <div class="review-carousel-viewport" data-review-viewport>
+            <div class="review-carousel-track" data-review-track aria-live="polite"></div>
           </div>
-          <div class="col-12 col-md-6">
-            <article class="review-card h-100">
-              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
-              <blockquote class="review-quote">“¡El mejor doc del mundo! Es lindísimo para tratar los pacientes que llegamos con miedo, como yo. Tiene la paciencia para explicar el procedimiento, implicaciones, riesgos, etc. Su atención es de 1000 de inicio a fin.”</blockquote>
-              <p class="review-author">Samantha Arroyo</p>
-              <p class="review-source-label">Reseña de Google Maps</p>
-            </article>
-          </div>
-          <div class="col-12 col-md-6">
-            <article class="review-card h-100">
-              <p class="review-rating" aria-label="Calificación: 5 de 5 estrellas">★★★★★ <span class="visually-hidden">5 de 5 estrellas</span></p>
-              <blockquote class="review-quote">“Excelente atención, muy profesional y respetuoso”</blockquote>
-              <p class="review-author">Jonathan Jared Salinas Muñoz</p>
-              <p class="review-source-label">Reseña de Google Maps</p>
-            </article>
-          </div>
+          <div class="review-carousel-indicators" data-review-indicators hidden></div>
         </div>
 
         <div class="review-actions justify-content-center mt-4">
-          <button type="button" class="btn btn-primary" data-review-destination="reviews" disabled>Ver opiniones</button>
-          <button type="button" class="btn btn-outline-primary" data-review-destination="write" disabled>Dejar opinión</button>
+          <a class="btn btn-primary" data-review-destination="reviews" hidden>Ver opiniones en Google</a>
+          <a class="btn btn-outline-primary" data-review-destination="write" hidden>Dejar opinión</a>
         </div>
-        <p class="review-implementation-note text-center">Las opiniones se muestran como citas estáticas proporcionadas para este sitio y se atribuyen a Google Maps; no hay una integración automática de reseñas. «Dejar opinión» se habilitará al configurar el enlace oficial de reseñas.</p>
+        <p class="review-implementation-note text-center">Opiniones compartidas para este sitio; esta selección no se actualiza automáticamente. Consulta Google para ver la información publicada actualmente.</p>
       </div>
     </section>
 
@@ -2068,76 +4362,100 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contacto</h2>
-        <p>Agenda tu consulta con el Dr. Arni Mendoza para una evaluación personalizada</p>
+        <span class="eyebrow">Estamos para orientarte</span>
+        <h2><span class="title-highlight">Contacto</span></h2>
+        <p>Consulta la ubicación del consultorio y la información disponible para comunicarte.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
-          <div class="col-lg-6">
+        <div class="row gy-4 align-items-stretch">
+          <div class="col-lg-3">
             <div class="row gy-4">
 
               <div class="col-lg-12">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-geo-alt"></i>
+                <div class="info-item contact-card d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt" aria-hidden="true"></i>
                   <h3>Dirección</h3>
                   <p data-address-display></p>
                   <a class="btn btn-outline-primary mt-3" data-location-link target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps</a>
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bi bi-telephone"></i>
+              <div class="col-lg-12" data-contact-card>
+                <div class="info-item contact-card d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone" aria-hidden="true"></i>
                   <h3>Teléfono de llamadas</h3>
-                  <p><a data-contact-phone hidden></a><span data-contact-phone-pending>Pendiente de confirmación</span></p>
+                  <p><a data-contact-phone hidden></a></p>
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
-                  <i class="bi bi-whatsapp"></i>
+              <div class="col-lg-12" data-contact-card>
+                <div class="info-item contact-card d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
                   <h3>WhatsApp</h3>
-                  <p><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a><span data-contact-whatsapp-pending>Pendiente de confirmación</span></p>
+                  <p><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a></p>
                 </div>
               </div><!-- End Info Item -->
 
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <!-- TODO: CONECTAR FORMULARIO DE CONTACTO CON SERVICIO DE CORREO -->
-            <form method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5" data-contact-map-column>
+            <div class="contact-map-card">
+              <h3>Ubicación del consultorio</h3>
+              <div class="google-map-embed ratio ratio-1x1">
+                <iframe data-location-embed title="Mapa de ubicación del consultorio del Dr. Arni Mendoza en Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-contact-form-column>
+            <form class="php-email-form" data-whatsapp-contact-form hidden>
+              <h3>Solicita información</h3>
+              <!-- <p class="form-status">El formulario prepara un mensaje para que lo revises y lo envíes desde WhatsApp. Evita incluir datos clínicos sensibles.</p> -->
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Su Nombre" required="">
+                  <label for="contact-name">Nombre</label>
+                  <input id="contact-name" type="text" name="name" class="form-control" autocomplete="name" maxlength="100" required>
                 </div>
 
                 <div class="col-md-6">
-                  <input type="email" class="form-control" name="email" placeholder="Su Email" required="">
+                  <label for="contact-email">Correo electrónico</label>
+                  <input id="contact-email" type="email" class="form-control" name="email" autocomplete="email" maxlength="254" required>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Asunto" required="">
+                  <label for="contact-subject">Asunto</label>
+                  <select id="contact-subject" class="form-control" name="subject" data-contact-subjects required>
+                    <option value="" selected disabled>Selecciona un asunto</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contact-date">Fecha deseada (opcional)</label>
+                  <input id="contact-date" type="date" class="form-control" name="date">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contact-time">Hora deseada (opcional)</label>
+                  <input id="contact-time" type="time" class="form-control" name="time">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Mensaje" required=""></textarea>
+                  <label for="contact-message">Mensaje (opcional)</label>
+                  <textarea id="contact-message" class="form-control" name="message" rows="4" maxlength="1000"></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Enviando...</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Este formulario aún no está conectado a un servicio de correo y no envía el mensaje. Use únicamente los medios de contacto habilitados en esta página.</div>
-
-                  <button type="submit">Enviar Mensaje</button>
+                  <p class="form-status" data-contact-form-status role="status" aria-live="polite" hidden></p>
+                  <button type="submit">Continuar en WhatsApp</button>
                 </div>
 
               </div>
             </form>
-          </div><!-- End Contact Form -->
+          </div><!-- End WhatsApp contact form -->
 
         </div>
 
@@ -2145,135 +4463,123 @@
 
     </section><!-- /Contact Section -->
 
-    <section class="section pt-0" aria-labelledby="location-map-title">
-      <div class="container">
-        <h2 id="location-map-title" class="visually-hidden">Mapa de ubicación del consultorio</h2>
-        <div class="google-map-embed ratio ratio-16x9">
-          <iframe data-location-embed title="Mapa de ubicación del consultorio del Dr. Arni Mendoza en Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer id="footer" class="footer light-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
+        <div class="col-lg-3 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="brand-symbol"><img src="assets/img/logoarnimendoza.optimized.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></span>
             <span class="brand-wordmark" data-brand-name>Dr. Arni Mendoza</span>
           </a>
           <div class="footer-contact pt-3">
             <p data-address-display></p>
-            <p class="mt-3"><strong>Teléfono:</strong> <span><a data-contact-phone hidden></a><span data-contact-phone-pending>Pendiente de confirmación</span></span></p>
-            <p><strong>WhatsApp:</strong> <span><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a><span data-contact-whatsapp-pending>Pendiente de confirmación</span></span></p>
+            <p class="mt-3" data-contact-card><strong>Teléfono:</strong> <a data-contact-phone hidden></a></p>
+            <p data-contact-card><strong>WhatsApp:</strong> <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a data-whatsapp-action hidden target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a data-site-social="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a data-site-social="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        <div class="col-lg-2 col-md-6 footer-links">
           <h4>Navegación</h4>
           <ul>
             <li><a href="#hero">Inicio</a></li>
-            <li><a href="#about">Acerca de</a></li>
+            <li><a href="#about">Doctor</a></li>
             <li><a href="#procedures">Procedimientos</a></li>
-            <li><a href="#hours">Horarios</a></li>
             <li><a href="#testimonials">Opiniones</a></li>
             <li><a href="#contact">Contacto</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-3 footer-links">
-          <h4>Servicios</h4>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Procedimientos</h4>
           <ul>
             <li><a href="#procedures">Hernias</a></li>
-            <li><a href="#procedures">Vesícula</a></li>
-            <li><a href="#procedures">Apendicitis</a></li>
+            <li><a href="#procedures">Vesícula y apéndice</a></li>
             <li><a href="#procedures">Cirugía laparoscópica</a></li>
-            <li><a href="#contact">Consulta Especializada</a></li>
+            <li><a href="#contact">Consulta general</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-3 footer-links">
-          <h4>Información</h4>
-          <ul>
-            <li><a href="#about">Cédula Profesional: 11767675</a></li>
-            <li><a href="#about">Cédula Especialidad: 14408066</a></li>
-            <li><a href="#about">UNAM - Cirugía General</a></li>
-            <li><a href="#procedures">Especialista en Hernias</a></li>
-            <li><a href="#procedures">Mínima Invasión</a></li>
-          </ul>
+        <div class="col-lg-4 col-md-6 footer-academic">
+          <h4>Formación profesional</h4>
+          <div class="academic-mark" aria-label="Distintivo gráfico de formación universitaria, no es el escudo oficial de la UNAM">
+            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M8 24 32 11l24 13H8Zm5 5h6v17h-6V29Zm16 0h6v17h-6V29Zm16 0h6v17h-6V29ZM9 53h46M6 58h52" />
+            </svg>
+            <span>UNAM</span>
+          </div>
+          <p><strong data-university>Universidad Nacional Autónoma de México</strong></p>
+          <p><span data-specialty>Cirugía general</span> · enfoque en hernias y mínima invasión.</p>
+          <p class="academic-license">Cédula profesional: <span data-professional-license>11767675</span></p>
+          <p class="academic-license">Cédula de especialidad: <span data-specialty-license>14408066</span></p>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename" data-brand-name>Dr. Arni Mendoza</strong> <span>Todos los Derechos Reservados</span></p>
+      <p>© <span data-site-year>2026</span> <strong class="px-1 sitename" data-brand-name>Dr. Arni Mendoza</strong> <span>Todos los Derechos Reservados</span></p>
       <div class="credits">
-        Sitio web diseñado para brindar información médica profesional
+        <span data-legal-notice>La información de este sitio es general y no sustituye una valoración médica.</span>
       </div>
     </div>
 
   </footer>
 
+  <div class="floating-dock" aria-label="Acciones rápidas">
     <a data-phone-action hidden class="call-float" aria-label="Llamar al consultorio">
-    <i class="bi bi-telephone"></i>
-  </a>
+      <i class="bi bi-telephone" aria-hidden="true"></i>
+    </a>
 
-  <a data-whatsapp-action hidden target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
+    <a data-whatsapp-action hidden target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Enviar mensaje y solicitar una cita por WhatsApp">
+      <i class="bi bi-whatsapp" aria-hidden="true"></i>
+      <span class="floating-dock-label">¡Agenda tu cita!</span>
+    </a>
 
-  <!-- Scroll Top -->
-  <button type="button" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Volver al inicio"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></button>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    <button type="button" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Volver al inicio"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></button>
+  </div>
 
   <!-- Vendor JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/site-config.js?v=5"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
   <script>
     // Initialize AOS
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const contactForm = document.querySelector('.php-email-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const loading = contactForm.querySelector('.loading');
-        const errorMessage = contactForm.querySelector('.error-message');
-        const sentMessage = contactForm.querySelector('.sent-message');
-
-        if (loading) loading.style.display = 'none';
-        if (errorMessage) errorMessage.style.display = 'none';
-        if (sentMessage) {
-          sentMessage.style.display = 'block';
-          sentMessage.textContent = 'Este formulario aún no está conectado a un servicio de correo y no envía el mensaje. Use únicamente los medios de contacto habilitados en esta página.';
-        }
-      });
-    }
-
-    // Initialize Bootstrap carousel
+    // Initialize optional animation and Bootstrap behaviors
     document.addEventListener('DOMContentLoaded', function() {
-      const heroCarousel = document.querySelector('#hero-carousel');
-      if (heroCarousel) {
-        new bootstrap.Carousel(heroCarousel, {
-          interval: 5000,
-          ride: 'carousel'
+      if (window.AOS) {
+        AOS.init({
+          duration: prefersReducedMotion ? 0 : 650,
+          easing: 'ease-out-cubic',
+          once: true,
+          mirror: false,
+          disable: prefersReducedMotion
         });
+      } else {
+        document.querySelectorAll('[data-aos]').forEach(element => {
+          element.style.opacity = '1';
+          element.style.transform = 'none';
+        });
+      }
+
+      const heroCarousel = document.querySelector('#hero-carousel');
+      if (heroCarousel && window.bootstrap) {
+        const carousel = new bootstrap.Carousel(heroCarousel, {
+          interval: prefersReducedMotion ? false : 7000,
+          pause: 'hover',
+          touch: true,
+          ride: prefersReducedMotion ? false : 'carousel'
+        });
+        if (prefersReducedMotion) carousel.pause();
       }
 
       // Mobile nav toggle
@@ -2282,9 +4588,14 @@
 
       if (mobileNavToggle && navmenu) {
         mobileNavToggle.addEventListener('click', function() {
-          document.body.classList.toggle('mobile-nav-active');
-          mobileNavToggle.classList.toggle('bi-list');
-          mobileNavToggle.classList.toggle('bi-x');
+          const isOpen = document.body.classList.toggle('mobile-nav-active');
+          mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+          mobileNavToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+          const toggleIcon = mobileNavToggle.querySelector('i');
+          if (toggleIcon) {
+            toggleIcon.classList.toggle('bi-list', !isOpen);
+            toggleIcon.classList.toggle('bi-x', isOpen);
+          }
         });
 
         // Close mobile nav when clicking on a menu link
@@ -2292,8 +4603,13 @@
           link.addEventListener('click', function() {
             if (document.body.classList.contains('mobile-nav-active')) {
               document.body.classList.remove('mobile-nav-active');
-              mobileNavToggle.classList.add('bi-list');
-              mobileNavToggle.classList.remove('bi-x');
+              mobileNavToggle.setAttribute('aria-expanded', 'false');
+              mobileNavToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+              const toggleIcon = mobileNavToggle.querySelector('i');
+              if (toggleIcon) {
+                toggleIcon.classList.add('bi-list');
+                toggleIcon.classList.remove('bi-x');
+              }
             }
           });
         });
@@ -2314,16 +4630,8 @@
           e.preventDefault();
           window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
           });
-        });
-      }
-
-      // Preloader
-      const preloader = document.querySelector('#preloader');
-      if (preloader) {
-        window.addEventListener('load', function() {
-          preloader.remove();
         });
       }
 
@@ -2346,7 +4654,7 @@
           const target = document.querySelector(this.getAttribute('href'));
           if (target) {
             target.scrollIntoView({
-              behavior: 'smooth',
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
               block: 'start'
             });
           }

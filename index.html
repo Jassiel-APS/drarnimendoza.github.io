@@ -3953,6 +3953,516 @@
       }
     }
 
+    .header .topbar {
+      display: block !important;
+      padding: 0.45rem 0;
+      background: #0f2740;
+      color: #fff;
+    }
+
+    .topbar-inner,
+    .topbar-contact-links,
+    .topbar-meta,
+    .topbar-hours {
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar-inner {
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .topbar-contact-links,
+    .topbar-meta {
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+    }
+
+    .topbar-contact-links a,
+    .topbar-meta a,
+    .topbar-hours {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #fff;
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+
+    .topbar-meta a {
+      font-size: 0.9rem;
+    }
+
+    .topbar-contact-links a:hover,
+    .topbar-meta a:hover {
+      color: #4fd1c5;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    @media (max-width: 1199px) {
+      .header .topbar {
+        display: block !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .header .topbar {
+        display: block !important;
+        padding: 0.45rem 0.2rem;
+      }
+
+      .topbar-inner {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .topbar-contact-links {
+        justify-content: center;
+        gap: 0.35rem 0.7rem;
+      }
+
+      .topbar-contact-links a {
+        font-size: 0.67rem;
+      }
+
+      .topbar-meta {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .topbar-meta a,
+      .topbar-hours {
+        font-size: 0.65rem;
+      }
+
+      .header .cta-btn {
+        display: inline-flex;
+        width: auto;
+        flex: 0 0 auto;
+        margin-left: 0.35rem;
+        padding: 0.5rem 0.6rem;
+        font-size: 0.69rem;
+        white-space: nowrap;
+      }
+    }
+
+    .credentials {
+      background: linear-gradient(180deg, #07192b 0%, #0b2239 100%);
+      color: #fff;
+    }
+
+    .credentials .section-title {
+      text-align: center;
+    }
+
+    .credentials .section-title h2 {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .credentials .section-title p {
+      color: #94a3b8;
+    }
+
+    .credentials-badge {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid rgba(22, 140, 140, 0.35);
+      border-radius: 999px;
+      background: rgba(22, 140, 140, 0.15);
+      color: #4fd1c5;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .credentials-bento {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto;
+      gap: 20px;
+    }
+
+    .credentials-card,
+    .credentials-hours {
+      min-width: 0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .credentials-card {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .credentials-label {
+      color: #cbd5e1;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .credentials-icon {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      margin: 0.85rem 0;
+      place-items: center;
+      border-radius: 11px;
+      background: rgba(22, 140, 140, 0.2);
+      color: #4fd1c5;
+      font-size: 1.1rem;
+    }
+
+    .credentials-card h3 {
+      margin: 0 0 0.35rem;
+      color: #fff;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .credentials-card > p:not(.credentials-number):not(.credentials-check) {
+      margin: 0;
+      color: #94a3b8;
+      line-height: 1.55;
+    }
+
+    .credentials-license-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .credentials-license-label .credentials-icon {
+      margin: 0;
+    }
+
+    .credentials-number {
+      margin: 14px 0 8px;
+      color: #fff;
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .credentials-check {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: auto 0 0;
+      color: #4fd1c5;
+      font-size: 0.88rem;
+    }
+
+    .credentials-hours {
+      grid-column: 1;
+      grid-row: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 32px;
+      border-color: rgba(79, 209, 197, 0.35);
+      background: linear-gradient(160deg, rgba(22, 140, 140, 0.24) 0%, rgba(15, 45, 68, 0.5) 100%);
+    }
+
+    .credentials-hours-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #d7fffb;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .credentials-hours-heading .credentials-icon {
+      margin: 0;
+      background: rgba(79, 209, 197, 0.18);
+    }
+
+    .credentials-hours-content p {
+      margin: 0 0 0.65rem;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .credentials-hours-content strong {
+      display: block;
+      color: #fff;
+      font-size: clamp(1.7rem, 2.1vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .credentials-hours-content > span {
+      display: block;
+      margin-top: 0.75rem;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .credentials-hours > a {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(79, 209, 197, 0.16);
+      color: #0f2740;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .credentials-hours > a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(79, 209, 197, 0.24);
+    }
+
+    .contact .contact-phone-link,
+    .contact .contact-social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+      color: #17324d;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact .contact-social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1rem;
+    }
+
+    .contact .contact-social-links a:hover,
+    .contact .contact-phone-link:hover {
+      color: #168c8c;
+    }
+
+    .contact-anchor {
+      display: block;
+      height: 0;
+      scroll-margin-top: 6rem;
+    }
+
+    .footer a {
+      color: #cbd5e1 !important;
+    }
+
+    .footer a:hover {
+      color: #4fd1c5 !important;
+      transform: translateX(4px);
+    }
+
+    .footer .footer-top .footer-links h4,
+    .footer .footer-top .footer-academic > h4 {
+      margin-bottom: 1.2rem;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .footer .footer-top .brand-wordmark,
+    .footer .footer-top .footer-about .logo {
+      color: #fff !important;
+    }
+
+    .footer .footer-top .brand-symbol img {
+      filter: brightness(0) invert(1);
+    }
+
+    .footer .footer-contact p,
+    .footer .footer-contact strong {
+      color: #e2e8f0;
+    }
+
+    .footer .footer-contact-phone,
+    .footer .footer-contact [data-contact-whatsapp] {
+      color: #e2e8f0 !important;
+      text-decoration: none;
+    }
+
+    .footer .social-links a {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff !important;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .footer .social-links a:hover {
+      background: #168c8c;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+    .phone-dock-item {
+      position: relative;
+    }
+
+    .floating-dock .call-float {
+      border: 2px solid #4fd1c5;
+      background: #fff;
+      color: #0f2740;
+      cursor: pointer;
+    }
+
+    .floating-dock .call-float:hover,
+    .floating-dock .call-float:focus-visible {
+      background: #e6fffb;
+      color: #0f2740;
+    }
+
+    .phone-popover {
+      position: absolute;
+      right: calc(100% + 0.75rem);
+      bottom: 0;
+      z-index: 1;
+      display: grid;
+      width: min(260px, calc(100vw - 5.5rem));
+      min-width: min(230px, calc(100vw - 5.5rem));
+      gap: 0.45rem;
+      padding: 0.8rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 18px 48px rgba(10, 25, 47, 0.24);
+      backdrop-filter: blur(14px);
+      opacity: 0;
+      transform: translateX(0.5rem) scale(0.98);
+      transform-origin: right bottom;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .phone-popover.is-open {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+
+    .phone-popover > p {
+      margin: 0 0 0.2rem;
+      color: #0f2740;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .phone-popover > a {
+      display: flex;
+      min-height: 42px;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.65rem;
+      border-radius: 0.65rem;
+      background: #f1f5f9;
+      color: #17324d;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .phone-popover > a:hover,
+    .phone-popover > a:focus-visible {
+      background: #e6fffb;
+      color: #0f766e;
+    }
+
+    .phone-popover[hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 380px) {
+      .phone-popover {
+        width: min(230px, calc(100vw - 5rem));
+        min-width: min(210px, calc(100vw - 5rem));
+        right: calc(100% + 0.55rem);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .footer .footer-top > .row > [class*="col-"] {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .credentials-bento {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+      }
+
+      .credentials-hours {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        min-height: 270px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .credentials-bento {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) 1.05fr;
+        grid-template-rows: repeat(2, minmax(205px, 1fr));
+      }
+
+      .credentials-hours {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .credentials .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .credentials-bento {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        gap: 14px;
+      }
+
+      .credentials-card,
+      .credentials-hours {
+        padding: 22px;
+      }
+
+      .credentials-hours {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 290px;
+      }
+    }
+
 </style>
 </head>
 
@@ -3960,14 +4470,17 @@
 
   <header id="header" class="header sticky-top">
 
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="d-none d-md-flex align-items-center">
-          <i class="bi bi-clock me-1" aria-hidden="true"></i> <span data-hours-header>Lunes - Sábado, 8AM a 8PM</span>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-contact-links" aria-label="Teléfonos y WhatsApp del consultorio">
+          <a data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 6726 6049</span></a>
+          <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100</span></a>
+          <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>55 3661 0155</span></a>
         </div>
-        <div class="d-flex align-items-center" data-contact-card>
-          <i class="bi bi-phone me-1"></i>
-          <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer" style="color: #fff;">WhatsApp</a>
+        <div class="topbar-meta">
+          <a data-site-social="facebook" aria-label="Facebook" title="Facebook" hidden><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          <a data-site-social="instagram" aria-label="Instagram" title="Instagram" hidden><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <span class="topbar-hours"><i class="bi bi-clock" aria-hidden="true"></i><span data-hours-header>Lunes - Sábado, 8AM a 8PM</span></span>
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -3987,14 +4500,14 @@
             <li><a href="#procedures">Procedimientos</a></li>
             <li><a href="#hours">Horarios</a></li>
             <li><a href="#testimonials">Opiniones</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#contacto">Contacto</a></li>
           </ul>
           <button type="button" class="mobile-nav-toggle d-xl-none" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navmenu-links">
             <i class="bi bi-list" aria-hidden="true"></i>
           </button>
         </nav>
 
-        <a class="cta-btn" href="#contact">Contacto</a>
+        <a class="cta-btn" href="#contact"><i class="bi bi-calendar-check" aria-hidden="true"></i>Agendar cita</a>
 
       </div>
 
@@ -4164,57 +4677,44 @@
 
     </section><!-- /About Section -->
 
-    <!-- Professional details replace statistics pending doctor verification. -->
     <section id="credentials" class="credentials section">
       <div class="container section-title" data-aos="fade-up">
-        <span class="eyebrow">Formación y atención</span>
-        <h2><span class="title-highlight">Datos profesionales</span></h2>
-        <p>Información profesional publicada en el sitio.</p>
+        <span class="credentials-badge">Formación y acreditación</span>
+        <h2>Datos profesionales</h2>
+        <p>Certificaciones oficiales, trayectoria académica y disponibilidad de consulta.</p>
       </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-8">
-            <div class="row g-3">
-              <div class="col-sm-6">
-                <article class="credential-item">
-                  <i class="bi bi-person-vcard" aria-hidden="true"></i>
-                  <h3>Cédula profesional</h3>
-                  <p data-professional-license>11767675</p>
-                </article>
-              </div>
-              <div class="col-sm-6">
-                <article class="credential-item">
-                  <i class="bi bi-person-vcard" aria-hidden="true"></i>
-                  <h3>Cédula de especialidad</h3>
-                  <p data-specialty-license>14408066</p>
-                </article>
-              </div>
-              <div class="col-sm-6">
-                <article class="credential-item">
-                  <i class="bi bi-mortarboard" aria-hidden="true"></i>
-                  <h3>Formación</h3>
-                  <p data-university>Universidad Nacional Autónoma de México</p>
-                </article>
-              </div>
-              <div class="col-sm-6">
-                <article class="credential-item">
-                  <i class="bi bi-heart-pulse" aria-hidden="true"></i>
-                  <h3>Especialidad</h3>
-                  <p data-specialty>Cirugía general</p>
-                </article>
-              </div>
-            </div>
+      <div class="container credentials-bento">
+        <article class="credentials-card">
+          <span class="credentials-label">Formación académica</span>
+          <span class="credentials-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
+          <h3>Médico Cirujano</h3>
+          <p data-university>Universidad Nacional Autónoma de México</p>
+        </article>
+        <article class="credentials-card">
+          <span class="credentials-label">Especialidad</span>
+          <span class="credentials-icon"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
+          <h3 data-specialty>Cirugía General</h3>
+          <p>Certificado por el Consejo Mexicano de Cirugía General</p>
+        </article>
+        <article class="credentials-card credentials-license">
+          <div class="credentials-license-label"><span class="credentials-icon"><i class="bi bi-person-vcard" aria-hidden="true"></i></span><span class="credentials-label">Cédula profesional</span></div>
+          <p class="credentials-number" data-professional-license>11767675</p>
+          <p class="credentials-check"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Registro oficial DGP</p>
+        </article>
+        <article class="credentials-card credentials-license">
+          <div class="credentials-license-label"><span class="credentials-icon"><i class="bi bi-person-vcard" aria-hidden="true"></i></span><span class="credentials-label">Cédula de especialidad</span></div>
+          <p class="credentials-number" data-specialty-license>14408066</p>
+          <p class="credentials-check"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Especialidad en Cirugía General</p>
+        </article>
+        <article id="hours" class="credentials-hours">
+          <div class="credentials-hours-heading"><span class="credentials-icon"><i class="bi bi-clock" aria-hidden="true"></i></span><span>Horarios y contacto</span></div>
+          <div class="credentials-hours-content">
+            <p data-hours-days>Lunes a Sábado</p>
+            <strong>08:00 a 20:00 hrs</strong>
+            <span>*Atención previa cita</span>
           </div>
-          <div class="col-lg-4">
-            <article id="hours" class="hours-card">
-              <i class="bi bi-clock" aria-hidden="true"></i>
-              <h3>Horarios de atención</h3>
-              <p class="hours-time" data-hours-display>8:00 a 20:00</p>
-              <p class="hours-days" data-hours-days>Lunes a sábado</p>
-              <a class="hours-cta" href="#contact">Ver opciones de contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-            </article>
-          </div>
-        </div>
+          <a href="#contact">Agendar cita o contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </article>
       </div>
     </section><!-- /Professional details -->
 
@@ -4335,7 +4835,7 @@
       <div class="container section-title" data-aos="fade-up">
         <span class="eyebrow">Experiencias compartidas</span>
         <h2><span class="title-highlight">Opiniones</span> de nuestros pacientes</h2>
-        <p>Una selección de opiniones compartidas en Google Maps. Consulta la ficha para ver las reseñas más recientes; estas citas no se actualizan automáticamente.</p>
+        <p>Una selección de opiniones compartidas en Google Maps. Consulta la ficha para ver las reseñas más recientes</p>
       </div>
       <div class="container">
         <div class="review-carousel" aria-roledescription="carrusel de opiniones">
@@ -4353,12 +4853,13 @@
           <a class="btn btn-primary" data-review-destination="reviews" hidden>Ver opiniones en Google</a>
           <a class="btn btn-outline-primary" data-review-destination="write" hidden>Dejar opinión</a>
         </div>
-        <p class="review-implementation-note text-center">Opiniones compartidas para este sitio; esta selección no se actualiza automáticamente. Consulta Google para ver la información publicada actualmente.</p>
+        <p class="review-implementation-note text-center">Reseñas recopiladas periódicamente. Las valoraciones pueden variar con el tiempo; consulta nuestro perfil en Google para ver las opiniones y calificaciones más recientes.</p>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
+      <span id="contacto" class="contact-anchor" aria-hidden="true"></span>
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -4385,16 +4886,28 @@
               <div class="col-lg-12" data-contact-card>
                 <div class="info-item contact-card d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-telephone" aria-hidden="true"></i>
-                  <h3>Teléfono de llamadas</h3>
-                  <p><a data-contact-phone hidden></a></p>
+                  <h3>Teléfonos de consultorio</h3>
+                  <p>Atención en consultorio con asistentes</p>
+                  <a class="contact-phone-link" data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 6726 6049</span></a>
+                  <a class="contact-phone-link" data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100</span></a>
                 </div>
               </div><!-- End Info Item -->
 
               <div class="col-lg-12" data-contact-card>
                 <div class="info-item contact-card d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
                   <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                  <h3>WhatsApp</h3>
-                  <p><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a></p>
+                  <h3>WhatsApp Business</h3>
+                  <p><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"><span>55 3661 0155</span></a></p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-lg-12">
+                <div class="info-item contact-card contact-social-card d-flex flex-column justify-content-center align-items-center">
+                  <h3>Síguenos en redes sociales</h3>
+                  <div class="contact-social-links">
+                    <a data-site-social="facebook" aria-label="Facebook, Dr. Arni Mendoza" hidden><i class="bi bi-facebook" aria-hidden="true"></i><span>Dr. Arni Mendoza</span></a>
+                    <a data-site-social="instagram" aria-label="Instagram, @doctorarni" hidden><i class="bi bi-instagram" aria-hidden="true"></i><span>@doctorarni</span></a>
+                  </div>
                 </div>
               </div><!-- End Info Item -->
 
@@ -4413,7 +4926,7 @@
           <div class="col-lg-4" data-contact-form-column>
             <form class="php-email-form" data-whatsapp-contact-form hidden>
               <h3>Solicita información</h3>
-              <!-- <p class="form-status">El formulario prepara un mensaje para que lo revises y lo envíes desde WhatsApp. Evita incluir datos clínicos sensibles.</p> -->
+              <p class="form-status">El formulario prepara un mensaje para que lo revises y lo envíes desde WhatsApp. Evita incluir datos clínicos sensibles.</p>
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -4476,12 +4989,13 @@
           </a>
           <div class="footer-contact pt-3">
             <p data-address-display></p>
-            <p class="mt-3" data-contact-card><strong>Teléfono:</strong> <a data-contact-phone hidden></a></p>
-            <p data-contact-card><strong>WhatsApp:</strong> <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a></p>
+            <p class="mt-3"><strong>Teléfonos consultorio (asistentes):</strong></p>
+            <p><a class="footer-contact-phone" data-contact-phone-line="0" hidden><span>55 6726 6049</span></a><span aria-hidden="true"> / </span><a class="footer-contact-phone" data-contact-phone-line="1" hidden><span>55 2000 6100</span></a></p>
+            <p><strong>WhatsApp Business:</strong> <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"><span>55 3661 0155</span></a></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a data-site-social="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a data-site-social="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a data-site-social="facebook" aria-label="Facebook" hidden><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a data-site-social="instagram" aria-label="Instagram" hidden><i class="bi bi-instagram" aria-hidden="true"></i></a>
           </div>
         </div>
 
@@ -4533,9 +5047,16 @@
   </footer>
 
   <div class="floating-dock" aria-label="Acciones rápidas">
-    <a data-phone-action hidden class="call-float" aria-label="Llamar al consultorio">
-      <i class="bi bi-telephone" aria-hidden="true"></i>
-    </a>
+    <div class="phone-dock-item">
+      <button type="button" class="call-float" id="phone-menu-toggle" aria-label="Mostrar teléfonos del consultorio" aria-expanded="false" aria-controls="phone-menu">
+        <i class="bi bi-telephone" aria-hidden="true"></i>
+      </button>
+      <div class="phone-popover" id="phone-menu" aria-labelledby="phone-menu-title" hidden>
+        <p id="phone-menu-title">Llamar a consultorio (Asistentes)</p>
+        <a data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>Línea 1: <span class="contact-value">55 6726 6049</span></span></a>
+        <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>Línea 2: <span class="contact-value">55 2000 6100</span></span></a>
+      </div>
+    </div>
 
     <a data-whatsapp-action hidden target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Enviar mensaje y solicitar una cita por WhatsApp">
       <i class="bi bi-whatsapp" aria-hidden="true"></i>
@@ -4546,7 +5067,7 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/js/site-config.js?v=5"></script>
+  <script src="assets/js/site-config.js?v=6"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 

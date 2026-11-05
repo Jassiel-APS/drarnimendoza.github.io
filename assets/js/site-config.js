@@ -50,14 +50,15 @@ window.DrArniSiteConfig = Object.freeze({
       text: 'Excelente atención, muy profesional y respetuoso'
     }
   ],
-  // FALTA: Verificar dato definitivo con el cliente
   contact: {
-    callPhoneE164: '525628438214',
-    callPhoneDisplay: '56 2843 8214',
-    whatsappE164: '525628438214',
-    whatsappDisplay: '56 2843 8214',
-    hospitalPhoneE164: '',
-    hospitalPhoneDisplay: ''
+    assistantPhones: [
+      { e164: '525567266049', display: '55 6726 6049' },
+      { e164: '525520006100', display: '55 2000 6100' }
+    ],
+    callPhoneE164: '525567266049',
+    callPhoneDisplay: '55 6726 6049',
+    whatsappE164: '525536610155',
+    whatsappDisplay: '55 3661 0155'
   },
   googleReviews: {
     profileUrl: 'https://maps.app.goo.gl/u8jfQfDmmhfyzRak6?g_st=aw',
@@ -70,8 +71,8 @@ window.DrArniSiteConfig = Object.freeze({
     embedUrl: 'https://www.google.com/maps?q=R%C3%ADo%20Bamba%20781%2C%20Consultorio%204%2C%20Lindavista%2C%20Ciudad%20de%20M%C3%A9xico&output=embed'
   },
   social: {
-    facebook: 'https://www.facebook.com/drarnimendoza',
-    instagram: 'https://instagram.com/drarnimendoza'
+    facebook: 'https://www.facebook.com/share/18YNTDzeNm/',
+    instagram: 'https://www.instagram.com/doctorarni?cplk=MTd4eWM1cG42ZDhxbQ=='
   },
   year: 2026,
   legalNotice: 'La información de este sitio es general y no sustituye una valoración médica.'
@@ -156,7 +157,7 @@ window.DrArniSiteConfig = Object.freeze({
         return;
       }
       link.href = hrefPrefix === 'wa.me' ? `https://wa.me/${digits}` : `tel:+${digits}`;
-      const valueNode = link.querySelector('.contact-value');
+      const valueNode = link.querySelector('.contact-value, span');
       if (valueNode) valueNode.textContent = display;
       else link.textContent = display;
       link.hidden = false;
@@ -186,7 +187,72 @@ window.DrArniSiteConfig = Object.freeze({
 
   configurePhone('phone', config.contact.callPhoneE164, config.contact.callPhoneDisplay, 'tel');
   configurePhone('whatsapp', config.contact.whatsappE164, config.contact.whatsappDisplay, 'wa.me');
-  configurePhone('hospital', config.contact.hospitalPhoneE164, config.contact.hospitalPhoneDisplay, 'tel');
+  document.querySelectorAll('[data-contact-phone-line]').forEach(link => {
+    const phone = config.contact.assistantPhones[Number(link.dataset.contactPhoneLine)];
+    if (!phone || !digitsOnly(phone.e164)) {
+      link.remove();
+      return;
+    }
+    link.href = `tel:+${phone.e164}`;
+    const valueNode = link.querySelector('.contact-value, span');
+    if (valueNode) valueNode.textContent = phone.display;
+    else link.textContent = phone.display;
+    link.hidden = false;
+  });
+
+  document.querySelectorAll('[data-site-social]').forEach(link => {
+    const destination = config.social[link.dataset.siteSocial];
+    if (!validHttpsUrl(destination)) {
+      link.remove();
+      return;
+    }
+    link.href = destination;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.hidden = false;
+  });
+
+  const phoneToggle = document.querySelector('#phone-menu-toggle');
+  const phonePopover = document.querySelector('#phone-menu');
+  if (phoneToggle && phonePopover) {
+    let closeTimer;
+
+    function closePhonePopover() {
+      if (phoneToggle.getAttribute('aria-expanded') !== 'true') return;
+      phoneToggle.setAttribute('aria-expanded', 'false');
+      phonePopover.classList.remove('is-open');
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(() => {
+        if (phoneToggle.getAttribute('aria-expanded') === 'false') phonePopover.hidden = true;
+      }, 180);
+    }
+
+    phoneToggle.addEventListener('click', () => {
+      window.clearTimeout(closeTimer);
+      if (phoneToggle.getAttribute('aria-expanded') === 'true') {
+        closePhonePopover();
+        return;
+      }
+      phonePopover.hidden = false;
+      phoneToggle.setAttribute('aria-expanded', 'true');
+      window.requestAnimationFrame(() => phonePopover.classList.add('is-open'));
+    });
+
+    phonePopover.addEventListener('click', event => {
+      if (event.target.closest('a')) closePhonePopover();
+    });
+
+    document.addEventListener('click', event => {
+      if (!phoneToggle.contains(event.target) && !phonePopover.contains(event.target)) closePhonePopover();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && phoneToggle.getAttribute('aria-expanded') === 'true') {
+        closePhonePopover();
+        phoneToggle.focus();
+      }
+    });
+  }
 
   // Dirección y enlace de mapas
   document.querySelectorAll('[data-location-link]').forEach(link => {

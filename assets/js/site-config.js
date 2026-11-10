@@ -9,9 +9,14 @@ window.DrArniSiteConfig = Object.freeze({
     specialty: 'Cirugía general'
   },
   hours: {
-    days: 'Lunes a sábado',
-    display: '8:00 a 20:00',
-    header: 'Lunes - Sábado, 8AM a 8PM'
+    days: 'Jueves a Sábado',
+    display: '08:00 a 12:00 hrs',
+    header: 'Atención previa cita',    
+    // header: 'Jueves a Sábado · 08:00 a 12:00 hrs · Atención previa cita',
+    appointmentTimes: [
+      '08:00 AM', '08:30 AM', '09:00 AM', '09:30 AM', '10:00 AM',
+      '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM'
+    ]
   },
   images: {
     // FALTA: Reemplazar por PNG real del doctor
@@ -22,8 +27,53 @@ window.DrArniSiteConfig = Object.freeze({
     { value: 'vesicula', label: 'Vesícula' },
     { value: 'apendicitis', label: 'Apéndice' },
     { value: 'laparoscopia', label: 'Mínima invasión' },
+    { value: 'reflujo', label: 'Reflujo gastroesofágico' },
+    { value: 'nodulos-tiroideos', label: 'Nódulos tiroideos' },
     { value: 'general', label: 'Consulta general' }
   ],
+  procedures: [
+    {
+      value: 'reflujo',
+      title: 'Reflujo gastroesofágico',
+      icon: 'icon-reflujo',
+      description: 'Valoración integral y tratamiento quirúrgico antirreflujo (funduplicatura laparoscópica) y de hernia hiatal para pacientes con reflujo crónico.',
+      points: [
+        'Cirugía de mínima invasión',
+        'Alivio de síntomas refractarios a medicamento',
+        'Valoración funcional previa'
+      ]
+    },
+    {
+      value: 'nodulos-tiroideos',
+      title: 'Nódulos tiroideos',
+      icon: 'icon-tiroides',
+      description: 'Evaluación diagnóstica y manejo quirúrgico especializado de nódulos y patología de la glándula tiroides con enfoque seguro y preciso.',
+      points: [
+        'Valoración endocrino-quirúrgica',
+        'Cirugía tiroidea segura',
+        'Seguimiento integral'
+      ]
+    }
+  ],
+  avaladoPor: [
+    { siglas: 'UNAM', nombre: 'UNAM - Facultad de Medicina', logo: '' },
+    { siglas: 'CMCG', nombre: 'Consejo Mexicano de Cirugía General', logo: '' },
+    { siglas: 'AMCG', nombre: 'Asociación Mexicana de Cirugía General', logo: '' },
+    { siglas: 'CMI', nombre: 'Cirugía Laparoscópica y Mínima Invasión', logo: '' }
+  ],
+  segurosMedicos: {
+    nota: 'La aceptación de Seguros de Gastos Médicos Mayores depende de la red, convenio y condiciones de cada póliza. También se ofrece atención particular.',
+    aseguradoras: [
+      { nombre: 'GNP Seguros', siglas: 'GNP', logo: '' },
+      { nombre: 'MetLife', siglas: 'ML', logo: '' },
+      { nombre: 'AXA', siglas: 'AXA', logo: '' },
+      { nombre: 'Seguros Monterrey New York Life', siglas: 'SMNYL', logo: '' },
+      { nombre: 'Allianz', siglas: 'ALLIANZ', logo: '' },
+      { nombre: 'Mapfre', siglas: 'MAPFRE', logo: '' },
+      { nombre: 'Inbursa', siglas: 'INBURSA', logo: '' },
+      { nombre: 'Bupa', siglas: 'BUPA', logo: '' }
+    ]
+  },
   reviews: [
     {
       author: 'Francisco Ramírez',
@@ -57,8 +107,8 @@ window.DrArniSiteConfig = Object.freeze({
     ],
     callPhoneE164: '525567266049',
     callPhoneDisplay: '55 6726 6049',
-    whatsappE164: '525536610155',
-    whatsappDisplay: '55 3661 0155'
+    whatsappE164: '525554612009',
+    whatsappDisplay: '55 5461 2009'
   },
   googleReviews: {
     profileUrl: 'https://maps.app.goo.gl/u8jfQfDmmhfyzRak6?g_st=aw',
@@ -187,6 +237,9 @@ window.DrArniSiteConfig = Object.freeze({
 
   configurePhone('phone', config.contact.callPhoneE164, config.contact.callPhoneDisplay, 'tel');
   configurePhone('whatsapp', config.contact.whatsappE164, config.contact.whatsappDisplay, 'wa.me');
+  document.querySelectorAll('[data-whatsapp-insurance]').forEach(link => {
+    link.href = `https://wa.me/${config.contact.whatsappE164}?text=${encodeURIComponent('Hola, quisiera orientación para validar la cobertura de mi seguro de gastos médicos.')}`;
+  });
   document.querySelectorAll('[data-contact-phone-line]').forEach(link => {
     const phone = config.contact.assistantPhones[Number(link.dataset.contactPhoneLine)];
     if (!phone || !digitsOnly(phone.e164)) {
@@ -277,6 +330,78 @@ window.DrArniSiteConfig = Object.freeze({
     node.textContent = config.address.display;
   });
 
+  const institutionalLogos = document.querySelector('[data-avalado-por]');
+  if (institutionalLogos) {
+    config.avaladoPor.forEach(institution => {
+      const card = document.createElement('article');
+      card.className = 'institutional-logo';
+      const logoWrapper = document.createElement('div');
+      logoWrapper.className = 'logo-img-wrapper';
+      const fallbackLogo = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      fallbackLogo.classList.add('institutional-fallback');
+      fallbackLogo.setAttribute('viewBox', '0 0 64 64');
+      fallbackLogo.setAttribute('role', 'img');
+      fallbackLogo.setAttribute('aria-label', `Emblema ilustrativo de ${institution.nombre}`);
+      const emblem = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      emblem.setAttribute('cx', '32');
+      emblem.setAttribute('cy', '32');
+      emblem.setAttribute('r', '28');
+      const architecture = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      architecture.setAttribute('d', 'M13 25 32 14l19 11M17 29h30M20 30v17m8-17v17m8-17v17m8-17v17M16 50h32M13 54h38');
+      const fallbackSiglas = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      fallbackSiglas.setAttribute('x', '32');
+      fallbackSiglas.setAttribute('y', '62');
+      fallbackSiglas.textContent = institution.siglas;
+      fallbackLogo.append(emblem, architecture, fallbackSiglas);
+      logoWrapper.appendChild(fallbackLogo);
+      if (institution.logo) {
+        const logo = document.createElement('img');
+        logo.className = 'institution-logo-img';
+        logo.src = institution.logo;
+        logo.alt = institution.nombre;
+        logo.loading = 'lazy';
+        logo.addEventListener('load', () => fallbackLogo.setAttribute('hidden', ''), { once: true });
+        logo.addEventListener('error', () => logo.remove(), { once: true });
+        logoWrapper.appendChild(logo);
+      }
+      const acronym = document.createElement('strong');
+      acronym.className = 'institutional-acronym';
+      acronym.textContent = institution.siglas;
+      const name = document.createElement('span');
+      name.className = 'institutional-name';
+      name.textContent = institution.nombre;
+      card.append(logoWrapper, acronym, name);
+      institutionalLogos.appendChild(card);
+    });
+  }
+
+  const insuranceNote = document.querySelector('[data-insurance-note]');
+  if (insuranceNote) insuranceNote.textContent = config.segurosMedicos.nota;
+  const insurerGrid = document.querySelector('[data-insurers]');
+  if (insurerGrid) {
+    config.segurosMedicos.aseguradoras.forEach(insurer => {
+      const card = document.createElement('article');
+      card.className = 'insurer-card';
+      if (insurer.logo) {
+        const logo = document.createElement('img');
+        logo.src = insurer.logo;
+        logo.alt = insurer.nombre;
+        logo.loading = 'lazy';
+        card.appendChild(logo);
+      } else {
+        const monogram = document.createElement('span');
+        monogram.className = 'insurer-monogram';
+        monogram.setAttribute('aria-hidden', 'true');
+        monogram.textContent = insurer.siglas;
+        card.appendChild(monogram);
+      }
+      const name = document.createElement('strong');
+      name.textContent = insurer.nombre;
+      card.appendChild(name);
+      insurerGrid.appendChild(card);
+    });
+  }
+
   // Enlaces oficiales de reseñas; no se construye un destino de escritura.
   document.querySelectorAll('[data-review-destination]').forEach(button => {
     const destinationKey = { profile: 'profileUrl', reviews: 'reviewsUrl', write: 'writeReviewUrl' }[button.dataset.reviewDestination];
@@ -301,6 +426,129 @@ window.DrArniSiteConfig = Object.freeze({
       option.value = subject.value;
       option.textContent = subject.label;
       subjectSelect.appendChild(option);
+    });
+  }
+
+  const procedureTabList = document.querySelector('.procedures-tabs');
+  const procedureTabContent = document.querySelector('#procedures .tab-content');
+  if (procedureTabList && procedureTabContent) {
+    config.procedures.forEach((procedure, index) => {
+      const tabId = `procedures-tab-config-${index + 1}`;
+      const buttonId = `procedures-tab-button-config-${index + 1}`;
+      const tabItem = document.createElement('li');
+      tabItem.className = 'nav-item';
+      const button = document.createElement('button');
+      button.className = 'nav-link';
+      button.id = buttonId;
+      button.type = 'button';
+      button.setAttribute('data-bs-toggle', 'tab');
+      button.setAttribute('data-bs-target', `#${tabId}`);
+      button.setAttribute('role', 'tab');
+      button.setAttribute('aria-controls', tabId);
+      button.setAttribute('aria-selected', 'false');
+      const tabIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      tabIcon.setAttribute('aria-hidden', 'true');
+      tabIcon.setAttribute('focusable', 'false');
+      const tabUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      tabUse.setAttribute('href', `#${procedure.icon}`);
+      tabIcon.appendChild(tabUse);
+      const tabLabel = document.createElement('span');
+      tabLabel.textContent = procedure.title;
+      button.append(tabIcon, tabLabel);
+      tabItem.appendChild(button);
+      procedureTabList.appendChild(tabItem);
+
+      const pane = document.createElement('div');
+      pane.className = 'tab-pane';
+      pane.id = tabId;
+      pane.setAttribute('role', 'tabpanel');
+      pane.setAttribute('aria-labelledby', buttonId);
+      const panel = document.createElement('div');
+      panel.className = 'procedure-panel';
+      const row = document.createElement('div');
+      row.className = 'row align-items-center g-4';
+      const details = document.createElement('div');
+      details.className = 'col-lg-9 details';
+      const title = document.createElement('h3');
+      title.textContent = procedure.title;
+      const description = document.createElement('p');
+      description.textContent = procedure.description;
+      const points = document.createElement('ul');
+      points.className = 'procedure-points';
+      procedure.points.forEach(point => {
+        const item = document.createElement('li');
+        const check = document.createElement('i');
+        check.className = 'bi bi-check2-circle';
+        check.setAttribute('aria-hidden', 'true');
+        item.append(check, document.createTextNode(point));
+        points.appendChild(item);
+      });
+      const actions = document.createElement('div');
+      actions.className = 'procedure-actions';
+      const whatsapp = document.createElement('a');
+      whatsapp.className = 'procedure-whatsapp';
+      whatsapp.target = '_blank';
+      whatsapp.rel = 'noopener noreferrer';
+      whatsapp.href = `https://wa.me/${config.contact.whatsappE164}?text=${encodeURIComponent(`Hola, quisiera solicitar información sobre ${procedure.title.toLowerCase()}.`)}`;
+      const whatsappIcon = document.createElement('i');
+      whatsappIcon.className = 'bi bi-whatsapp';
+      whatsappIcon.setAttribute('aria-hidden', 'true');
+      whatsapp.append(whatsappIcon, document.createTextNode('Solicitar valoración por WhatsApp'));
+      const contact = document.createElement('a');
+      contact.className = 'procedure-contact-link';
+      contact.href = '#contact';
+      contact.textContent = 'Ver detalles y contacto ';
+      const arrow = document.createElement('i');
+      arrow.className = 'bi bi-arrow-right';
+      arrow.setAttribute('aria-hidden', 'true');
+      contact.appendChild(arrow);
+      actions.append(whatsapp, contact);
+      details.append(title, description, points, actions);
+
+      const visualColumn = document.createElement('div');
+      visualColumn.className = 'col-lg-3 text-center';
+      const visual = document.createElement('div');
+      visual.className = 'procedure-visual';
+      visual.setAttribute('aria-hidden', 'true');
+      const illustration = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      const illustrationUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      illustrationUse.setAttribute('href', `#${procedure.icon}`);
+      illustration.appendChild(illustrationUse);
+      visual.appendChild(illustration);
+      visualColumn.appendChild(visual);
+      row.append(details, visualColumn);
+      panel.appendChild(row);
+      pane.appendChild(panel);
+      procedureTabContent.appendChild(pane);
+    });
+  }
+
+  const appointmentDate = document.querySelector('#contact-date');
+  const appointmentTime = document.querySelector('[data-appointment-times]');
+  if (appointmentDate) {
+    const now = new Date();
+    appointmentDate.min = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, '0'),
+      String(now.getDate()).padStart(2, '0')
+    ].join('-');
+    const dateError = document.querySelector('#contact-date-error');
+    const validateAppointmentDate = () => {
+      const hasInvalidDay = appointmentDate.value && ![4, 5, 6].includes(new Date(`${appointmentDate.value}T00:00:00Z`).getUTCDay());
+      appointmentDate.setCustomValidity(hasInvalidDay
+        ? 'Las consultas y valoraciones se agendan únicamente de Jueves a Sábado. Por favor selecciona un jueves, viernes o sábado en el calendario.'
+        : '');
+      if (dateError) dateError.hidden = !hasInvalidDay;
+    };
+    appointmentDate.addEventListener('change', validateAppointmentDate);
+    appointmentDate.addEventListener('input', validateAppointmentDate);
+  }
+  if (appointmentTime) {
+    config.hours.appointmentTimes.forEach(time => {
+      const option = document.createElement('option');
+      option.value = time;
+      option.textContent = time;
+      appointmentTime.appendChild(option);
     });
   }
 

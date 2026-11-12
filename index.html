@@ -287,18 +287,140 @@
       padding: 80px 0;
     }
 
-    .hero h2 {
-      margin: 0;
-      font-size: 64px;
-      font-weight: 700;
-      color: var(--contrast-color);
+    .hero .hero-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(2rem, 4vw, 4rem);
+      width: min(1200px, calc(100% - 2rem));
+      margin-inline: auto;
     }
 
-    .hero p {
-      color: color-mix(in srgb, var(--contrast-color), transparent 20%);
-      margin: 10px 0 0 0;
-      font-size: 20px;
-      max-width: 600px;
+    .hero .hero-copy {
+      flex: 1 1 0;
+      max-width: 620px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .hero .hero-copy h1 {
+      margin: 1.2rem 0 1rem;
+      font-size: clamp(3.2rem, 5vw, 6.7rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero .hero-copy h1 span {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .hero .hero-copy p {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    .hero .hero-cta-copy {
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .hero .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .hero .hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .hero .hero-actions .btn-get-started {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent-color), #4f7cc3);
+      box-shadow: 0 18px 35px rgba(45, 94, 156, 0.22);
+    }
+
+    .hero .hero-actions .btn-secondary {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .hero .hero-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero .hero-visual {
+      position: relative;
+      flex: 0 0 42%;
+      min-height: 520px;
+    }
+
+    .hero .hero-photo {
+      position: absolute;
+      overflow: hidden;
+      border-radius: 32px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+      border: 6px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .hero .hero-photo--large {
+      width: 74%;
+      height: 72%;
+      right: 0;
+      top: 9%;
+    }
+
+    .hero .hero-photo--small {
+      width: 43%;
+      height: 42%;
+      left: 0;
+      bottom: 3%;
+      border-color: rgba(255, 255, 255, 0.26);
+    }
+
+    .hero .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-ambient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(109, 177, 255, 0.18), transparent 32%);
+      pointer-events: none;
     }
 
     .hero .btn-get-started {
@@ -5257,7 +5379,7 @@
       <div class="container topbar-inner">
         <div class="topbar-contact-links" aria-label="Teléfonos y WhatsApp del consultorio">
           <a data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 6726 6049</span></a>
-          <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100</span></a>
+          <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100 Ext. 188</span></a>
           <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>55 5461 2009</span></a>
         </div>
         <div class="topbar-meta">
@@ -5362,205 +5484,61 @@
         <path d="M10 10h44v32H10Zm8 9h28m-28 8h28"/>
         <path d="M23 42v14l9-5 9 5V42"/>
       </symbol>
-    </svg>
-
-    <!-- Hero Section -->
+    </svg>    <!-- Hero Section -->
     <section id="hero" class="hero section">
-
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-interval="7000" data-bs-pause="hover">
-
-        <div class="carousel-item active">
-          <div class="hero-bg" aria-hidden="true" style="background-image:url('assets/img/slider3.optimized.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="container">
-            <span class="eyebrow text-white">Cirugía gastrointestinal · CDMX</span>
-            <h1 data-brand-name>Dr. Arni Mendoza</h1>
-            <p>Cirujano general con formación en la Universidad Nacional Autónoma de México y enfoque en cirugía de hernias y procedimientos de mínima invasión.</p>
-            <div class="hero-actions">
-              <a href="#procedures" class="btn-get-started"><i class="bi bi-arrow-down-circle me-2" aria-hidden="true"></i>Ver procedimientos</a>
-              <a href="#contact" class="btn-secondary">Ver ubicación</a>
-              <a data-phone-action hidden class="btn-secondary">Llamar</a>
-              <a data-whatsapp-action hidden class="btn-secondary"><i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
-            </div>
+      <div class="hero-ambient" aria-hidden="true"></div>
+      <div class="container hero-shell">
+        <div class="hero-copy" data-aos="fade-right">
+          <span class="hero-pill">Atención especializada en cirugía general, hernias y pared abdominal</span>
+          <h1>Dr. Arni Mendoza — <span>Cirujano General en CDMX</span></h1>
+          <p>Recupera tu bienestar con una valoración especializada en cirugía general. Conoce las mejores opciones para tratar hernias de la pared abdominal, vesícula biliar, apendicitis, reflujo gastroesofágico, nódulos tiroideos y padecimientos quirúrgicos mediante cirugía de mínima invasión, con atención segura, clara y personalizada.</p>
+          <p class="hero-cta-copy">Agenda tu valoración y recibe orientación médica especializada.</p>
+          <div class="hero-actions">
+            <a href="tel:+525520006100,188" class="btn-get-started"><i class="bi bi-telephone me-2" aria-hidden="true"></i>Llama Ahora Para Más Información</a>
+            <a href="https://wa.me/525554612009?text=Hola%20Dr.%20Arni%20Mendoza%2C%20visité%20su%20página%20web%20y%20me%20gustaría%20solicitar%20información%20para%20agendar%20una%20cita%20de%20valoración." class="btn-secondary btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Agenda Tu Valoración Ahora</a>
           </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <div class="hero-bg" aria-hidden="true" style="background-image:url('assets/img/slider2.optimized.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="container">
-            <h2>Cirugía de Mínima Invasión</h2>
-            <p>La cirugía laparoscópica es una técnica de mínima invasión que se considera de acuerdo con la valoración clínica y las necesidades de cada paciente.</p>
-            <div class="hero-actions">
-              <a href="#procedures" class="btn-get-started"><i class="bi bi-arrow-down-circle me-2" aria-hidden="true"></i>Ver procedimientos</a>
-              <a href="#contact" class="btn-secondary">Ver ubicación</a>
-              <a data-phone-action hidden class="btn-secondary">Llamar</a>
-              <a data-whatsapp-action hidden class="btn-secondary"><i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
-            </div>
-          </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <div class="hero-bg" aria-hidden="true" style="background-image:url('assets/img/slider1.optimized.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="container">
-            <h2>Especialista en Hernias</h2>
-            <p>Valoración y tratamiento quirúrgico de hernias inguinales, umbilicales e incisionales, de acuerdo con las características de cada caso.</p>
-            <div class="hero-actions">
-              <a href="#procedures" class="btn-get-started"><i class="bi bi-arrow-down-circle me-2" aria-hidden="true"></i>Ver procedimientos</a>
-              <a href="#contact" class="btn-secondary">Ver ubicación</a>
-              <a data-phone-action hidden class="btn-secondary">Llamar</a>
-              <a data-whatsapp-action hidden class="btn-secondary"><i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
-            </div>
-          </div>
-        </div><!-- End Carousel Item -->
-
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-        <ol class="carousel-indicators"></ol>
-
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
-              <h4>Cirugía general</h4>
-              <p>Valoración y atención quirúrgica de acuerdo con cada caso.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
-              <h4>Hernias</h4>
-              <p>Valoración de hernias inguinales, umbilicales e incisionales.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-notes-medical" aria-hidden="true"></i></div>
-              <h4>Vesícula y apéndice</h4>
-              <p>Atención quirúrgica de padecimientos de vesícula y apendicitis.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-cut" aria-hidden="true"></i></div>
-              <h4>Mínima invasión</h4>
-              <p>Cirugía laparoscópica cuando está indicada para el caso.</p>
-            </div>
-          </div><!-- End Service Item -->
-
         </div>
 
+        <div class="hero-visual" data-aos="fade-left" aria-label="Fotografías de quirófano del Dr. Arni Mendoza">
+          <div class="hero-photo hero-photo--large">
+            <img src="assets/img/slider3.optimized.jpg" alt="Cirujano en quirófano" loading="lazy" decoding="async">
+          </div>
+          <div class="hero-photo hero-photo--small">
+            <img src="assets/img/slider2.optimized.jpg" alt="Equipo médico en sala de cirugía" loading="lazy" decoding="async">
+          </div>
+        </div>
       </div>
-
-    </section><!-- /Featured Services Section -->
-
-    <!-- About Section -->
+    </section><!-- /Hero Section -->    <!-- About Section -->
     <section id="about" class="about section">
       <div class="medical-ornament" aria-hidden="true">
         <svg><use href="#icon-stethoscope"></use></svg>
         <svg><use href="#icon-ecg"></use></svg>
       </div>
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <span class="eyebrow">Conoce al especialista</span>
         <h2>Acerca del <span class="title-highlight" data-brand-name>Dr. Arni Mendoza</span></h2>
-        <p>Especialista en Cirugía General con enfoque en procedimientos de mínima invasión y reparación de hernias</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
-
         <div class="row gy-4">
           <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <h3>Formación Académica y Profesional</h3>
-            <p class="fst-italic">
-              El Dr. Arni Mendoza es egresado de la Universidad Nacional Autónoma de México.
-            </p>
-            <p>
-              Su práctica se enfoca en cirugía general, reparación de hernias y procedimientos de mínima invasión. La indicación de cada procedimiento requiere valoración médica individual.
-            </p>
+            <h3>Acerca del Dr. Arni Mendoza</h3>
+            <p>El Dr. Arni Mendoza es médico especialista en Cirugía General, egresado de la Universidad Nacional Autónoma de México (UNAM), certificado por el Consejo Mexicano de Cirugía General. Su práctica profesional tiene un enfoque especializado en la reparación de hernias de la pared abdominal, tracto digestivo y cirugía de tiroides, áreas en las que aborda distintas patologías que requieren tratamiento quirúrgico.</p>
+            <p>Cuenta con un enfoque orientado a la laparoscopia avanzada (mínima invasión), integrando diferentes alternativas y técnicas quirúrgicas de acuerdo con las características de cada padecimiento y las necesidades de cada paciente.</p>
+            <p>Su filosofía de atención se basa en la valoración individualizada, la toma de decisiones médicas fundamentadas y la selección del tratamiento quirúrgico más adecuado para cada caso. Cada procedimiento requiere una valoración médica previa para establecer su indicación y plan de tratamiento.</p>
           </div>
           <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
             <figure class="doctor-card">
-              <img class="doctor-photo" data-config-image="about" src="assets/img/doctor-illustration.svg" alt="Ilustración editorial de un profesional médico; no es una fotografía del doctor" loading="lazy" decoding="async">
-              <span class="trust-badge trust-badge--credential"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>Cirugía general<br>Formación UNAM</span></span>
+              <img class="doctor-photo" data-config-image="about" src="assets/img/about.jpg" alt="Dr. Arni Mendoza" loading="lazy" decoding="async">
+              <span class="trust-badge trust-badge--credential"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>Cirugía General •<br>Formación UNAM</span></span>
               <span class="trust-badge trust-badge--care"><i class="bi bi-heart-pulse" aria-hidden="true"></i><span>Enfoque en hernias<br>y mínima invasión</span></span>
-              <figcaption class="doctor-photo-caption">Ilustración médica de apoyo; no representa una fotografía del doctor.</figcaption>
             </figure>
           </div>
         </div>
-
       </div>
-
     </section><!-- /About Section -->
-
-    <section id="credentials" class="credentials section">
-      <div class="container section-title" data-aos="fade-up">
-        <span class="credentials-badge">Formación y acreditación</span>
-        <h2>Datos profesionales</h2>
-        <p>Certificaciones oficiales, trayectoria académica y disponibilidad de consulta.</p>
-      </div>
-      <div class="container credentials-bento">
-        <article class="credentials-card">
-          <svg class="credentials-watermark" aria-hidden="true"><use href="#icon-graduation"></use></svg>
-          <span class="credentials-label">Formación académica</span>
-          <span class="credentials-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
-          <h3>Médico Cirujano</h3>
-          <p data-university>Universidad Nacional Autónoma de México</p>
-        </article>
-        <article class="credentials-card">
-          <svg class="credentials-watermark" aria-hidden="true"><use href="#icon-surgery-mark"></use></svg>
-          <span class="credentials-label">Especialidad</span>
-          <span class="credentials-icon"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
-          <h3 data-specialty>Cirugía General</h3>
-          <p>Certificado por el Consejo Mexicano de Cirugía General</p>
-        </article>
-        <article class="credentials-card credentials-license">
-          <svg class="credentials-watermark" aria-hidden="true"><use href="#icon-license-mark"></use></svg>
-          <div class="credentials-license-label"><span class="credentials-icon"><i class="bi bi-person-vcard" aria-hidden="true"></i></span><span class="credentials-label">Cédula profesional</span></div>
-          <p class="credentials-number" data-professional-license>11767675</p>
-          <p class="credentials-check"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Registro oficial DGP</p>
-        </article>
-        <article class="credentials-card credentials-license">
-          <svg class="credentials-watermark" aria-hidden="true"><use href="#icon-diploma-mark"></use></svg>
-          <div class="credentials-license-label"><span class="credentials-icon"><i class="bi bi-person-vcard" aria-hidden="true"></i></span><span class="credentials-label">Cédula de especialidad</span></div>
-          <p class="credentials-number" data-specialty-license>14408066</p>
-          <p class="credentials-check"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Especialidad en Cirugía General</p>
-        </article>
-        <article id="hours" class="credentials-hours">
-          <div class="credentials-hours-heading"><span class="credentials-icon"><i class="bi bi-clock" aria-hidden="true"></i></span><span>Horarios y contacto</span></div>
-          <div class="credentials-hours-content">
-            <p data-hours-days>Jueves a Sábado</p>
-            <strong data-hours-display>08:00 a 12:00 hrs</strong>
-            <span>*Atención previa cita</span>
-            <ul class="credentials-hours-benefits">
-              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Valoración quirúrgica integral</li>
-              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Atención personalizada previa cita</li>
-            </ul>
-          </div>
-          <a href="#contact">Agendar cita o contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-        </article>
-      </div>
-    </section><!-- /Professional details -->
-
-    <section class="institutional-section" aria-labelledby="institutional-heading">
+<section class="institutional-section" aria-labelledby="institutional-heading">
       <div class="container">
         <div class="institutional-heading">
           <span class="eyebrow">Formación y respaldo institucional — Avalado por</span>
@@ -5568,9 +5546,7 @@
         </div>
         <div class="institutional-logos" data-avalado-por></div>
       </div>
-    </section>
-
-    <!-- Procedures Section -->
+    </section>    <!-- Procedures Section -->
     <section id="procedures" class="procedures section light-background">
       <div class="medical-ornament" aria-hidden="true">
         <svg><use href="#icon-surgery-mark"></use></svg>
@@ -5612,14 +5588,24 @@
                       <p>Valoración de hernias inguinales, umbilicales e incisionales. El plan de tratamiento se determina según la evaluación clínica de cada paciente.</p>
                       <ul class="procedure-points">
                         <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Valoración clínica individual</li>
-                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Plan definido tras evaluación</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Plan definido según la hernia y el paciente</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Seguimiento y orientación para la recuperación</li>
                       </ul>
+                      <div class="procedure-symptoms">
+                        <strong>Principales síntomas a valorar:</strong>
+                        <ul>
+                          <li>Aumento de volumen o abultamiento en la pared abdominal o ingle</li>
+                          <li>Molestia al realizar esfuerzo o levantar peso</li>
+                          <li>Dolor local o sensación de pesadez</li>
+                        </ul>
+                      </div>
                       <div class="procedure-actions">
                         <a data-whatsapp-action data-whatsapp-service="hernia" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
                         <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
+                      <p class="procedure-disclaimer">Consulte a su médico • No se automedique</p>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-hernia"></use></svg></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/departments-1.jpg" alt="Hernia abdominal" loading="lazy" decoding="async"></div></div>
                   </div>
                 </div>
               </div>
@@ -5633,12 +5619,21 @@
                         <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Valoración clínica individual</li>
                         <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Plan definido tras evaluación</li>
                       </ul>
+                      <div class="procedure-symptoms">
+                        <strong>Principales síntomas a valorar:</strong>
+                        <ul>
+                          <li>Dolor abdominal superior derecho tras comer alimentos grasos</li>
+                          <li>Náuseas o sensación de indigestión</li>
+                          <li>Molestia recurrente en el cuadrante superior derecho</li>
+                        </ul>
+                      </div>
                       <div class="procedure-actions">
                         <a data-whatsapp-action data-whatsapp-service="vesicula" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
                         <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
+                      <p class="procedure-disclaimer">Consulte a su médico • No se automedique</p>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-vesicula"></use></svg></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/departments-2.jpg" alt="Vesícula biliar" loading="lazy" decoding="async"></div></div>
                   </div>
                 </div>
               </div>
@@ -5649,15 +5644,30 @@
                       <h3>Apendicitis</h3>
                       <p>La sospecha de apendicitis requiere valoración médica. La necesidad y el tipo de tratamiento se determinan de acuerdo con el cuadro clínico.</p>
                       <ul class="procedure-points">
-                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Valoración médica del cuadro clínico</li>
-                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Plan definido tras evaluación médica</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Dolor abdominal agudo que inicia alrededor del ombligo y se desplaza a la parte inferior derecha</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Fiebre, náuseas o vómito, y pérdida de apetito</li>
+                        <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Valoración médica urgente y tratamiento oportuno</li>
                       </ul>
+                      <div class="procedure-symptoms">
+                        <strong>Principales síntomas a valorar:</strong>
+                        <ul>
+                          <li>Dolor abdominal agudo que inicia alrededor del ombligo y se desplaza a la parte inferior derecha</li>
+                          <li>Fiebre</li>
+                          <li>Náuseas o vómito</li>
+                          <li>Pérdida de apetito</li>
+                        </ul>
+                      </div>
+                      <div class="procedure-alert">
+                        <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+                        <span>⚠️ Importante: La apendicitis aguda es una urgencia médica. Si usted o un familiar presenta alguno de estos síntomas, lo recomendable es acudir de inmediato al servicio de urgencias más cercano para una valoración oportuna.</span>
+                      </div>
                       <div class="procedure-actions">
                         <a data-whatsapp-action data-whatsapp-service="apendicitis" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
                         <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
+                      <p class="procedure-disclaimer">Consulte a su médico • No se automedique</p>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-appendix"></use></svg></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/departments-3.jpg" alt="Apendicitis" loading="lazy" decoding="async"></div></div>
                   </div>
                 </div>
               </div>
@@ -5671,12 +5681,21 @@
                         <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Indicación tras valoración médica</li>
                         <li><i class="bi bi-check2-circle" aria-hidden="true"></i>Indicación según condición clínica</li>
                       </ul>
+                      <div class="procedure-symptoms">
+                        <strong>Principales síntomas a valorar:</strong>
+                        <ul>
+                          <li>Dolor o molestias recurrentes que requieren valoración quirúrgica</li>
+                          <li>Hernias, alteraciones digestivas u otros signos que requieran mínima invasión</li>
+                          <li>Necesidad de tratamiento con menor trauma quirúrgico</li>
+                        </ul>
+                      </div>
                       <div class="procedure-actions">
                         <a data-whatsapp-action data-whatsapp-service="laparoscopia" hidden class="procedure-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Solicitar valoración por WhatsApp</a>
                         <a class="procedure-contact-link" href="#contact">Ver detalles y contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                       </div>
+                      <p class="procedure-disclaimer">Consulte a su médico • No se automedique</p>
                     </div>
-                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><svg><use href="#icon-laparoscopy"></use></svg></div></div>
+                    <div class="col-lg-3 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/departments-4.jpg" alt="Cirugía laparoscópica" loading="lazy" decoding="async"></div></div>
                   </div>
                 </div>
               </div>
@@ -5686,8 +5705,7 @@
       </div>
 
     </section><!-- /Procedures Section -->
-
-    <section class="insurance-section section" aria-labelledby="insurance-heading">
+<section class="insurance-section section" aria-labelledby="insurance-heading">
       <div class="medical-ornament" aria-hidden="true">
         <svg><use href="#icon-shield-health"></use></svg>
         <svg><use href="#icon-medical-cross"></use></svg>
@@ -5760,7 +5778,7 @@
                 <h3>Teléfonos de consultorio</h3>
                 <p>Atención en consultorio con asistentes</p>
                 <a class="contact-phone-link" data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 6726 6049</span></a>
-                <a class="contact-phone-link" data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100</span></a>
+                <a class="contact-phone-link" data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100 Ext. 188</span></a>
               </article>
 
               <article class="info-item contact-card contact-whatsapp-card" data-contact-card>
@@ -5870,7 +5888,7 @@
           <div class="footer-contact pt-3">
             <p data-address-display></p>
             <p class="mt-3"><strong>Teléfonos consultorio (asistentes):</strong></p>
-            <p><a class="footer-contact-phone" data-contact-phone-line="0" hidden><span>55 6726 6049</span></a><span aria-hidden="true"> / </span><a class="footer-contact-phone" data-contact-phone-line="1" hidden><span>55 2000 6100</span></a></p>
+            <p><a class="footer-contact-phone" data-contact-phone-line="0" hidden><span>55 6726 6049</span></a><span aria-hidden="true"> / </span><a class="footer-contact-phone" data-contact-phone-line="1" hidden><span>55 2000 6100 Ext. 188</span></a></p>
             <p><strong>WhatsApp Business:</strong> <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"><span>55 5461 2009</span></a></p>
           </div>
           <div class="social-links d-flex mt-4">
@@ -5910,8 +5928,6 @@
           </div>
           <p><strong data-university>Universidad Nacional Autónoma de México</strong></p>
           <p><span data-specialty>Cirugía general</span> · enfoque en hernias y mínima invasión.</p>
-          <p class="academic-license">Cédula profesional: <span data-professional-license>11767675</span></p>
-          <p class="academic-license">Cédula de especialidad: <span data-specialty-license>14408066</span></p>
         </div>
 
       </div>
@@ -5934,7 +5950,7 @@
       <div class="phone-popover" id="phone-menu" aria-labelledby="phone-menu-title" hidden>
         <p id="phone-menu-title">Llamar a consultorio (Asistentes)</p>
         <a data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>Línea 1: <span class="contact-value">55 6726 6049</span></span></a>
-        <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>Línea 2: <span class="contact-value">55 2000 6100</span></span></a>
+        <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>Línea 2: <span class="contact-value">55 2000 6100 Ext. 188</span></span></a>
       </div>
     </div>
 

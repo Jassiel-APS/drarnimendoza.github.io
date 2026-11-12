@@ -3,8 +3,6 @@ window.DrArniSiteConfig = Object.freeze({
   brandName: 'Dr. Arni Mendoza',
   legalName: 'Dr. Arni Alejandro Mendoza Soto',
   professional: {
-    professionalLicense: '11767675',
-    specialtyLicense: '14408066',
     university: 'Universidad Nacional Autónoma de México',
     specialty: 'Cirugía general'
   },
@@ -19,8 +17,7 @@ window.DrArniSiteConfig = Object.freeze({
     ]
   },
   images: {
-    // FALTA: Reemplazar por PNG real del doctor
-    about: 'assets/img/doctor-illustration.svg'
+    about: 'assets/img/about.jpg'
   },
   contactSubjects: [
     { value: 'hernia', label: 'Hernias' },
@@ -41,7 +38,14 @@ window.DrArniSiteConfig = Object.freeze({
         'Cirugía de mínima invasión',
         'Alivio de síntomas refractarios a medicamento',
         'Valoración funcional previa'
-      ]
+      ],
+      symptoms: [
+        'Ardor retroesternal o acidez frecuente',
+        'Regurgitación o sensación de comida subiendo',
+        'Molestia después de comer o acostarse'
+      ],
+      image: 'assets/img/departments-5.jpg',
+      disclaimer: 'Consulte a su médico • No se automedique'
     },
     {
       value: 'nodulos-tiroideos',
@@ -52,14 +56,23 @@ window.DrArniSiteConfig = Object.freeze({
         'Valoración endocrino-quirúrgica',
         'Cirugía tiroidea segura',
         'Seguimiento integral'
-      ]
+      ],
+      symptoms: [
+        'Abultamiento palpable en el cuello',
+        'Sensación de presión al tragar',
+        'Cambios en la voz o sensación de molestia al mover el cuello'
+      ],
+      image: 'assets/img/services.jpg',
+      disclaimer: 'Consulte a su médico • No se automedique'
     }
   ],
   avaladoPor: [
-    { siglas: 'UNAM', nombre: 'UNAM - Facultad de Medicina', logo: '' },
-    { siglas: 'CMCG', nombre: 'Consejo Mexicano de Cirugía General', logo: '' },
-    { siglas: 'AMCG', nombre: 'Asociación Mexicana de Cirugía General', logo: '' },
-    { siglas: 'CMI', nombre: 'Cirugía Laparoscópica y Mínima Invasión', logo: '' }
+    { siglas: 'UNAM', nombre: 'UNAM - Facultad de Medicina', logo: 'assets/img/promotors/UNAM.jpg' },
+    { siglas: 'CMCG', nombre: 'Consejo Mexicano de Cirugía General', logo: 'assets/img/promotors/CMCG.jpg' },
+    { siglas: 'AMCG', nombre: 'Asociación Mexicana de Cirugía General', logo: 'assets/img/promotors/AMCG.jpg' },
+    { siglas: 'LAP', nombre: 'Cirugía laparoscópica', logo: 'assets/img/promotors/Cirugía Laparoscópica.jpg' },
+    { siglas: 'PARED', nombre: 'Cirugía de pared abdominal', logo: 'assets/img/promotors/Cirugía de Pared Abdominal.jpg' },
+    { siglas: 'AH', nombre: 'Asociación Mexicana de Hernia A.C.', logo: 'assets/img/promotors/Asociación Mexicana de Hernia.jpg' }
   ],
   segurosMedicos: {
     nota: 'La aceptación de Seguros de Gastos Médicos Mayores depende de la red, convenio y condiciones de cada póliza. También se ofrece atención particular.',
@@ -103,12 +116,13 @@ window.DrArniSiteConfig = Object.freeze({
   contact: {
     assistantPhones: [
       { e164: '525567266049', display: '55 6726 6049' },
-      { e164: '525520006100', display: '55 2000 6100' }
+      { e164: '525520006100', display: '55 2000 6100 Ext. 188', extension: '188' }
     ],
     callPhoneE164: '525567266049',
     callPhoneDisplay: '55 6726 6049',
     whatsappE164: '525554612009',
-    whatsappDisplay: '55 5461 2009'
+    whatsappDisplay: '55 5461 2009',
+    whatsappDefaultMessage: 'Hola Dr. Arni Mendoza, visité su página web y me gustaría solicitar información para agendar una cita de valoración.'
   },
   googleReviews: {
     profileUrl: 'https://maps.app.goo.gl/u8jfQfDmmhfyzRak6?g_st=aw',
@@ -117,7 +131,7 @@ window.DrArniSiteConfig = Object.freeze({
   },
   address: {
     display: 'Río Bamba 781, Consultorio 4, Lindavista, CP 07300, Gustavo A. Madero, CDMX',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rio%20Bamba%20781%2C%20Consultorio%204%20Lindavista%20CDMX',
+    mapUrl: 'https://maps.app.goo.gl/4xs4MK8fn5tGFFie6?g_st=aw',
     embedUrl: 'https://www.google.com/maps?q=R%C3%ADo%20Bamba%20781%2C%20Consultorio%204%2C%20Lindavista%2C%20Ciudad%20de%20M%C3%A9xico&output=embed'
   },
   social: {
@@ -147,8 +161,6 @@ window.DrArniSiteConfig = Object.freeze({
   const mobileAppTitle = document.querySelector('meta[name="apple-mobile-web-app-title"]');
   if (mobileAppTitle) mobileAppTitle.content = config.brandName;
 
-  textNode('[data-professional-license]', config.professional.professionalLicense);
-  textNode('[data-specialty-license]', config.professional.specialtyLicense);
   textNode('[data-university]', config.professional.university);
   textNode('[data-specialty]', config.professional.specialty);
   textNode('[data-hours-days]', config.hours.days);
@@ -197,16 +209,22 @@ window.DrArniSiteConfig = Object.freeze({
   }
 
   // Configuración dinámica de teléfonos y botones de llamada/WhatsApp
+  function buildTelHref(digits, extension) {
+    const digitsOnlyValue = digitsOnly(digits) ? digits : '';
+    if (!digitsOnlyValue) return '';
+    return extension ? `tel:+${digitsOnlyValue},${extension}` : `tel:+${digitsOnlyValue}`;
+  }
+
   function configurePhone(role, digits, display, hrefPrefix) {
     const isConfigured = digitsOnly(digits) && Boolean(display);
-    
+
     document.querySelectorAll(`[data-contact-${role}]`).forEach(link => {
       if (!isConfigured) {
         link.closest('[data-contact-card]')?.remove();
         link.remove();
         return;
       }
-      link.href = hrefPrefix === 'wa.me' ? `https://wa.me/${digits}` : `tel:+${digits}`;
+      link.href = hrefPrefix === 'wa.me' ? `https://wa.me/${digits}` : buildTelHref(digits);
       const valueNode = link.querySelector('.contact-value, span');
       if (valueNode) valueNode.textContent = display;
       else link.textContent = display;
@@ -215,13 +233,16 @@ window.DrArniSiteConfig = Object.freeze({
 
     document.querySelectorAll(`[data-${role}-action]`).forEach(link => {
       if (isConfigured) {
-        const baseUrl = hrefPrefix === 'wa.me' ? `https://wa.me/${digits}` : `tel:+${digits}`;
+        const defaultMessage = config.contact.whatsappDefaultMessage || 'Hola, quisiera solicitar información para una valoración.';
+        const baseUrl = hrefPrefix === 'wa.me' ? `https://wa.me/${digits}` : buildTelHref(digits);
         if (hrefPrefix === 'wa.me' && link.dataset.whatsappService) {
           const service = config.contactSubjects.find(item => item.value === link.dataset.whatsappService);
           const message = service
             ? `Hola, quisiera solicitar información sobre ${service.label.toLowerCase()}.`
-            : 'Hola, quisiera solicitar información para una valoración.';
+            : defaultMessage;
           link.href = `${baseUrl}?text=${encodeURIComponent(message)}`;
+        } else if (hrefPrefix === 'wa.me') {
+          link.href = `${baseUrl}?text=${encodeURIComponent(defaultMessage)}`;
         } else {
           link.href = baseUrl;
         }
@@ -246,7 +267,7 @@ window.DrArniSiteConfig = Object.freeze({
       link.remove();
       return;
     }
-    link.href = `tel:+${phone.e164}`;
+    link.href = buildTelHref(phone.e164, phone.extension);
     const valueNode = link.querySelector('.contact-value, span');
     if (valueNode) valueNode.textContent = phone.display;
     else link.textContent = phone.display;
@@ -309,7 +330,7 @@ window.DrArniSiteConfig = Object.freeze({
 
   // Dirección y enlace de mapas
   document.querySelectorAll('[data-location-link]').forEach(link => {
-    if (validHttpsUrl(config.address.mapUrl, 'www.google.com')) {
+    if (validHttpsUrl(config.address.mapUrl)) {
       link.href = config.address.mapUrl;
     } else {
       link.remove();
@@ -483,6 +504,29 @@ window.DrArniSiteConfig = Object.freeze({
         item.append(check, document.createTextNode(point));
         points.appendChild(item);
       });
+      const symptoms = procedure.symptoms ? document.createElement('div') : null;
+      if (symptoms) {
+        symptoms.className = 'procedure-symptoms';
+        const symptomsLabel = document.createElement('strong');
+        symptomsLabel.textContent = 'Principales síntomas a valorar:';
+        const symptomsList = document.createElement('ul');
+        procedure.symptoms.forEach(itemText => {
+          const item = document.createElement('li');
+          item.textContent = itemText;
+          symptomsList.appendChild(item);
+        });
+        symptoms.append(symptomsLabel, symptomsList);
+      }
+      const alert = procedure.alert ? document.createElement('div') : null;
+      if (alert) {
+        alert.className = 'procedure-alert';
+        alert.innerHTML = `<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i><span>${procedure.alert}</span>`;
+      }
+      const disclaimer = procedure.disclaimer ? document.createElement('p') : null;
+      if (disclaimer) {
+        disclaimer.className = 'procedure-disclaimer';
+        disclaimer.textContent = procedure.disclaimer;
+      }
       const actions = document.createElement('div');
       actions.className = 'procedure-actions';
       const whatsapp = document.createElement('a');
@@ -503,18 +547,31 @@ window.DrArniSiteConfig = Object.freeze({
       arrow.setAttribute('aria-hidden', 'true');
       contact.appendChild(arrow);
       actions.append(whatsapp, contact);
-      details.append(title, description, points, actions);
+      const nodes = [title, description, points];
+      if (symptoms) nodes.push(symptoms);
+      if (alert) nodes.push(alert);
+      nodes.push(actions);
+      if (disclaimer) nodes.push(disclaimer);
+      details.append(...nodes);
 
       const visualColumn = document.createElement('div');
       visualColumn.className = 'col-lg-3 text-center';
       const visual = document.createElement('div');
       visual.className = 'procedure-visual';
       visual.setAttribute('aria-hidden', 'true');
-      const illustration = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      const illustrationUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-      illustrationUse.setAttribute('href', `#${procedure.icon}`);
-      illustration.appendChild(illustrationUse);
-      visual.appendChild(illustration);
+      if (procedure.image) {
+        const img = document.createElement('img');
+        img.src = procedure.image;
+        img.alt = procedure.title;
+        img.loading = 'lazy';
+        visual.appendChild(img);
+      } else {
+        const illustration = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        const illustrationUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        illustrationUse.setAttribute('href', `#${procedure.icon}`);
+        illustration.appendChild(illustrationUse);
+        visual.appendChild(illustration);
+      }
       visualColumn.appendChild(visual);
       row.append(details, visualColumn);
       panel.appendChild(row);

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -718,7 +718,6 @@
           </div>
           <h1 data-brand-name>Dr. Arni Mendoza</h1>
           <p class="specialty">Cirujano General | Especialista en Hernias y Mínima Invasión</p>
-          <p class="credentials">Cédula Profesional: 11767675 | Cédula Especialidad: 14408066</p>
         </div>
       </div>
 
@@ -938,7 +937,7 @@
         'TITLE:Cirujano General - Especialista en Hernias y Mínima Invasión',
         ...phoneLines,
         'ADR;TYPE=WORK:;;Rio Bamba 781, Consultorio 4;Ciudad de México;CDMX;07300;México',
-        'NOTE:Cédula Profesional: 11767675 | Cédula Especialidad: 14408066\\nEgresado UNAM\\nHorario: Lunes a Sábado, 8AM - 8PM',
+        'NOTE:Egresado UNAM\\nHorario: Lunes a Sábado, 8AM - 8PM',
         'END:VCARD'
       ].join('\r\n');
 
@@ -1013,3 +1012,4 @@
 
 </body>
 </html>
+

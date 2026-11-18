@@ -17,8 +17,13 @@ window.DrArniSiteConfig = Object.freeze({
     ]
   },
   images: {
-    about: 'assets/img/about.jpg'
+    about: 'assets/img/slider3.optimized.jpg'
   },
+  heroGallery: [
+    { src: 'assets/img/slider3.optimized.jpg', alt: 'Dr. Arni Mendoza, cirujano general en CDMX, durante una cirugía' },
+    { src: 'assets/img/slider2.optimized.jpg', alt: 'Equipo médico en sala de cirugía general' },
+    { src: 'assets/img/slider1.optimized.jpg', alt: 'Atención quirúrgica en quirófano en Ciudad de México' }
+  ],
   contactSubjects: [
     { value: 'hernia', label: 'Hernias' },
     { value: 'vesicula', label: 'Vesícula' },
@@ -77,14 +82,14 @@ window.DrArniSiteConfig = Object.freeze({
   segurosMedicos: {
     nota: 'La aceptación de Seguros de Gastos Médicos Mayores depende de la red, convenio y condiciones de cada póliza. También se ofrece atención particular.',
     aseguradoras: [
-      { nombre: 'GNP Seguros', siglas: 'GNP', logo: '' },
-      { nombre: 'MetLife', siglas: 'ML', logo: '' },
-      { nombre: 'AXA', siglas: 'AXA', logo: '' },
-      { nombre: 'Seguros Monterrey New York Life', siglas: 'SMNYL', logo: '' },
-      { nombre: 'Allianz', siglas: 'ALLIANZ', logo: '' },
-      { nombre: 'Mapfre', siglas: 'MAPFRE', logo: '' },
-      { nombre: 'Inbursa', siglas: 'INBURSA', logo: '' },
-      { nombre: 'Bupa', siglas: 'BUPA', logo: '' }
+      { nombre: 'GNP Seguros', siglas: 'GNP', logo: 'assets/img/PaytoSave/GNP.jpeg' },
+      { nombre: 'MetLife', siglas: 'ML', logo: 'assets/img/PaytoSave/Metlife.jpg' },
+      { nombre: 'AXA', siglas: 'AXA', logo: 'assets/img/PaytoSave/Axa.png' },
+      { nombre: 'Seguros Monterrey New York Life', siglas: 'SMNYL', logo: 'assets/img/PaytoSave/Seguros Moneterrey New York Life.png' },
+      { nombre: 'Allianz', siglas: 'ALLIANZ', logo: 'assets/img/PaytoSave/Allianz.png' },
+      { nombre: 'Mapfre', siglas: 'MAPFRE', logo: 'assets/img/PaytoSave/Mapfre.png' },
+      { nombre: 'Inbursa', siglas: 'INBURSA', logo: 'assets/img/PaytoSave/Inbursa.png' },
+      { nombre: 'Bupa', siglas: 'BUPA', logo: 'assets/img/PaytoSave/Bupa.png' }
     ]
   },
   reviews: [
@@ -125,14 +130,13 @@ window.DrArniSiteConfig = Object.freeze({
     whatsappDefaultMessage: 'Hola Dr. Arni Mendoza, visité su página web y me gustaría solicitar información para agendar una cita de valoración.'
   },
   googleReviews: {
-    profileUrl: 'https://maps.app.goo.gl/u8jfQfDmmhfyzRak6?g_st=aw',
-    reviewsUrl: 'https://maps.app.goo.gl/u8jfQfDmmhfyzRak6?g_st=aw',
+    profileUrl: 'https://maps.app.goo.gl/L16SNha6CmRxGhi78',
+    reviewsUrl: 'https://maps.app.goo.gl/L16SNha6CmRxGhi78',
     writeReviewUrl: '' // Enlace corto directo obtenido desde Google Business Profile
   },
   address: {
     display: 'Río Bamba 781, Consultorio 4, Lindavista, CP 07300, Gustavo A. Madero, CDMX',
-    mapUrl: 'https://maps.app.goo.gl/4xs4MK8fn5tGFFie6?g_st=aw',
-    embedUrl: 'https://www.google.com/maps?q=R%C3%ADo%20Bamba%20781%2C%20Consultorio%204%2C%20Lindavista%2C%20Ciudad%20de%20M%C3%A9xico&output=embed'
+    mapUrl: 'https://maps.app.goo.gl/L16SNha6CmRxGhi78'
   },
   social: {
     facebook: 'https://www.facebook.com/share/18YNTDzeNm/',
@@ -198,6 +202,96 @@ window.DrArniSiteConfig = Object.freeze({
       })
       .catch(error => console.error(`Unable to load SVG image "${source}".`, error));
   });
+
+  const heroGallery = document.querySelector('[data-hero-gallery]');
+  const heroBubbles = heroGallery ? [...heroGallery.querySelectorAll('[data-hero-bubble]')] : [];
+  const galleryImages = Array.isArray(config.heroGallery) ? config.heroGallery.filter(image =>
+    image && typeof image.src === 'string' && image.src.trim() &&
+    typeof image.alt === 'string' && image.alt.trim()
+  ) : [];
+  if (heroBubbles.length && galleryImages.length) {
+    let activeGalleryIndex = 0;
+    let rotationTimer;
+    heroBubbles.forEach((bubble, index) => {
+      const image = bubble.querySelector('img');
+      const galleryImage = galleryImages[index % galleryImages.length];
+      if (image) {
+        image.src = galleryImage.src;
+        image.alt = galleryImage.alt;
+      }
+    });
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'hero-lightbox';
+    lightbox.hidden = true;
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Fotografía de quirófano ampliada');
+    const lightboxImage = document.createElement('img');
+    const closeLightbox = document.createElement('button');
+    closeLightbox.className = 'hero-lightbox-close';
+    closeLightbox.type = 'button';
+    closeLightbox.setAttribute('aria-label', 'Cerrar fotografía ampliada');
+    closeLightbox.textContent = '×';
+    lightbox.append(lightboxImage, closeLightbox);
+    document.body.appendChild(lightbox);
+
+    let lastFocusedBubble = null;
+    const hideLightbox = () => {
+      lightbox.classList.remove('is-open');
+      window.setTimeout(() => {
+        lightbox.hidden = true;
+        document.body.style.removeProperty('overflow');
+        if (lastFocusedBubble) lastFocusedBubble.focus();
+      }, 220);
+    };
+    heroBubbles.forEach(bubble => {
+      bubble.addEventListener('click', () => {
+        const image = bubble.querySelector('img');
+        if (!image) return;
+        lastFocusedBubble = bubble;
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeLightbox.focus();
+        window.requestAnimationFrame(() => lightbox.classList.add('is-open'));
+      });
+    });
+    closeLightbox.addEventListener('click', hideLightbox);
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) hideLightbox();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !lightbox.hidden) hideLightbox();
+    });
+
+    const rotateGallery = () => {
+      if (document.hidden || heroGallery.matches(':hover') || heroGallery.contains(document.activeElement)) return;
+      activeGalleryIndex = (activeGalleryIndex + 1) % galleryImages.length;
+      heroBubbles.forEach((bubble, index) => {
+        const image = bubble.querySelector('img');
+        if (!image) return;
+        image.classList.add('is-changing');
+        window.setTimeout(() => {
+          const galleryImage = galleryImages[(activeGalleryIndex + index) % galleryImages.length];
+          image.src = galleryImage.src;
+          image.alt = galleryImage.alt;
+          image.classList.remove('is-changing');
+        }, 450);
+      });
+    };
+    if (galleryImages.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      rotationTimer = window.setInterval(rotateGallery, 4500);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          window.clearInterval(rotationTimer);
+        } else {
+          rotationTimer = window.setInterval(rotateGallery, 4500);
+        }
+      });
+    }
+  }
 
   function validHttpsUrl(value, hostname) {
     try {
@@ -336,17 +430,6 @@ window.DrArniSiteConfig = Object.freeze({
       link.remove();
     }
   });
-  document.querySelectorAll('[data-location-embed]').forEach(frame => {
-    const embedUrl = config.address.embedUrl;
-    if (validHttpsUrl(embedUrl, 'www.google.com') &&
-        new URL(embedUrl).pathname === '/maps' &&
-        new URL(embedUrl).searchParams.get('output') === 'embed') {
-      frame.src = embedUrl;
-    } else {
-    frame.closest('[data-contact-map-column]')?.remove();
-    frame.remove();
-    }
-  });
   document.querySelectorAll('[data-address-display]').forEach(node => {
     node.textContent = config.address.display;
   });
@@ -381,6 +464,7 @@ window.DrArniSiteConfig = Object.freeze({
         logo.src = institution.logo;
         logo.alt = institution.nombre;
         logo.loading = 'lazy';
+        logo.decoding = 'async';
         logo.addEventListener('load', () => fallbackLogo.setAttribute('hidden', ''), { once: true });
         logo.addEventListener('error', () => logo.remove(), { once: true });
         logoWrapper.appendChild(logo);
@@ -403,22 +487,13 @@ window.DrArniSiteConfig = Object.freeze({
     config.segurosMedicos.aseguradoras.forEach(insurer => {
       const card = document.createElement('article');
       card.className = 'insurer-card';
-      if (insurer.logo) {
-        const logo = document.createElement('img');
-        logo.src = insurer.logo;
-        logo.alt = insurer.nombre;
-        logo.loading = 'lazy';
-        card.appendChild(logo);
-      } else {
-        const monogram = document.createElement('span');
-        monogram.className = 'insurer-monogram';
-        monogram.setAttribute('aria-hidden', 'true');
-        monogram.textContent = insurer.siglas;
-        card.appendChild(monogram);
-      }
-      const name = document.createElement('strong');
-      name.textContent = insurer.nombre;
-      card.appendChild(name);
+      const logo = document.createElement('img');
+      logo.src = insurer.logo;
+      logo.alt = insurer.nombre;
+      logo.loading = 'lazy';
+      logo.decoding = 'async';
+      logo.addEventListener('error', () => card.remove(), { once: true });
+      card.appendChild(logo);
       insurerGrid.appendChild(card);
     });
   }
@@ -489,7 +564,7 @@ window.DrArniSiteConfig = Object.freeze({
       const row = document.createElement('div');
       row.className = 'row align-items-center g-4';
       const details = document.createElement('div');
-      details.className = 'col-lg-9 details';
+      details.className = 'col-lg-6 details';
       const title = document.createElement('h3');
       title.textContent = procedure.title;
       const description = document.createElement('p');
@@ -555,15 +630,16 @@ window.DrArniSiteConfig = Object.freeze({
       details.append(...nodes);
 
       const visualColumn = document.createElement('div');
-      visualColumn.className = 'col-lg-3 text-center';
+      visualColumn.className = 'col-lg-6 text-center';
       const visual = document.createElement('div');
       visual.className = 'procedure-visual';
       visual.setAttribute('aria-hidden', 'true');
       if (procedure.image) {
         const img = document.createElement('img');
         img.src = procedure.image;
-        img.alt = procedure.title;
+        img.alt = `Imagen ilustrativa de ${procedure.title.toLowerCase()} en cirugía general`;
         img.loading = 'lazy';
+        img.decoding = 'async';
         visual.appendChild(img);
       } else {
         const illustration = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

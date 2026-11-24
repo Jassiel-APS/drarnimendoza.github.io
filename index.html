@@ -66,7 +66,8 @@
         "closes": "12:00"
       }
     ],
-    "availableService": [
+    "availabl
+    eService": [
       { "@type": "MedicalProcedure", "name": "Reparación de hernias de pared abdominal" },
       { "@type": "MedicalProcedure", "name": "Cirugía de vesícula biliar" },
       { "@type": "MedicalProcedure", "name": "Atención quirúrgica de apendicitis aguda" },
@@ -3969,7 +3970,114 @@
       color: #64748b;
     }
 
+    .appointment-calendar {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 0;
+      left: auto;
+      z-index: 20;
+      width: 22rem;
+      max-width: calc(100vw - 2rem);
+      padding: 1rem;
+      border: 1px solid #dbe3ec;
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 0.5rem 1.5rem rgba(16, 43, 67, 0.12);
+    }
+
+    .appointment-date-control {
+      position: relative;
+    }
+
+    .appointment-calendar[hidden] {
+      display: none;
+    }
+
+    .appointment-calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .appointment-calendar-month {
+      margin: 0;
+      color: var(--heading-color);
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .appointment-calendar-nav,
+    .appointment-calendar-day {
+      min-width: 2.25rem;
+      min-height: 2.25rem;
+      border: 0;
+      border-radius: 0.5rem;
+      background: transparent;
+    }
+
+    .appointment-calendar-nav {
+      color: var(--heading-color);
+    }
+
+    .appointment-calendar-nav:disabled {
+      color: #c4cbd3;
+      cursor: not-allowed;
+    }
+
+    .appointment-calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 0.25rem;
+      text-align: center;
+    }
+
+    .appointment-calendar-weekday {
+      padding: 0.35rem 0;
+      color: #64748b;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .appointment-calendar-day {
+      color: var(--heading-color);
+      cursor: pointer;
+    }
+
+    .appointment-calendar-day:enabled:hover,
+    .appointment-calendar-day[aria-pressed="true"] {
+      background: var(--accent-color);
+      color: #fff;
+    }
+
+    .appointment-calendar-day:disabled {
+      color: #c4cbd3;
+      cursor: not-allowed;
+    }
+
+    .appointment-calendar-day.is-outside-month {
+      visibility: hidden;
+    }
+
+    .appointment-calendar-clear {
+      margin-top: 0.75rem;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--accent-color);
+      font-size: 0.875rem;
+      text-decoration: underline;
+    }
+
     @media (max-width: 640px) {
+      .appointment-calendar {
+        right: auto;
+        left: 0;
+        width: min(22rem, calc(100vw - 2rem));
+      }
+
       .insurance-help {
         align-items: stretch;
         flex-direction: column;
@@ -5883,9 +5991,8 @@
 
     <div class="topbar">
       <div class="container topbar-inner">
-        <div class="topbar-contact-links" aria-label="Teléfonos y WhatsApp del consultorio">
+        <div class="topbar-contact-links" aria-label="Teléfono y WhatsApp del consultorio">
           <a data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 6726 6049</span></a>
-          <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100 Ext. 188</span></a>
           <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>55 5461 2009</span></a>
         </div>
         <div class="topbar-meta">
@@ -5909,7 +6016,6 @@
             <li><a href="#hero" class="active">Inicio</a></li>
             <li><a href="#about">Acerca de</a></li>
             <li><a href="#procedures">Procedimientos</a></li>
-            <li><a href="#hours">Horarios</a></li>
             <li><a href="#testimonials">Opiniones</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
@@ -5995,12 +6101,12 @@
       <div class="hero-ambient" aria-hidden="true"></div>
       <div class="container hero-shell">
         <div class="hero-copy" data-aos="fade-right">
-          <span class="hero-pill">Atención especializada en cirugía general, hernias y pared abdominal</span>
+          <span class="hero-pill">Atención especializada en cirugía general, hernias y pared abdominalAtención especializada en cirugía gastrointestinal, hernias, mínima invasión y cabeza y cuello</span>
           <h1>Dr. Arni Mendoza — <span>Cirujano General en CDMX</span></h1>
           <p>Recupera tu bienestar con una valoración especializada en cirugía general. Conoce las mejores opciones para tratar hernias de la pared abdominal, vesícula biliar, apendicitis, reflujo gastroesofágico, nódulos tiroideos y padecimientos quirúrgicos mediante cirugía de mínima invasión, con atención segura, clara y personalizada.</p>
           <p class="hero-cta-copy">Agenda tu valoración y recibe orientación médica especializada.</p>
           <div class="hero-actions">
-            <a href="tel:+525520006100,188" class="btn-get-started"><i class="bi bi-telephone me-2" aria-hidden="true"></i>Llama Ahora Para Más Información</a>
+            <a href="tel:+525567266049" class="btn-get-started"><i class="bi bi-telephone me-2" aria-hidden="true"></i>Llama Ahora Para Más Información</a>
             <a href="https://wa.me/525554612009?text=Hola%20Dr.%20Arni%20Mendoza%2C%20visité%20su%20página%20web%20y%20me%20gustaría%20solicitar%20información%20para%20agendar%20una%20cita%20de%20valoración." class="btn-secondary btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Agenda Tu Valoración Ahora</a>
           </div>
         </div>
@@ -6039,23 +6145,14 @@
           </div>
           <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
             <figure class="doctor-card">
-              <img class="doctor-photo" data-config-image="about" src="assets/img/slider3.optimized.jpg" alt="Dr. Arni Mendoza, cirujano general en CDMX, durante una cirugía" loading="lazy" decoding="async">
+              <img class="doctor-photo" data-config-image="about" src="assets/img/doctors/DrArni.jpeg" alt="Dr. Arni Mendoza, cirujano general en CDMX, durante una cirugía" loading="lazy" decoding="async">
               <span class="trust-badge trust-badge--credential"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>Cirugía General •<br>Formación UNAM</span></span>
               <span class="trust-badge trust-badge--care"><i class="bi bi-heart-pulse" aria-hidden="true"></i><span>Enfoque en hernias<br>y mínima invasión</span></span>
             </figure>
           </div>
         </div>
       </div>
-    </section><!-- /About Section -->
-<section class="institutional-section" aria-labelledby="institutional-heading">
-      <div class="container">
-        <div class="institutional-heading">
-          <span class="eyebrow">Formación y respaldo institucional — Avalado por</span>
-          <h2 id="institutional-heading" class="visually-hidden">Formación y respaldo institucional</h2>
-        </div>
-        <div class="institutional-logos" data-avalado-por></div>
-      </div>
-    </section>    <!-- Procedures Section -->
+    </section>   <!-- Procedures Section -->
     <section id="procedures" class="procedures section light-background">
       <div class="medical-ornament" aria-hidden="true">
         <svg><use href="#icon-surgery-mark"></use></svg>
@@ -6114,7 +6211,7 @@
                       </div>
                       <p class="procedure-disclaimer">Consulte a su médico • No se automedique</p>
                     </div>
-                    <div class="col-lg-6 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/departments-1.jpg" alt="Cirugía de hernia de pared abdominal en CDMX" loading="lazy" decoding="async"></div></div>
+                    <div class="col-lg-6 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/departments-4.jpg" alt="Cirugía de hernia de pared abdominal en CDMX" loading="lazy" decoding="async"></div></div>
                   </div>
                 </div>
               </div>
@@ -6176,7 +6273,7 @@
                       </div>
                       <p class="procedure-disclaimer">Consulte a su médico • No se automedique</p>
                     </div>
-                    <div class="col-lg-6 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/departments-3.jpg" alt="Atención quirúrgica para apendicitis en CDMX" loading="lazy" decoding="async"></div></div>
+                    <div class="col-lg-6 text-center"><div class="procedure-visual" aria-hidden="true"><img src="assets/img/apendicitis.avif" alt="Atención quirúrgica para apendicitis en CDMX" loading="lazy" decoding="async"></div></div>
                   </div>
                 </div>
               </div>
@@ -6284,10 +6381,9 @@
             <div class="contact-direct-cards">
               <article class="info-item contact-card contact-phone-card">
                 <i class="bi bi-telephone" aria-hidden="true"></i>
-                <h3>Teléfonos de consultorio</h3>
+                <h3>Teléfono de consultorio</h3>
                 <p>Atención en consultorio con asistentes</p>
                 <a class="contact-phone-link" data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 6726 6049</span></a>
-                <a class="contact-phone-link" data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>55 2000 6100 Ext. 188</span></a>
               </article>
 
               <article class="info-item contact-card contact-whatsapp-card" data-contact-card>
@@ -6350,9 +6446,23 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label for="contact-date">Fecha deseada (opcional)</label>
-                        <input id="contact-date" type="date" class="form-control" name="date" aria-describedby="contact-date-error">
-                        <span id="contact-date-error" class="field-validation-message" role="alert" hidden>Las consultas y valoraciones se agendan únicamente de Jueves a Sábado. Por favor selecciona un jueves, viernes o sábado en el calendario.</span>
+                  <label for="contact-date-picker">Fecha deseada (opcional)</label>
+                  <div class="appointment-date-control">
+                    <button id="contact-date-picker" type="button" class="form-control text-start" aria-haspopup="dialog" aria-expanded="false" aria-controls="contact-date-calendar" aria-describedby="contact-date-note">
+                      <span data-appointment-date-display>Selecciona una fecha</span>
+                    </button>
+                    <input type="hidden" name="date" data-appointment-date>
+                    <small id="contact-date-note" class="appointment-time-note">Fechas disponibles: jueves a sábado.</small>
+                    <div id="contact-date-calendar" class="appointment-calendar" role="dialog" aria-label="Selecciona una fecha para tu cita" hidden>
+                      <div class="appointment-calendar-header">
+                        <button type="button" class="appointment-calendar-nav" data-calendar-previous aria-label="Mes anterior">&lsaquo;</button>
+                        <p class="appointment-calendar-month" data-calendar-month aria-live="polite"></p>
+                        <button type="button" class="appointment-calendar-nav" data-calendar-next aria-label="Mes siguiente">&rsaquo;</button>
+                      </div>
+                      <div class="appointment-calendar-grid" aria-label="Días del mes" data-calendar-grid></div>
+                      <button type="button" class="appointment-calendar-clear" data-calendar-clear>Quitar fecha</button>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="col-md-6">
@@ -6382,6 +6492,16 @@
       </div>
 
     </section><!-- /Contact Section -->
+    <!-- /About Section -->
+<section class="institutional-section" aria-labelledby="institutional-heading">
+      <div class="container">
+        <div class="institutional-heading">
+          <span class="eyebrow">Formación y respaldo institucional — Avalado por</span>
+          <h2 id="institutional-heading" class="visually-hidden">Formación y respaldo institucional</h2>
+        </div>
+        <div class="institutional-logos" data-avalado-por></div>
+      </div>
+    </section> 
 
   </main>
 
@@ -6396,8 +6516,8 @@
           </a>
           <div class="footer-contact pt-3">
             <p data-address-display></p>
-            <p class="mt-3"><strong>Teléfonos consultorio (asistentes):</strong></p>
-            <p><a class="footer-contact-phone" data-contact-phone-line="0" hidden><span>55 6726 6049</span></a><span aria-hidden="true"> / </span><a class="footer-contact-phone" data-contact-phone-line="1" hidden><span>55 2000 6100 Ext. 188</span></a></p>
+            <p class="mt-3"><strong>Teléfono consultorio (asistentes):</strong></p>
+            <p><a class="footer-contact-phone" data-contact-phone-line="0" hidden><span>55 6726 6049</span></a></p>
             <p><strong>WhatsApp Business:</strong> <a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"><span>55 5461 2009</span></a></p>
           </div>
           <div class="social-links d-flex mt-4">
@@ -6453,13 +6573,12 @@
 
   <div class="floating-dock" aria-label="Acciones rápidas">
     <div class="phone-dock-item">
-      <button type="button" class="call-float" id="phone-menu-toggle" aria-label="Mostrar teléfonos del consultorio" aria-expanded="false" aria-controls="phone-menu">
+      <button type="button" class="call-float" id="phone-menu-toggle" aria-label="Mostrar teléfono del consultorio" aria-expanded="false" aria-controls="phone-menu">
         <i class="bi bi-telephone" aria-hidden="true"></i>
       </button>
       <div class="phone-popover" id="phone-menu" aria-labelledby="phone-menu-title" hidden>
-        <p id="phone-menu-title">Llamar a consultorio (Asistentes)</p>
-        <a data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>Línea 1: <span class="contact-value">55 6726 6049</span></span></a>
-        <a data-contact-phone-line="1" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span>Línea 2: <span class="contact-value">55 2000 6100 Ext. 188</span></span></a>
+        <p id="phone-menu-title">Llamar al consultorio</p>
+        <a data-contact-phone-line="0" hidden><i class="bi bi-telephone" aria-hidden="true"></i><span class="contact-value">55 6726 6049</span></a>
       </div>
     </div>
 

@@ -49,7 +49,7 @@ window.DrArniSiteConfig = Object.freeze({
         'Regurgitación o sensación de comida subiendo',
         'Molestia después de comer o acostarse'
       ],
-      image: 'assets/img/departments-5.jpg',
+      image: 'assets/img/departments-6.jpg',
       disclaimer: 'Consulte a su médico • No se automedique'
     },
     {
@@ -67,7 +67,7 @@ window.DrArniSiteConfig = Object.freeze({
         'Sensación de presión al tragar',
         'Cambios en la voz o sensación de molestia al mover el cuello'
       ],
-      image: 'assets/img/services.jpg',
+      image: 'assets/img/nodulos-tiroideos.jpg',
       disclaimer: 'Consulte a su médico • No se automedique'
     }
   ],
@@ -120,8 +120,7 @@ window.DrArniSiteConfig = Object.freeze({
   ],
   contact: {
     assistantPhones: [
-      { e164: '525567266049', display: '55 6726 6049' },
-      { e164: '525520006100', display: '55 2000 6100 Ext. 188', extension: '188' }
+      { e164: '525567266049', display: '55 6726 6049' }
     ],
     callPhoneE164: '525567266049',
     callPhoneDisplay: '55 6726 6049',
@@ -656,25 +655,118 @@ window.DrArniSiteConfig = Object.freeze({
     });
   }
 
-  const appointmentDate = document.querySelector('#contact-date');
+  const appointmentDate = document.querySelector('[data-appointment-date]');
+  const appointmentDatePicker = document.querySelector('#contact-date-picker');
+  const appointmentCalendar = document.querySelector('#contact-date-calendar');
   const appointmentTime = document.querySelector('[data-appointment-times]');
-  if (appointmentDate) {
-    const now = new Date();
-    appointmentDate.min = [
-      now.getFullYear(),
-      String(now.getMonth() + 1).padStart(2, '0'),
-      String(now.getDate()).padStart(2, '0')
+  if (appointmentDate && appointmentDatePicker && appointmentCalendar) {
+    const dateDisplay = appointmentDatePicker.querySelector('[data-appointment-date-display]');
+    const monthDisplay = appointmentCalendar.querySelector('[data-calendar-month]');
+    const calendarGrid = appointmentCalendar.querySelector('[data-calendar-grid]');
+    const previousMonth = appointmentCalendar.querySelector('[data-calendar-previous]');
+    const nextMonth = appointmentCalendar.querySelector('[data-calendar-next]');
+    const clearDate = appointmentCalendar.querySelector('[data-calendar-clear]');
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    let visibleMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    const weekdayNames = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
+
+    const formatDateValue = date => [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, '0'),
+      String(date.getDate()).padStart(2, '0')
     ].join('-');
-    const dateError = document.querySelector('#contact-date-error');
-    const validateAppointmentDate = () => {
-      const hasInvalidDay = appointmentDate.value && ![4, 5, 6].includes(new Date(`${appointmentDate.value}T00:00:00Z`).getUTCDay());
-      appointmentDate.setCustomValidity(hasInvalidDay
-        ? 'Las consultas y valoraciones se agendan únicamente de Jueves a Sábado. Por favor selecciona un jueves, viernes o sábado en el calendario.'
-        : '');
-      if (dateError) dateError.hidden = !hasInvalidDay;
+    const dateFromValue = value => {
+      const [year, month, day] = value.split('-').map(Number);
+      return new Date(year, month - 1, day);
     };
-    appointmentDate.addEventListener('change', validateAppointmentDate);
-    appointmentDate.addEventListener('input', validateAppointmentDate);
+    const formatDisplayDate = date => new Intl.DateTimeFormat('es-MX', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(date);
+    const closeCalendar = () => {
+      appointmentCalendar.hidden = true;
+      appointmentDatePicker.setAttribute('aria-expanded', 'false');
+    };
+    const renderCalendar = () => {
+      monthDisplay.textContent = new Intl.DateTimeFormat('es-MX', {
+        month: 'long',
+        year: 'numeric'
+      }).format(visibleMonth);
+      previousMonth.disabled = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), 0) < today;
+      calendarGrid.replaceChildren();
+
+      weekdayNames.forEach((name, day) => {
+        const weekday = document.createElement('span');
+        weekday.className = 'appointment-calendar-weekday';
+        weekday.setAttribute('aria-label', ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'][day]);
+        weekday.textContent = name;
+        calendarGrid.appendChild(weekday);
+      });
+
+      const firstDay = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), 1);
+      const daysInMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 0).getDate();
+      const totalCells = Math.ceil((firstDay.getDay() + daysInMonth) / 7) * 7;
+      for (let cell = 0; cell < totalCells; cell += 1) {
+        const dayNumber = cell - firstDay.getDay() + 1;
+        const dayButton = document.createElement('button');
+        dayButton.type = 'button';
+        dayButton.className = 'appointment-calendar-day';
+        if (dayNumber < 1 || dayNumber > daysInMonth) {
+          dayButton.classList.add('is-outside-month');
+          dayButton.tabIndex = -1;
+        } else {
+          const date = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), dayNumber);
+          const isAvailable = [4, 5, 6].includes(date.getDay()) && date >= today;
+          const dateValue = formatDateValue(date);
+          dayButton.textContent = String(dayNumber);
+          dayButton.disabled = !isAvailable;
+          dayButton.setAttribute('aria-label', formatDisplayDate(date));
+          dayButton.setAttribute('aria-pressed', String(appointmentDate.value === dateValue));
+          dayButton.addEventListener('click', () => {
+            appointmentDate.value = dateValue;
+            dateDisplay.textContent = formatDisplayDate(date);
+            closeCalendar();
+            appointmentDatePicker.focus();
+          });
+        }
+        calendarGrid.appendChild(dayButton);
+      }
+
+      clearDate.disabled = !appointmentDate.value;
+    };
+
+    appointmentDatePicker.addEventListener('click', () => {
+      const shouldOpen = appointmentCalendar.hidden;
+      appointmentCalendar.hidden = !shouldOpen;
+      appointmentDatePicker.setAttribute('aria-expanded', String(shouldOpen));
+      if (shouldOpen) renderCalendar();
+    });
+    previousMonth.addEventListener('click', () => {
+      visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1);
+      renderCalendar();
+    });
+    nextMonth.addEventListener('click', () => {
+      visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
+      renderCalendar();
+    });
+    clearDate.addEventListener('click', () => {
+      appointmentDate.value = '';
+      dateDisplay.textContent = 'Selecciona una fecha';
+      renderCalendar();
+      appointmentDatePicker.focus();
+    });
+    document.addEventListener('click', event => {
+      if (!appointmentCalendar.contains(event.target) && !appointmentDatePicker.contains(event.target)) closeCalendar();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !appointmentCalendar.hidden) {
+        closeCalendar();
+        appointmentDatePicker.focus();
+      }
+    });
   }
   if (appointmentTime) {
     config.hours.appointmentTimes.forEach(time => {

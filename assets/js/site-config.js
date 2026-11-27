@@ -120,7 +120,8 @@ window.DrArniSiteConfig = Object.freeze({
   ],
   contact: {
     assistantPhones: [
-      { e164: '525567266049', display: '55 6726 6049' }
+      { e164: '525567266049', display: '55 6726 6049' },
+      { e164: '525520006100', display: '55 2000 6100 Ext. 188', extension: '188' }
     ],
     callPhoneE164: '525567266049',
     callPhoneDisplay: '55 6726 6049',
